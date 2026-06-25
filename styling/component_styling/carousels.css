@@ -12,7 +12,8 @@
     color: black;
 }
 
-.prev-button{
-    
+.carousel-item img {
+    box-shadow: -1px 4px 16px -4px rgba(0,0,0,0.8);
+    margin: 10px;
+    border-radius: 30px;
 }
-
