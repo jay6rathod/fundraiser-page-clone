@@ -1,0 +1,104 @@
+/* Glowing Button css */
+.glowBtn {
+    background: hsla(44, 100%, 71%, 1);
+    background: linear-gradient(90deg, hsla(44, 100%, 71%, 1) 0%, hsla(15, 97%, 74%, 1) 100%);
+    color: black;
+    border: none;
+    font-weight: 500;
+    border-radius: 20px;
+    padding: 10px;
+    animation: constant-glow 1s infinite ease-in-out;
+    transition: 0.3s ease;
+}
+
+
+.glowBtn:hover{
+    color: white;
+}
+
+@keyframes constant-glow {
+  0% {
+    box-shadow: 0 0 5px hsla(44, 100%, 71%, 1), 
+                0 0 10px hsla(15, 97%, 74%, 1);
+  }
+  50% {
+    box-shadow: 0 0 20px hsla(44, 100%, 71%, 1), 
+                0 0 30px hsla(15, 97%, 74%, 1);
+  }
+  100% {
+    box-shadow: 0 0 5px hsla(44, 100%, 71%, 1), 
+                0 0 10px hsla(15, 97%, 74%, 1);
+  }
+}
+
+
+
+/* Navbar positioning */
+.navi{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.navi-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+}
+
+/* searchbar styling */
+
+.search-wrapper{
+    position: relative;
+    /* width: 260px; */
+}
+
+.search-bar{
+    border-radius: 30px;
+}
+
+.search-bar:focus{
+    outline: none;
+    box-shadow: none;
+    border: 2px solid #24936B;
+}
+
+.search-icon{
+    position: absolute;
+    right: -20px;
+    /* top: 10%; */
+    transform: translateX(-50%);
+    /* z-index: 1; */
+}
+
+.search-icon:active{
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+.search-icon:focus{
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+.clear-icon {
+  display: none;
+}
+
+.icon-hide {
+  display: none;
+}
+
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: #24936B;
+}

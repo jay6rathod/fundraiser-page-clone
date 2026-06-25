@@ -1,0 +1,59 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 20px;
+  padding: 2px 14px 2px 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  /* font-family: Arial, sans-serif; */
+}
+
+.icon-wrapper {
+  background-color: #2bd1ff;
+  color: #ffffff;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-wrapper i {
+  font-size: 14px; 
+}
+
+.label {
+  margin-left: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #222222;
+  letter-spacing: 0.5px;
+}
+
+
+.division{
+  margin-top: 20px;
+  display: flex;
+}
+
+.left{
+  flex: 2;
+}
+
+.right{
+  flex: 1;
+}
+
+.money-details{
+  
+}
+
+.recent-donation-details{
+  width: 100px;
+  height: 100px;
+  border: 5px solid green;
+  border-radius: 50%;
+  background-color: #F9F9F9;
+}

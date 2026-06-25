@@ -1,0 +1,18 @@
+.image-content{
+    width: 800px;
+    height: auto;
+    margin-top: 50px;
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: black;
+}
+
+.control-btn span{
+    color: black;
+}
+
+.prev-button{
+    
+}
+
