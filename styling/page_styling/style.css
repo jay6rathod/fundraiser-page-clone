@@ -211,6 +211,9 @@
   padding-right: 40px;
   background-color: #F0F0F0;
   border: 2px solid #25966D;
+  margin: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .read-more-btn:hover{
@@ -244,3 +247,165 @@
   5px 10px 12.6px -2.5px rgba(0, 0, 0, 0.11); 
 }
 
+.hidden_part{
+  display: none;
+}
+
+.story_content{
+  text-align: left;
+}
+
+.story_section_wrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.story_section {
+  width: 700px;
+  border-radius: 10px;
+  box-shadow:
+  0.3px 0.5px 0.7px rgba(0, 0, 0, 0.11),
+  0.8px 1.6px 2px -0.8px rgba(0, 0, 0, 0.11),
+  2.1px 4.1px 5.2px -1.7px rgba(0, 0, 0, 0.11),
+  5px 10px 12.6px -2.5px rgba(0, 0, 0, 0.11); 
+}
+
+.read_more_wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgWrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.donators{
+  display: flex;
+  justify-content: left;
+  align-items: self-start;
+}
+
+.donator-list-wrap{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 30px;
+  text-align: left;
+}
+
+.donator-list-wrap > p{
+  font-size: 1.2rem;
+}
+
+.donator-logo {
+  width: 50px; 
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  font-size: 1rem;
+  border: 1px solid gray;
+  background-color: gainsboro;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.all_donations{
+  margin-top: 60px;
+  box-shadow:
+  0.3px 0.5px 0.7px rgba(0, 0, 0, 0.11),
+  0.8px 1.6px 2px -0.8px rgba(0, 0, 0, 0.11),
+  2.1px 4.1px 5.2px -1.7px rgba(0, 0, 0, 0.11),
+  5px 10px 12.6px -2.5px rgba(0, 0, 0, 0.11); 
+}
+
+.donation_paginator {
+  width: 100%; 
+}
+
+.donation_paginator .pagination {
+  display: flex;
+  width: 100%;
+}
+
+.donation_paginator .page-item:nth-child(2) {
+  flex-grow: 1;
+}
+
+
+.donation_paginator .page-item:nth-child(2) .page-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.fundraise_for_cause{
+  margin-top: 40px;
+  box-shadow:
+  0.3px 0.5px 0.7px rgba(0, 0, 0, 0.11),
+  0.8px 1.6px 2px -0.8px rgba(0, 0, 0, 0.11),
+  2.1px 4.1px 5.2px -1.7px rgba(0, 0, 0, 0.11),
+  5px 10px 12.6px -2.5px rgba(0, 0, 0, 0.11);
+}
+
+
+.raise_funds{
+  border: none;
+  width: 400px;
+  border-radius: 40px;
+  padding: 5px;
+  background-color: #21986A;
+  color: white;
+  font-weight: 500;
+}
+
+.fundraise_cause_card{
+  text-align: left;
+}
+
+.fundraiser_cause_img_wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.side-by-side-btns{
+  margin-top: 50px;
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.side_btn{
+  border-radius: 40px;
+}
+
+.patient-btn{
+  background-color: #21986A;
+  color: white;
+  font-weight: 600;
+}
+
+.patient-btn:hover{
+  background-color: #21986acf;
+  color: white;
+  font-weight: 600;
+}
+
+.concern-btn{
+  border: 2px solid rgb(243, 69, 69);
+  color: rgb(243, 69, 69);
+  font-weight: 600;
+}
+
+.concern-btn:hover{
+  background-color: rgb(243, 69, 69);
+  color: white;
+}
