@@ -59,4 +59,188 @@
   border-top: 5px solid green;
   border-radius: 50%;
   background-color: #F9F9F9;
+  margin-left: 35%;
+  margin-bottom: 20px;
+  color: rgb(150, 149, 149);
 }
+
+.total-raised-details h3{
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: rgb(150, 149, 149);
+}
+
+.total-raised-details h3 > span{
+  font-weight: 700;
+}
+
+.total-donors{
+  color: #349D77;
+  font-weight: 400;
+}
+
+.handwritten_span {
+  font-family: "Shadows Into Light", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(101, 100, 100);
+  font-size: 1.3rem;
+  display: block;
+}
+
+.dialog_btn{
+  padding: 10px;
+  margin: 10px;
+  width: 400px;
+  border-radius: 30px;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.donate_now{
+  background-color: #FF8502;
+}
+.share_fb{
+  background-color: #5890FF;
+}
+
+.info-btn{
+  color: #25966D;
+}
+
+
+.defLogo{
+  padding: 15px;
+  border: 1px solid gainsboro;
+  background-color: #F8F8F8;
+  border-radius: 50%;
+}
+
+.verified{
+  font-size: .8rem;
+  font-weight: 500;
+  color: rgb(97, 96, 96);
+  border: 1px solid gainsboro;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+.verified > i{
+  color: #25966D;
+  font-size: .7rem;
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardi {
+  box-shadow:
+  0.3px 0.5px 0.7px rgba(0, 0, 0, 0.11),
+  0.8px 1.6px 2px -0.8px rgba(0, 0, 0, 0.11),
+  2.1px 4.1px 5.2px -1.7px rgba(0, 0, 0, 0.11),
+  5px 10px 12.6px -2.5px rgba(0, 0, 0, 0.11);
+  margin: 10px;
+
+}
+
+.payment-logos{
+  width: 25px;
+  height: auto;
+}
+
+.payment-card > h5{
+  margin-top: 3px;
+}
+
+.payment-note{
+  font-size: .7rem;
+  margin: 7px;
+}
+
+.payment-card{
+  background-color: #FFFFFF;
+  box-shadow:
+  0.3px 0.5px 0.7px rgba(0, 0, 0, 0.11),
+  0.8px 1.6px 2px -0.8px rgba(0, 0, 0, 0.11),
+  2.1px 4.1px 5.2px -1.7px rgba(0, 0, 0, 0.11),
+  5px 10px 12.6px -2.5px rgba(0, 0, 0, 0.11);
+}
+
+.update_content{
+  text-align: left;
+  margin: 15px;
+}
+
+.update-card > h4{
+  text-align: left;
+  margin: 15px;
+}
+
+.update-card{
+  width: 700px;
+  border-radius: 10px;
+  box-shadow:
+  0.3px 0.5px 0.7px rgba(0, 0, 0, 0.11),
+  0.8px 1.6px 2px -0.8px rgba(0, 0, 0, 0.11),
+  2.1px 4.1px 5.2px -1.7px rgba(0, 0, 0, 0.11),
+  5px 10px 12.6px -2.5px rgba(0, 0, 0, 0.11);
+}
+
+.update_card_wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.btn-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.read-more-btn{
+  color: #25966D;
+  border-radius: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: #F0F0F0;
+  border: 2px solid #25966D;
+}
+
+.read-more-btn:hover{
+  color: #25966D;
+  border-radius: 40px;
+  background-color: #fff;
+  border: 2px solid #25966D;
+}
+
+.first_donor_img{
+  height: auto;
+  width: 200px;
+}
+
+.first_donor_img_wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top_influencers{
+  margin-top: 110px;
+}
+
+.top_card{
+  border-radius: 10px;
+  box-shadow:
+  0.3px 0.5px 0.7px rgba(0, 0, 0, 0.11),
+  0.8px 1.6px 2px -0.8px rgba(0, 0, 0, 0.11),
+  2.1px 4.1px 5.2px -1.7px rgba(0, 0, 0, 0.11),
+  5px 10px 12.6px -2.5px rgba(0, 0, 0, 0.11); 
+}
+
