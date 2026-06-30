@@ -18,14 +18,14 @@
     <nav class="mini_nav" id="miniNav">
         <div class="container">
             <div class="section_buttons">
-                <button class="btn nav_story_btn">Story</button>
-                <button class="btn nav_updates_btn">Updates(1)</button>
-                <button class="btn nav_comments_btn">Comments(0)</button>
+                <button class="nav_story_btn secBtn">Story</button>
+                <button class="nav_updates_btn secBtn">Updates(1)</button>
+                <button class="nav_comments_btn secBtn">Comments(0)</button>
             </div>
             <div class="share_buttons">
-                <button class="shareWhatsapp btn">Share on <i class="fa-brands fa-whatsapp"></i></button>
-                <button class="shareFacebook btn">Share on <i class="fa-brands fa-facebook"></i></button>
-                <button class="share btn"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="shareWhatsapp">Share on <i class="fa-brands fa-whatsapp"></i></button>
+                <button class="shareFacebook">Share on <i class="fa-brands fa-facebook"></i></button>
+                <button class="share"><i class="fa-solid fa-share-nodes"></i></button>
             </div>
         </div>
     </nav>
@@ -71,22 +71,28 @@
             <div class="left">
                 <div id="carousel-content"></div>
 
-                <div class="row side-by-side-cards">
+                <div class="row side-by-side-cards g-1">
                     <div class="col-sm-6 mb-3 mb-sm-0">
                         <div class="card campaigner-details-card cardi">
-                            <div class="card-body ">
-                                <div class="campaigner-header header">
-                                    <span class="defLogo">RC</span>
+                            <div class="card-body">
+                                <div class="header">
+                                    <div class="defLogo">RC</div>
                                     <div class="header-head">
-                                        <span>Campaigner Details </span>
-                                        <span class="verified"> VERIFIED <i class="fa-solid fa-circle-check"></i></span>
+                                        <div class="d-flex justify-content-between align-items-center w-100">
+                                            <span>Campaigner Details</span>
+                                            <span class="verified">VERIFIED <i
+                                                    class="fa-solid fa-circle-check"></i></span>
+                                        </div>
                                         <hr>
                                     </div>
                                 </div>
-                                <div class="campaigner-details-main">
-                                    <span>Rohini Chauhan</span><br>
-                                    <span><i class="fa-solid fa-location-dot"></i> Karnal, Haryana</span><br>
-                                    <span><a href=""><i class="fa-solid fa-envelope"></i> Contact</a></span>
+                                <div class="details-main">
+                                    <div class="name">Rohini Chauhan</div>
+                                    <div class="location-contact">
+                                        <span><i class="fa-solid fa-location-dot"></i> Karnal Haryana</span>
+                                        <a href="#" class="contact-link"><i class="fa-solid fa-envelope"></i>
+                                            Contact</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -95,18 +101,21 @@
                     <div class="col-sm-6">
                         <div class="card beneficiary-details-card cardi">
                             <div class="card-body">
-                                <div class="beneficiary-header header">
-                                    <span class="defLogo">GG</span>
+                                <div class="header">
+                                    <div class="defLogo">GG</div>
                                     <div class="header-head">
-                                        <span>Beneficiary Details </span>
-                                        <span class="verified"> VERIFIED <i class="fa-solid fa-circle-check"></i></span>
+                                        <div class="d-flex justify-content-between align-items-center w-100">
+                                            <span>Beneficiary Details</span>
+                                            <span class="verified">VERIFIED <i
+                                                    class="fa-solid fa-circle-check"></i></span>
+                                        </div>
                                         <hr>
                                     </div>
                                 </div>
-                                <div class="beneficiary-details-main">
-                                    <span>Garvika Goyal</span><br>
-                                    <span>Child of Rohini Chauhan</span><br>
-                                    <span>Patient receiving treatment at home</span>
+                                <div class="details-main">
+                                    <div class="name">Garvika Goyal</div>
+                                    <div class="sub-detail">Child of Rohini Chauhan</div>
+                                    <div class="sub-detail">Patient receiving treatment at home</div>
                                 </div>
                             </div>
                         </div>
@@ -584,8 +593,97 @@
                 </div>
 
                 <div class="side-by-side-btns">
-                    <button class="btn side_btn patient-btn">REFER A PATIENT</button>
-                    <button class="btn side_btn concern-btn">RAISE A CONCERN</button>
+                    <button class="side_btn patient-btn">REFER A PATIENT</button>
+                    <button class="side_btn concern-btn">RAISE A CONCERN</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer container-fluid text-center">
+        <div class="parallax">
+            <button class="para-btn">START A FREE FUNDRAISER</button>
+        </div>
+        <div class="actual-foot">
+            <div class="footer-head">
+                <h1>Join The Impact Community!</h1>
+                <div class="footer-header-input">
+                    <input class="email-footer-input" type="email" placeholder="Enter your e-mail id">
+                    <button type="button" class="subscribe-btn-footer ">SUBSCRIBE NOW</button>
+                </div>
+            </div>
+            <hr>
+            <div class="footer-main">
+                <div class="footer-container">
+                    <div class="footer-col">
+                        <h3>Contact Us</h3>
+                        <div class="contact-text">General Enquiry</div>
+                        <div class="contact-text">Email : info@impactguru.com</div>
+                        <div class="contact-text">Phone : 18008912903</div>
+                        <span class="sub-text">(Toll-free number for Indian residents)</span>
+                        <div class="contact-text">Click below to Raise a Concern</div>
+                        <a href="#" class="btn raise-foot-btn">Raise A Concern</a>
+
+                        <h3>Follow Us On</h3>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#"><i class="fas fa-blog"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>About Us</h3>
+                        <ul>
+                            <li><a href="#" class="footer-anchor">About Us</a></li>
+                            <li><a href="#" class="footer-anchor">Careers</a></li>
+                            <li><a href="#" class="footer-anchor">Blog</a></li>
+                            <li>
+                                <a href="#" class="footer-anchor">Resources</a>
+                                <ul class="nested-list">
+                                    <li><a href="#" class="footer-anchor">English</a></li>
+                                    <li><a href="#" class="footer-anchor">Hindi</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#" class="footer-anchor">Press & Awards</a></li>
+                            <li><a href="#" class="footer-anchor">Contact Us</a></li>
+                            <li><a href="#" class="footer-anchor">Referrals</a></li>
+                            <li><a href="#" class="footer-anchor">Bug Bounty</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>Learn</h3>
+                        <ul>
+                            <li><a href="#" class="footer-anchor">What is Crowdfunding?</a></li>
+                            <li><a href="#" class="footer-anchor">Fundraising Ideas</a></li>
+                            <li><a href="#" class="footer-anchor">Fundraising Tips</a></li>
+                            <li><a href="#" class="footer-anchor">Frequently Asked Questions</a></li>
+                            <li><a href="#" class="footer-anchor">Pricing & Fees</a></li>
+                            <li><a href="#" class="footer-anchor">Trust & Safety</a></li>
+                            <li><a href="#" class="footer-anchor">Find Hospital List</a></li>
+                            <li><a href="#" class="footer-anchor">Disease Cost Calculator</a></li>
+                            <li><a href="#" class="footer-anchor">Patient Care Guides</a></li>
+                            <li><a href="#" class="footer-anchor">Health Insurance Plans</a></li>
+                            <li><a href="#" class="footer-anchor">Health Insurance Compare</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>Top Categories</h3>
+                        <ul>
+                            <li><a href="#" class="footer-anchor">Medical Crowdfunding</a></li>
+                            <li><a href="#" class="footer-anchor">Transplant Crowdfunding</a></li>
+                            <li><a href="#" class="footer-anchor">Cancer Crowdfunding</a></li>
+                            <li><a href="#" class="footer-anchor">Child Health Crowdfunding</a></li>
+                            <li><a href="#" class="footer-anchor">NGO Crowdfunding</a></li>
+                            <li><a href="#" class="footer-anchor">Education Crowdfunding</a></li>
+                            <li><a href="#" class="footer-anchor">Emergency Crowdfunding</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

@@ -103,35 +103,36 @@ $(window).on("scroll", function () {
 // Handling secondary nav buttons
 $(".nav_story_btn").click(function () {
     $("html, body").animate({
-        scrollTop: $("#story").offset().top
+        scrollTop: $("#story").offset().top - 90
     }, 0);
 });
 
 $(".nav_updates_btn").click(function () {
     $("html, body").animate({
-        scrollTop: $("#update-container").offset().top
+        scrollTop: $("#update-container").offset().top - 90
     }, 0);
 });
 
 $(".nav_comments_btn").click(function () {
     $("html, body").animate({
-        scrollTop: $("#comments").offset().top
+        scrollTop: $("#comments").offset().top - 90
     }, 0);
 });
 
 const story = document.querySelector("#story");
+const comments = document.querySelector(".comments");
 const miniNav = document.querySelector(".mini_nav");
 
 window.addEventListener("scroll", () => {
-
     const storyTop = story.offsetTop;
+    const commentsTop = comments.offsetTop; 
+    const commentsBottom = commentsTop + comments.offsetHeight;
 
-    if(window.scrollY >= storyTop){
+    if (window.scrollY >= storyTop && window.scrollY < commentsBottom) {
         miniNav.classList.add("show");
-    }else{
+    } else {
         miniNav.classList.remove("show");
     }
-
 });
 
 const lingerShare = document.querySelector(".share_linger_btn_container");

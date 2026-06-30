@@ -103,3 +103,10 @@ a{
 a:hover{
     color: #24936B;
 }
+
+.icon-btn{
+    border: none;
+    background-color: transparent;
+    margin-top: 5px;
+    margin-right: 10px;
+}
