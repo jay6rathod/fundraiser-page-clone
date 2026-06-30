@@ -134,6 +134,18 @@ window.addEventListener("scroll", () => {
 
 });
 
+const lingerShare = document.querySelector(".share_linger_btn_container");
+
+window.addEventListener("scroll", () => {
+    const storyTop = story.offsetTop;
+
+    if(window.scrollY >= storyTop){
+        lingerShare.classList.add("disappear");
+    }else{
+        lingerShare.classList.remove("disappear");
+    }
+})
+
 // // Loads a ad type popup when user reloads
 // $(document).ready(function() {
 //     const $popup = $(".welcome-card");
@@ -149,3 +161,26 @@ window.addEventListener("scroll", () => {
 //         $("body").removeClass("dimmed noscroll");
 //     });
 // });
+
+
+
+// test
+$('#exampleModal').on('show.bs.modal', function () {
+    console.log('Modal is about to open');
+});
+
+$('#exampleModal').on('shown.bs.modal', function () {
+    console.log('Modal is fully visible');
+});
+
+$('#exampleModal').on('hide.bs.modal', function () {
+    console.log('Modal is about to close');
+});
+
+$('#exampleModal').on('hidden.bs.modal', function () {
+    console.log('Modal is fully hidden');
+});
+
+$('.donate_now').click(function () {
+    console.log('Button clicked');
+});
