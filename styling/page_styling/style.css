@@ -1010,6 +1010,11 @@ mark {
   border-radius: 40px;
 }
 
+.email-footer-input:focus{
+  outline: none;
+  border: 2px solid #21986A;
+}
+
 .subscribe-btn-footer {
   padding: 15px;
   color: white;
