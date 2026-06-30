@@ -1146,6 +1146,60 @@ mark {
     border-color: #218861;
   }
 
+
+
+/* Confirmation modal */
+
+/* Image Styling */
+#confirmCloseModal .modal-heart-img {
+  width: 180px; 
+  height: auto;
+}
+
+/* Description Text */
+#confirmCloseModal .modal-desc {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Primary "Yes" Button */
+#confirmCloseModal .continue-btn {
+  background-color: #218861; /* Green from the image */
+  color: #ffffff;
+  border: none;
+  border-radius: 50px; /* Pill shape */
+  padding: 12px 24px;
+  font-weight: 700;
+  font-size: 15px;
+  width: 85%;
+  margin: 0 auto 15px auto;
+  transition: opacity 0.2s;
+}
+
+#confirmCloseModal .continue-btn:hover {
+  opacity: 0.9;
+}
+
+/* Secondary "No" Button */
+#confirmCloseModal .dismiss-btn {
+  background: red;
+  color: #218861; /* Same green as primary button */
+  border: none;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 10px;
+  width: 85%;
+  margin: 0 auto;
+}
+
+#confirmCloseModal .dismiss-btn:hover {
+  text-decoration: underline;
+}
+#confirmCloseModal {
+    z-index: 10555 !important; 
+}
+
+
 /* Popup message styling */
 /* .welcome-card {
   display: flex;
