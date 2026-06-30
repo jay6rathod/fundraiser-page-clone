@@ -1132,6 +1132,20 @@ mark {
   text-decoration: none;
 }
 
+.custom-tabs .nav-link {
+    color: #218861; 
+    border: 1px solid #218861;
+    border-radius: 0;
+    font-weight: 500;
+    font-size: 1.1rem;
+    background-color: white;
+  }
+  .custom-tabs .nav-link.active {
+    background-color: #218861;
+    color: white;
+    border-color: #218861;
+  }
+
 /* Popup message styling */
 /* .welcome-card {
   display: flex;
