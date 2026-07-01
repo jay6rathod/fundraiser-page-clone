@@ -949,16 +949,11 @@ mark {
 }
 
 .parallax {
-  /* The image used */
   background-image: url("../../assets/parallax_bg.png");
-
-  /* Set a specific height */
   min-height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -1146,28 +1141,21 @@ mark {
     border-color: #218861;
   }
 
-
-
-/* Confirmation modal */
-
-/* Image Styling */
 #confirmCloseModal .modal-heart-img {
   width: 180px; 
   height: auto;
 }
 
-/* Description Text */
 #confirmCloseModal .modal-desc {
   font-size: 16px;
   line-height: 1.5;
 }
 
-/* Primary "Yes" Button */
 #confirmCloseModal .continue-btn {
-  background-color: #218861; /* Green from the image */
+  background-color: #218861; 
   color: #ffffff;
   border: none;
-  border-radius: 50px; /* Pill shape */
+  border-radius: 50px; 
   padding: 12px 24px;
   font-weight: 700;
   font-size: 15px;
@@ -1180,23 +1168,184 @@ mark {
   opacity: 0.9;
 }
 
-/* Secondary "No" Button */
 #confirmCloseModal .dismiss-btn {
-  background: red;
-  color: #218861; /* Same green as primary button */
+  color: #218861; 
   border: none;
   font-weight: 700;
   font-size: 15px;
   padding: 10px;
   width: 85%;
   margin: 0 auto;
+  background-color: transparent;
 }
 
-#confirmCloseModal .dismiss-btn:hover {
-  text-decoration: underline;
-}
 #confirmCloseModal {
     z-index: 10555 !important; 
+}
+
+.amt{
+  background-color: gainsboro;
+  color: #21986A;
+  font-size: .75rem;
+}
+
+.amt:hover{
+  background-color: gray;
+  color: white;
+}
+
+.amt_active{
+  background-color: #21986A;
+  color: white;
+}
+
+#give-once-tab, #give-monthly-tab{
+  font-size: .9rem;
+}
+
+.currency-dropdown{
+  font-size: .8rem;
+}
+
+.amount-input-field{
+  width: 300px;
+}
+
+.amount-input-field:active{
+  outline: none;
+  border: none;
+}
+
+.amount-input-field:focus{
+  outline: none;
+  box-shadow: none;
+  border: 2px solid #218861;
+}
+
+.msg_content_wrapper{
+  width: 100%;
+  height: 100px;
+  background-color: #F4EBC8;
+  padding: 0;
+  border-radius: 20px;
+}
+
+
+.msg-content-container {
+  display: flex;
+  align-items: flex-start; 
+  justify-content: space-between;
+  text-align: left;
+  gap: 15px;
+  padding: 10px;
+
+}
+
+.msg-para-wrapper p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.close-button {
+  flex-shrink: 0;
+  margin-top: 0px; 
+  font-size: 0.7rem;
+}
+.msg-content-container > p{
+  font-size: .8rem;
+}
+
+.msg-para-wrapper{
+  width: 90%;
+}
+
+
+.amt5{
+  padding: 0;
+  color: #21986A;
+  margin: 0;
+  display: flex;
+  margin-bottom: 100px;
+  margin-left: 10px;
+  font-size: 12px;
+  background-color: transparent;
+}
+
+.amt5:focus{
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.request_message_wrapper{
+  top: 0;
+  margin-bottom: 10px;
+}
+
+.msg_accept_content_wrapper{
+  display: flex;
+  align-items: flex-start; 
+  text-align: left;
+  gap: 15px;
+  padding: 10px;
+  background-color: #F4EBC8;
+  border-radius: 20px;
+}
+
+.accept_msg_img{
+  width: auto;
+  height: 80px;
+}
+
+.accept_msg > p{
+  font-size: .7rem;
+  text-align: left;
+}
+
+.space-line{
+  background-color: #F2F2F2;
+  width: auto;
+  height: 10px;
+  margin: 0;
+}
+
+.tip-container {
+    max-width: 600px;
+}
+
+.tip-trigger {
+    cursor: pointer;
+}
+
+.tip-container p {
+    text-align: left !important;
+    font-size: .7rem;
+}
+
+.tip-container h6{
+  font-size: .8rem;
+}
+
+.btn-tip {
+    border: 1px solid #dee2e6;
+    background-color: #fff;
+    font-size: .7rem;
+    padding: 5px;
+}
+
+.btn-tip.active {
+    background-color: #eaf5f0;
+    border-color: #198754;
+}
+
+/* .other_amt_input {
+    display: none;
+} */
+
+.other_amt_input{
+  width: 100;
+  height: auto;
+  
 }
 
 

@@ -1,29 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donation Tip</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons for the chevron -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    .text-navy { color: #003366; }
+    .text-brand-green { color: #198754; } /* Standard Bootstrap success green */
+    .btn-tip {
+      background-color: #ffffff;
+      color: #198754;
+      border: 1px solid #dee2e6;
+    }
+    .btn-tip:hover {
+      background-color: #f8f9fa;
+      color: #146c43;
+    }
+    .btn-tip.active {
+      background-color: #eaf5f0; /* Light green background */
+      border-color: #198754;
+      color: #198754;
+    }
+  </style>
+</head>
 <body>
-  <script>
-    const img = new Image();
-    img.onload = () => {
-      const canvas = document.createElement('canvas');
-      
-      // Scaling up by 10x for better quality in the parallax effect
-      // Since the original width is only 50px
-      const scale = 10; 
-      canvas.width = img.width * scale;
-      canvas.height = img.height * scale;
-      
-      const ctx = canvas.getContext('2d');
-      ctx.scale(scale, scale);
-      ctx.drawImage(img, 0, 0);
-      
-      const a = document.createElement('a');
-      a.download = 'parallax_bg.png';
-      a.href = canvas.toDataURL('image/png');
-      a.click();
-    };
-    
-    // Your provided data URI
-    img.src = "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='50' height='25'%3E%3Cdefs%3E%3Cpattern id='b' width='2' height='2' patternUnits='userSpaceOnUse'%3E%3Cg stroke='%2321936a' stroke-width='.1'%3E%3Cpath fill='%2325956d' d='M0 0h1v1H0z'/%3E%3Cpath fill='%2321936a' d='M1 1h1v1H1z'/%3E%3Cpath fill='%232a9770' d='M0 1h1v1H0z'/%3E%3Cpath fill='%232e9973' d='M1 0h1v1H1z'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='c' width='5' height='11' patternUnits='userSpaceOnUse'%3E%3Cg fill='%23339c76'%3E%3Cuse xlink:href='%23a' x='2'/%3E%3Cuse xlink:href='%23a' x='4' y='1'/%3E%3Cuse xlink:href='%23a' x='1' y='2'/%3E%3Cuse xlink:href='%23a' x='2' y='4'/%3E%3Cuse xlink:href='%23a' x='4' y='6'/%3E%3Cuse xlink:href='%23a' y='8'/%3E%3Cuse xlink:href='%23a' x='3' y='9'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='d' width='7' height='7' patternUnits='userSpaceOnUse'%3E%3Cg fill='%23379e79'%3E%3Cuse xlink:href='%23a' x='1' y='1'/%3E%3Cuse xlink:href='%23a' x='3' y='4'/%3E%3Cuse xlink:href='%23a' x='5' y='6'/%3E%3Cuse xlink:href='%23a' y='3'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='e' width='11' height='5' patternUnits='userSpaceOnUse'%3E%3Cg fill='%2321936a'%3E%3Cuse xlink:href='%23a' x='1' y='1'/%3E%3Cuse xlink:href='%23a' x='6' y='3'/%3E%3Cuse xlink:href='%23a' x='8' y='2'/%3E%3Cuse xlink:href='%23a' x='3'/%3E%3Cuse xlink:href='%23a' y='3'/%3E%3C/g%3E%3Cg fill='%233ca07c'%3E%3Cuse xlink:href='%23a' x='8' y='3'/%3E%3Cuse xlink:href='%23a' x='4' y='2'/%3E%3Cuse xlink:href='%23a' x='5' y='4'/%3E%3Cuse xlink:href='%23a' x='10'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='f' width='47' height='23' patternUnits='userSpaceOnUse'%3E%3Cg fill='%23f9cf1c'%3E%3Cuse xlink:href='%23a' x='2' y='5'/%3E%3Cuse xlink:href='%23a' x='23' y='13'/%3E%3Cuse xlink:href='%23a' x='4' y='18'/%3E%3Cuse xlink:href='%23a' x='35' y='9'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='g' width='61' height='31' patternUnits='userSpaceOnUse'%3E%3Cg fill='%23f9cf1c'%3E%3Cuse xlink:href='%23a' x='16'/%3E%3Cuse xlink:href='%23a' x='13' y='22'/%3E%3Cuse xlink:href='%23a' x='44' y='15'/%3E%3Cuse xlink:href='%23a' x='12' y='11'/%3E%3C/g%3E%3C/pattern%3E%3Cpath stroke='%2321936a' stroke-width='.1' id='a' d='M0 0h1v1H0z'/%3E%3C/defs%3E%3Cpath fill='url(%23b)' d='M0 0h50v25H0z'/%3E%3Cpath fill='url(%23c)' d='M0 0h50v25H0z'/%3E%3Cpath fill='url(%23d)' d='M0 0h50v25H0z'/%3E%3Cpath fill='url(%23e)' d='M0 0h50v25H0z'/%3E%3Cpath fill='url(%23f)' d='M0 0h50v25H0z'/%3E%3Cpath fill='url(%23g)' d='M0 0h50v25H0z'/%3E%3C/svg%3E";
-  </script>
+
+<div class="container mt-4" style="max-width: 600px;">
+  <!-- Header Row -->
+  <div class="d-flex justify-content-between align-items-start mb-2">
+    <div>
+      <h5 class="fw-bold mb-1 text-navy">Share Some Love?</h5>
+      <p class="mb-0 text-navy">Add 16% to help us fund urgent campaigns</p>
+    </div>
+    <!-- Chevron Icon -->
+    <i class="bi bi-chevron-up text-secondary fs-5 cursor-pointer"></i>
+  </div>
+
+  <!-- Description Text -->
+  <p class="text-secondary mb-3">
+    Your tip allows us to continue helping more people & communities at a reduced fee!
+  </p>
+
+  <!-- Tip Buttons -->
+  <div class="d-flex flex-wrap gap-2">
+    <button class="btn btn-tip rounded-pill px-4 py-2">11%</button>
+    <button class="btn btn-tip active rounded-pill px-4 py-2">16%</button>
+    <button class="btn btn-tip rounded-pill px-4 py-2">21%</button>
+    <button class="btn btn-tip rounded-pill px-4 py-2 fw-bold">Other Amount</button>
+  </div>
+</div>
+
+<!-- Bootstrap JS (Optional, for interactivity if this is part of an accordion) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

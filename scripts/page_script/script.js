@@ -5,7 +5,7 @@ $("#carousel-content").load('../../components/carousels.html')
 // This handles the scrolling of update read-more btn to updates section
 $(".update-read-btn").click(function () {
     $("html, body").animate({
-        scrollTop: $("#update-container").offset().top
+        scrollTop: $("#update-container").offset().top - 90
     }, 0);
 });
 
@@ -147,6 +147,57 @@ window.addEventListener("scroll", () => {
     }
 })
 
+const amtInput = document.querySelector(".amount-input-field");
+
+$(document).ready(function(){
+    $(".amt1").click(function (){
+        amtInput.value = 1800;
+        $(".amt1").addClass("amt_active");
+        $(".amt2").removeClass("amt_active");
+        $(".amt3").removeClass("amt_active");
+        $(".amt4").removeClass("amt_active");
+    })
+    $(".amt2").click(function (){
+        amtInput.value = 4000;
+        $(".amt2").addClass("amt_active");
+        $(".amt1").removeClass("amt_active");
+        $(".amt3").removeClass("amt_active");
+        $(".amt4").removeClass("amt_active");
+    })
+    $(".amt3").click(function (){
+        amtInput.value = 7500;
+        $(".amt3").addClass("amt_active");
+        $(".amt2").removeClass("amt_active");
+        $(".amt1").removeClass("amt_active");
+        $(".amt4").removeClass("amt_active");
+        $(".request_message_wrapper").removeClass("d-none")
+    })
+    $(".amt4").click(function (){
+        amtInput.value = 9999;
+        $(".amt4").addClass("amt_active");
+        $(".amt2").removeClass("amt_active");
+        $(".amt3").removeClass("amt_active");
+        $(".amt1").removeClass("amt_active");
+    })
+    $(".amt5").click(function () {
+        amtInput.value = 7900;
+        $("#initialMessage").addClass("d-none");
+        $("#thankYouMessage").removeClass("d-none");
+        setTimeout(() => {
+            $("#thankYouMessage").addClass("d-none");
+        }, 3000);
+    })
+})
+
+$(".close-button").click(() => {
+    $(".request_message_wrapper").addClass("d-none");
+})
+
+// $(".other_amt_btn").click(function() {
+//     $(this).hide(); 
+//     $(this).siblings(".other_amt_input").show(); // Shows the input group next to it
+// });
+
 // // Loads a ad type popup when user reloads
 // $(document).ready(function() {
 //     const $popup = $(".welcome-card");
@@ -162,26 +213,3 @@ window.addEventListener("scroll", () => {
 //         $("body").removeClass("dimmed noscroll");
 //     });
 // });
-
-
-
-// test
-$('#exampleModal').on('show.bs.modal', function () {
-    console.log('Modal is about to open');
-});
-
-$('#exampleModal').on('shown.bs.modal', function () {
-    console.log('Modal is fully visible');
-});
-
-$('#exampleModal').on('hide.bs.modal', function () {
-    console.log('Modal is about to close');
-});
-
-$('#exampleModal').on('hidden.bs.modal', function () {
-    console.log('Modal is fully hidden');
-});
-
-$('.donate_now').click(function () {
-    console.log('Button clicked');
-});

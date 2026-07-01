@@ -447,8 +447,8 @@
                     <button class="share_fb dialog_btn">SHARE ON FACEBOOK</button>
                 </div>
 
-
-                <div class="modal fade" id="donateModal" tabindex="-1" aria-labelledby="donateModalLabel"
+                <!-- Modals -->
+                <div class="modal fade p-0" id="donateModal" tabindex="-1" aria-labelledby="donateModalLabel"
                     aria-hidden="true">
 
                     <div class="modal-dialog">
@@ -462,18 +462,18 @@
                                 </button>
                             </div>
 
-                            <div class="modal-body">
+                            <div class="modal-body-fluid">
                                 <ul class="nav nav-pills custom-tabs d-flex w-100" id="donationTabs" role="tablist">
 
                                     <li class="nav-item flex-fill" role="presentation">
-                                        <button class="nav-link active w-100 py-3" id="give-once-tab"
-                                            data-bs-toggle="tab" data-bs-target="#give-once" type="button" role="tab">
+                                        <button class="nav-link active w-100" id="give-once-tab" data-bs-toggle="tab"
+                                            data-bs-target="#give-once" type="button" role="tab">
                                             Give Once
                                         </button>
                                     </li>
 
                                     <li class="nav-item flex-fill position-relative" role="presentation">
-                                        <button class="nav-link w-100 py-3" id="give-monthly-tab" data-bs-toggle="tab"
+                                        <button class="nav-link w-100" id="give-monthly-tab" data-bs-toggle="tab"
                                             data-bs-target="#give-monthly" type="button" role="tab">
                                             Give Monthly
                                         </button>
@@ -481,16 +481,105 @@
 
                                 </ul>
 
-                                <div class="tab-content border-top-0 border border-success" id="donationTabsContent">
-
+                                <div class="tab-content border-top-0 fluid" id="donationTabsContent">
                                     <div class="tab-pane fade show active p-4" id="give-once" role="tabpanel">
-
-                                        <div class="d-flex justify-content-center gap-2 mb-4">
-                                            <button class="btn btn-light rounded-pill px-4 py-2 border">₹ 1800</button>
-                                            <button class="btn btn-light rounded-pill px-4 py-2 border">₹ 4000</button>
-                                            <button class="btn btn-light rounded-pill px-4 py-2 border">₹ 7500</button>
-                                            <button class="btn btn-success rounded-pill px-4 py-2">₹9999</button>
+                                        <div class="d-flex justify-content-center gap-2">
+                                            <button class="btn rounded-pill px-4 py-2 amt1 amt">₹ 1800</button>
+                                            <button class="btn rounded-pill px-4 py-2 amt2 amt">₹ 4000</button>
+                                            <button class="btn rounded-pill px-4 py-2 amt3 amt">₹ 7500</button>
+                                            <button class="btn rounded-pill px-4 py-2 amt4 amt">₹ 9999</button>
                                         </div>
+                                        <div class="amount_wrapper d-flex justify-content-center gap-2 m-0 p-0">
+                                            <div class="dropdown">
+                                                <button class="btn btn-light dropdown-toggle currency-dropdown"
+                                                    type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <i class="fa-solid fa-indian-rupee-sign"></i> INR
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item currency-dropdown" href="#"><i
+                                                                class="fa-solid fa-indian-rupee-sign"></i> INR</a></li>
+                                                    <li><a class="dropdown-item currency-dropdown" href="#"><i
+                                                                class="fa-solid fa-dollar-sign"></i> USD</a></li>
+                                                    <li><a class="dropdown-item currency-dropdown" href="#"><i
+                                                                class="fa-solid fa-sterling-sign"></i> GBP</a></li>
+                                                    <li><a class="dropdown-item currency-dropdown" href="#"><i
+                                                                class="fa-solid fa-euro-sign"></i> EUROS</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="amount_input_wrapper">
+                                                <input type="number"
+                                                    class="form-control rounded-pill amount-input-field currency-dropdown"
+                                                    aria-label="Donation Amount" value=9999>
+                                            </div>
+                                        </div>
+
+                                        <div class="request_message_wrapper d-none fade show">
+                                            <div class="msg_content_wrapper" id="initialMessage">
+                                                <span class="msg-content-container">
+                                                    <div class="msg-para-wrapper">
+                                                        <p>2000+ donors chose the slightly higher ₹ 7900 as their
+                                                            donation today. Would you like to increase your donation?
+                                                        </p>
+                                                    </div>
+                                                    <button type="button" class="btn-close close-button"
+                                                        aria-label="Close"></button>
+                                                </span>
+                                                <button class="btn amt5">Yes, Donate</button>
+                                            </div>
+
+                                            <div class="msg_accept_content_wrapper d-none" id="thankYouMessage">
+                                                <img src="https://cdn.impactguru.com/themes/front/page/images/nudge-thankyou.svg"
+                                                    class="accept_msg_img" alt="Happy Face">
+                                                <div class="accept_msg">
+                                                    <p><b>Thank You!</b></p>
+                                                    <p>We truly appreciate this gesture of yours.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr class="space-line border">
+
+                                        <div class="p-3 tip-container">
+                                            <div class="d-flex justify-content-between align-items-center mb-1 tip-trigger"
+                                                data-bs-toggle="collapse" data-bs-target="#tipCollapse"
+                                                aria-expanded="false" aria-controls="tipCollapse">
+                                                <h6 class="mb-0 fw-bold">Share Some Love?</h6>
+                                                <i class="fa-solid fa-chevron-down text-muted"></i>
+                                            </div>
+                                            <p class="text-muted mb-0">Add 16% to help us fund urgent campaigns</p>
+
+                                            <div class="collapse" id="tipCollapse">
+                                                <p class="mb-3">Your tip allows us to continue helping more people &
+                                                    communities at a reduced fee!</p>
+
+                                                <ul class="list-unstyled d-flex gap-2 w-100 mb-0">
+                                                    <li class="flex-fill">
+                                                        <button
+                                                            class="btn w-100 rounded-pill text-success btn-tip">11%</button>
+                                                    </li>
+                                                    <li class="flex-fill">
+                                                        <button
+                                                            class="btn w-100 rounded-pill text-success fw-bold btn-tip active">16%</button>
+                                                    </li>
+                                                    <li class="flex-fill">
+                                                        <button
+                                                            class="btn w-100 rounded-pill text-success btn-tip">21%</button>
+                                                    </li>
+                                                    <li class="flex-fill">
+                                                        <button
+                                                            class="btn w-100 rounded-pill text-success btn-tip other_amt_btn">Other
+                                                            Amount</button>
+                                                    </li>
+                                                    <li class="other_amt_input">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control "
+                                                                aria-label="other amount"
+                                                                aria-describedby="inputGroup-sizing-sm">
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
 
                                     </div>
 
@@ -501,7 +590,6 @@
                                         <p class="text-muted mb-1">Subsequent donations support other patients who need
                                             immediate help.</p>
                                         <p class="text-muted small">Note: Receive monthly fund utilization reports!</p>
-
                                     </div>
 
                                 </div>
@@ -521,30 +609,10 @@
                     </div>
 
 
-                    <div class="modal fade" id="confirmCloseModal" tabindex="-1" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content position-relative p-4 text-center border-0 rounded-4">
-
-                                <button type="button" class="btn-close position-absolute top-0 end-0 m-3"
-                                    data-bs-dismiss="modal" aria-label="Close"></button>
-
-                                <img src="https://d2aq6dqxahe4ka.cloudfront.net/themes/front/page/images/story/heart.svg"
-                                    alt="heart_image" class="modal-heart-img mx-auto mt-4 mb-4">
-
-                                <p class="modal-desc text-muted mb-4 px-2">
-                                    Not everyone can afford to take care of their loved ones. Garvika Goyal's life can
-                                    only be saved by donations made by kind people like you.
-                                </p>
-
-                                <button class="continue-btn">YES, I WILL CONTRIBUTE</button>
-                                <button class="dismiss-btn" data-bs-dismiss="modal">NO, I DON'T WISH TO HELP</button>
-
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
 
+                <!-- Right div continues -->
                 <div class="payment_options">
                     <div class="card payment-card">
                         <h5>Donate via Paytm/Google Pay/PhonePe</h5>
@@ -750,6 +818,30 @@
                         </ul>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Closing Modal -->
+    <div class="modal fade" id="confirmCloseModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content position-relative p-4 text-center border-0 rounded-4">
+
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+
+                <img src="https://d2aq6dqxahe4ka.cloudfront.net/themes/front/page/images/story/heart.svg"
+                    alt="heart_image" class="modal-heart-img mx-auto mt-4 mb-4">
+
+                <p class="modal-desc text-muted mb-4 px-2">
+                    Not everyone can afford to take care of their loved ones. Garvika Goyal's life can
+                    only be saved by donations made by kind people like you.
+                </p>
+
+                <button class="continue-btn" data-bs-toggle="modal" data-bs-target="#donateModal" type="button">YES, I
+                    will contribute</button>
+                <button class="dismiss-btn" data-bs-dismiss="modal">NO, I will do it later.</button>
             </div>
         </div>
     </div>
