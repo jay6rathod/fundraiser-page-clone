@@ -195,8 +195,22 @@ $(".close-button").click(() => {
 
 // $(".other_amt_btn").click(function() {
 //     $(this).hide(); 
-//     $(this).siblings(".other_amt_input").show(); // Shows the input group next to it
+//     $(".other_amt_input").removeClass("d-none")
 // });
+
+$(".other_amt_btn").click(function() {
+    $(".other_amt_wrapper").addClass("hidden-element"); 
+    $(".other_amt_input").removeClass("hidden-element"); 
+    $(".other_amt_input .oai").focus(); 
+});
+
+$(".num-amt-btn").click(() => {
+    $(".other_amt_wrapper").removeClass("hidden-element"); 
+    $(".other_amt_input").addClass("hidden-element");
+}) 
+
+
+
 
 // // Loads a ad type popup when user reloads
 // $(document).ready(function() {
