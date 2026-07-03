@@ -554,15 +554,15 @@
                                                 <ul class="list-unstyled d-flex gap-2 w-100 mb-0">
                                                     <li class="flex-fill">
                                                         <button
-                                                            class="btn w-100 rounded-pill text-success btn-tip num-amt-btn">11%</button>
+                                                            class="btn w-100 rounded-pill text-success btn-tip num-amt-btn btn11p">11%</button>
                                                     </li>
                                                     <li class="flex-fill">
                                                         <button
-                                                            class="btn w-100 rounded-pill text-success fw-bold btn-tip active num-amt-btn">16%</button>
+                                                            class="btn w-100 rounded-pill text-success fw-bold btn-tip active-p-btns num-amt-btn btn16p">16%</button>
                                                     </li>
                                                     <li class="flex-fill">
                                                         <button
-                                                            class="btn w-100 rounded-pill text-success btn-tip num-amt-btn">21%</button>
+                                                            class="btn w-100 rounded-pill text-success btn-tip num-amt-btn btn21p">21%</button>
                                                     </li>
 
                                                     <li class="flex-fill other_amt_wrapper">
@@ -587,36 +587,135 @@
                                             </div>
 
                                             <hr class="space-line border">
-                                            <!-- <form action="">
-                                                <div class="input-field">
-                                                    <input type="text" id="name" required />
-                                                    <label for="name">Your name:</label>
+                                            <form action="" class="donation_details_form">
+                                                <div class="donation-details-input-field">
+                                                    <input class="donation_details_input_fields name_field" type="text"
+                                                        id="name" required />
+                                                    <label class="donation_details_label" for="name">Full Name*</label>
+                                                    <sub class="full_name_warning_sub warning-sub d-none">Please enter
+                                                        your full name</sub>
                                                 </div>
-                                            </form> -->
+                                                <div class="anonymous-container">
+                                                    <input type="checkbox" id="anonymous_checkbox">
+                                                    <label for="anonymous_checkbox">Contribute Anonymously</label>
+                                                    <sub class="anonymous_sub d-none">Your name will remain anonymous on
+                                                        the fundraiser page</sub>
+                                                </div>
+
+                                                <div class="donation-details-input-field">
+                                                    <input class="donation_details_input_fields email_field"
+                                                        type="email" placeholder=" " id="email" required />
+                                                    <label class="donation_details_label" for="email">Email*</label>
+                                                    <sub class="email_warning_sub warning-sub d-none">Please enter a
+                                                        valid email address</sub>
+                                                </div>
+
+                                                <div class="phone_input_field_container">
+                                                    <div class="country-code-container">
+                                                        <select class="country-code-select">
+                                                            <option>(+91) India</option>
+                                                            <option>(+1) United States</option>
+                                                            <option>(+44) United Kingdom</option>
+                                                        </select>
+                                                        <span class="dropdown-arrow"><i
+                                                                class="fa-solid fa-angle-down"></i></span>
+                                                    </div>
+                                                    <div class="donation-details-input-field">
+                                                        <input class="donation_details_input_fields phno_field"
+                                                            type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                                            placeholder=" " id="phno" required />
+                                                        <label class="donation_details_label" for="phno">Phone
+                                                            Number*</label>
+                                                        <sub class="phno_warning_sub warning-sub d-none">Please enter a
+                                                            valid phone number</sub>
+                                                    </div>
+                                                </div>
+                                                <div class="state_input_container">
+                                                    <label for="state" class="state_label">Billing State</label>
+                                                    <input type="text" value="Maharashtra" class="state_input">
+                                                </div>
+                                                <div class="citizen_input_container">
+                                                    <label for="citizen" class="citizen_label title_label">Are you an
+                                                        Indian Citizen?*</label>
+                                                    <input type="radio" name="citizen" id="isCitizen"
+                                                        class="citizen_radio" checked>
+                                                    <label for="isCitizen" class="citizen_label">Yes</label>
+                                                    <input type="radio" name="citizen" id="isNotCitizen"
+                                                        class="citizen_radio">
+                                                    <label for="isNotCitizen" class="citizen_label">No</label>
+                                                </div>
+                                                <div class="notify_updates_container">
+                                                    <input type="checkbox" name="notify_updates"
+                                                        class="notifyUpdatesCheckbox" id="notify_updates">
+                                                    <label for="notify_updates" class="notify_updates_label">I want to
+                                                        receive transaction updates / alerts from Impact Guru</label>
+                                                </div>
+
+                                                <div class="policy_sub_container">
+                                                    <sub class="policy_sub">By proceeding, you are agreeing to Impact
+                                                        Guru’s <a href="" class="policy_anchor">Terms of Use, Privacy
+                                                            Policy,</a> and <a href="" class="policy_anchor">Cookie
+                                                            Policy</a></sub>
+                                                </div>
+                                            </form>
                                         </div>
-
-
                                     </div>
 
                                     <div class="tab-pane fade p-4 text-center" id="give-monthly" role="tabpanel">
-
-                                        <h5 class="fw-bold text-secondary">Your first donation will support Garvika
-                                            Goyal</h5>
-                                        <p class="text-muted mb-1">Subsequent donations support other patients who need
-                                            immediate help.</p>
-                                        <p class="text-muted small">Note: Receive monthly fund utilization reports!</p>
+                                        <div class="second_tab">
+                                            <h5 class="fw-bold text-secondary">Your first donation will support Garvika
+                                                Goyal</h5>
+                                            <p class="text-muted mb-1 subtitle-header">Subsequent donations support
+                                                other patients who need immediate help.</p>
+                                            <p class="text-muted small note-header">Note: Receive monthly fund
+                                                utilization reports!</p>
+                                            <div class="first_section_in_second_tab">
+                                                <h5 class="first_section_header">1. CHOOSE MONTHLY AMOUNT</h5>
+                                                <hr>
+                                                <div class="d-flex justify-content-center gap-2">
+                                                    <button class="btn rounded-pill px-4 py-2 amt6 amt">₹ 500</button>
+                                                    <button class="btn rounded-pill px-4 py-2 amt7 amt">₹ 750</button>
+                                                    <button class="btn rounded-pill px-4 py-2 amt8 amt">₹ 1000</button>
+                                                    <button class="btn rounded-pill px-4 py-2 amt9 amt">₹ 1500</button>
+                                                </div>
+                                                <div class="amount_wrapper month_amt_wrap d-flex justify-content-center gap-2 m-0 p-0">
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-light dropdown-toggle month-curr-dd currency-dropdown"
+                                                            type="button" data-bs-toggle="dropdown"
+                                                            aria-expanded="false">
+                                                            <i class="fa-solid fa-indian-rupee-sign"></i> INR
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a class="dropdown-item currency-dropdown" href="#"><i
+                                                                        class="fa-solid fa-indian-rupee-sign"></i>
+                                                                    INR</a></li>
+                                                            <li><a class="dropdown-item currency-dropdown" href="#"><i
+                                                                        class="fa-solid fa-dollar-sign"></i> USD</a>
+                                                            </li>
+                                                            <li><a class="dropdown-item currency-dropdown" href="#"><i
+                                                                        class="fa-solid fa-sterling-sign"></i> GBP</a>
+                                                            </li>
+                                                            <li><a class="dropdown-item currency-dropdown" href="#"><i
+                                                                        class="fa-solid fa-euro-sign"></i> EUROS</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="month_amount_input_wrapper">
+                                                        <input type="number"
+                                                            class="form-control rounded-pill monthly-amount-input-field currency-dropdown"
+                                                            aria-label="Donation Amount" value=1500>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
 
                                 </div>
                             </div>
 
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                                    Close
-                                </button>
-
-                                <button type="button" class="btn btn-primary">
-                                    Save changes
+                            <div class="modal-footer modfoot">
+                                <button type="button" class="btn rounded-pill border donate-modal-btn">
+                                    Donate Now (₹11599)
                                 </button>
                             </div>
 
@@ -869,5 +968,4 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../scripts/page_script/script.js"></script>
 </body>
-
 </html>

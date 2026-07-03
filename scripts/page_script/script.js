@@ -201,6 +201,7 @@ $(".close-button").click(() => {
 $(".other_amt_btn").click(function() {
     $(".other_amt_wrapper").addClass("hidden-element"); 
     $(".other_amt_input").removeClass("hidden-element"); 
+    $(".num-amt-btn").removeClass("active-p-btns"); 
     $(".other_amt_input .oai").focus(); 
 });
 
@@ -209,7 +210,113 @@ $(".num-amt-btn").click(() => {
     $(".other_amt_input").addClass("hidden-element");
 }) 
 
+$(".btn11p").click(() => {
+    $(".num-amt-btn").removeClass("active-p-btns");
+    $(".btn11p").addClass("active-p-btns");
+})
 
+$(".btn16p").click(() => {
+    $(".num-amt-btn").removeClass("active-p-btns");
+    $(".btn16p").addClass("active-p-btns");
+})
+
+$(".btn21p").click(() => {
+    $(".num-amt-btn").removeClass("active-p-btns");
+    $(".btn21p").addClass("active-p-btns");
+})
+
+
+// Form logic script
+// for name 
+$('.name_field').on('input', function() {
+    if ($.trim($(this).val()) == '') {
+        $(".full_name_warning_sub").removeClass("d-none");
+    } else {
+        $(".full_name_warning_sub").addClass("d-none"); 
+    }
+});
+
+// for email
+$('.email_field').on('input', function() {
+    if ($.trim($(this).val()) == '') {
+        $(".email_warning_sub").removeClass("d-none");
+    }
+    else if(!this.checkValidity()){
+        $(".email_warning_sub").removeClass("d-none");
+    }
+    else {
+        $(".email_warning_sub").addClass("d-none"); 
+    }
+});
+
+$('#anonymous_checkbox').change(function () {
+    if ($(this).prop('checked')) {
+        $(".anonymous_sub").removeClass("d-none")
+        setTimeout(() => 
+            $(".anonymous_sub").addClass("d-none")
+        , 5000)
+        console.log("Checked");
+    }
+});
+
+$('.phno_field').on('input', function () {
+
+    if ($(this).val().trim() === '') {
+        $('.phno_warning_sub')
+            .text('Please enter a phone number')
+            .removeClass('d-none');
+    }
+    else if (!this.checkValidity()) {
+        $('.phno_warning_sub')
+            .text('Please enter a valid phone number')
+            .removeClass('d-none');
+    }
+    else {
+        $('.phno_warning_sub').addClass('d-none');
+    }
+
+});
+
+$(".state_input").on('blur', function () {
+    if ($(this).val().trim() === '') {
+        $(this).val('Maharashtra');
+    }
+});
+
+// second modal scripts
+
+const monthAmtInput = document.querySelector(".monthly-amount-input-field");
+
+$(document).ready(function() {
+    $(".amt6").click(function (){
+        monthAmtInput.value = 500;
+        $(".amt6").addClass("amt_active");
+        $(".amt7").removeClass("amt_active");
+        $(".amt8").removeClass("amt_active");
+        $(".amt9").removeClass("amt_active");
+    })
+    $(".amt7").click(function (){
+        monthAmtInput.value = 750;
+        $(".amt7").addClass("amt_active");
+        $(".amt6").removeClass("amt_active");
+        $(".amt8").removeClass("amt_active");
+        $(".amt9").removeClass("amt_active");
+    })
+    $(".amt8").click(function (){
+        monthAmtInput.value = 1000;
+        $(".amt8").addClass("amt_active");
+        $(".amt7").removeClass("amt_active");
+        $(".amt6").removeClass("amt_active");
+        $(".amt9").removeClass("amt_active");
+    })
+    $(".amt9").click(function (){
+        monthAmtInput.value = 1500;
+        $(".amt9").addClass("amt_active");
+        $(".amt7").removeClass("amt_active");
+        $(".amt8").removeClass("amt_active");
+        $(".amt6").removeClass("amt_active");
+    })
+})
 
 
 // // Loads a ad type popup when user reloads
