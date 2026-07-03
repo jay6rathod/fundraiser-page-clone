@@ -1674,7 +1674,7 @@ mark {
 }
 
 
-.first_section_header{
+.section_headers{
   font-size: .9rem;
   text-align: left;
 }
@@ -1685,6 +1685,275 @@ mark {
 
 .monthly-amount-input-field{
   width: 220%;
+}
+
+.donation-container {
+    max-width: 560px;
+    font-family: Arial, sans-serif;
+    color: #555;
+}
+
+.donation-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.donation-row label {
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.donation-select {
+    flex: 1;
+    height: 42px;
+    padding: 0 12px;
+    border: 1px solid #d8d8d8;
+    border-radius: 10px;
+    background: #fff;
+    font-size: 16px;
+    color: #6b7280;
+    cursor: pointer;
+}
+
+.donation-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.info-icon{
+  font-size: 1rem;
+}
+
+.info-text p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 14px;
+    color: #85888b;
+    text-align: left;
+}
+
+.third_section_in_second_tab{
+  margin-top: 30px;
+}
+
+/* second modal forms  */
+.support_details_form{
+  margin-top: 30px;
+}
+
+.support-input-field{
+  position: relative;
+  width: 420px;
+  height: 24px;
+  line-height: 24px;
+  margin-top: 30px;
+}
+
+.support_label{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 420px;
+  text-align: left;
+  font-size: .8rem;
+  margin-bottom: .5rem;
+  color: #8e8e8e;
+  transition: 0.2s all;
+  cursor: text;
+}
+
+.support_input_fields{
+  width: 100%;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid #8e8e8e;
+  box-shadow: none;
+  color: #21986A;
+}
+
+.support_input_fields:invalid{
+  outline: 0;
+}
+
+.support_input_fields:focus~label,
+.support_input_fields:valid~label {
+  font-size: .8rem;
+  top: -24px;
+  color: #8e8e8e;
+}
+
+.support_email_field:focus~label,
+.support_email_field:not(:placeholder-shown)~label {
+  font-size: .8rem;
+  top: -24px;
+  color: #8e8e8e;
+}
+
+
+.warning-sub{
+  color: red;
+  font-size: .6rem;
+  bottom: -15px;
+  left: 0;
+  text-align: left;
+  position: absolute;
+}
+
+.anonymous-container{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+
+.anonymous-container label{
+    position: static;
+    width: auto;
+    font-size: .8rem;
+}
+
+.support_anonymous_sub{
+    font-size: .6rem;
+    display: block;
+    margin-left: -170px; 
+    margin-top: 24px;
+}
+
+.support-country-container{
+    position: relative;
+    width: 120px;
+    margin-top: 16px;
+}
+
+.support-country-select{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #8e8e8e;
+    padding: 10px 24px 10px 0;
+    font-size: .8rem;
+    color: #888;
+    background: transparent;
+    outline: none;
+    appearance: none;
+}
+
+.support-dropdown-arrow{
+  font-size: .8rem;
+}
+
+.support-dropdown-arrow{
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    pointer-events: none;
+}
+
+.support-phone-container{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.support-country-container{
+    width: 120px;
+    flex-shrink: 0;
+}
+
+.support-phone-container .support-input-field{
+    flex: 1;
+}
+
+.support-state-container{
+  margin-top: 20px;
+}
+
+.support-state-label{
+  width: 420px;
+  text-align: left;
+  font-size: .8rem;
+  margin-bottom: .5rem;
+  color: #8e8e8e;
+  transition: 0.2s all;
+  cursor: text;
+}
+
+.support-state-input{
+  width: 100%;
+  border: 0;
+  outline: 0;
+  border-bottom: 2px solid #8e8e8e;
+  box-shadow: none;
+  color: #21986A;
+}
+
+.support-citizen-container{
+  margin-top: 20px;
+    width: 420px;
+  text-align: left;
+  font-size: .8rem;
+  /* margin-bottom: .5rem; */
+  color: #8e8e8e;
+  transition: 0.2s all;
+  cursor: text;
+}
+
+
+.support-citizen-radio{
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #198754;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+}
+
+.support-citizen-radio:checked::before{
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #198754;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.support-title-label{
+  color: rgb(55, 55, 55);
+}
+
+.support-citizen-label{
+  margin-right: 20px;
+  cursor: pointer;
+  font-size: .8rem;
+}
+
+.support-notify-label{
+  font-size: .6rem;
+  color: rgb(144, 144, 144);
+}
+
+.support-notify-checkbox{
+  width: 11px;
+  height: 11px;
+  margin-top: 2px;
+}
+
+.support-notify-container{
+  justify-content: left;
+  align-items: left;
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
 }
 
 /* Popup message styling */

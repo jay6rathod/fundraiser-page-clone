@@ -318,6 +318,65 @@ $(document).ready(function() {
     })
 })
 
+// Second modal same form script
+// Form logic script
+// for name 
+$('.support_name_field').on('input', function() {
+    if ($.trim($(this).val()) == '') {
+        $(".support_name_warning").removeClass("d-none");
+    } else {
+        $(".support_name_warning").addClass("d-none"); 
+    }
+});
+
+// for email
+$('.support_email_field').on('input', function() {
+    if ($.trim($(this).val()) == '') {
+        $(".support_email_warning").removeClass("d-none");
+    }
+    else if(!this.checkValidity()){
+        $(".support_email_warning").removeClass("d-none");
+    }
+    else {
+        $(".support_email_warning").addClass("d-none"); 
+    }
+});
+
+$('#support_anonymous_checkbox').change(function () {
+    if ($(this).prop('checked')) {
+        $(".support_anonymous_sub").removeClass("d-none")
+        setTimeout(() => 
+            $(".support_anonymous_sub").addClass("d-none")
+        , 5000)
+        console.log("Checked");
+    }
+});
+
+$('.support_phone_field').on('input', function () {
+
+    if ($(this).val().trim() === '') {
+        $('.support_phone_warning')
+            .text('Please enter a phone number')
+            .removeClass('d-none');
+    }
+    else if (!this.checkValidity()) {
+        $('.support_phone_warning')
+            .text('Please enter a valid phone number')
+            .removeClass('d-none');
+    }
+    else {
+        $('.support_phone_warning').addClass('d-none');
+    }
+
+});
+
+$(".support-state-input").on('blur', function () {
+    if ($(this).val().trim() === '') {
+        $(this).val('Maharashtra');
+    }
+});
+
+
 
 // // Loads a ad type popup when user reloads
 // $(document).ready(function() {

@@ -661,6 +661,7 @@
                                         </div>
                                     </div>
 
+                                    <!-- second tab of the modal -->
                                     <div class="tab-pane fade p-4 text-center" id="give-monthly" role="tabpanel">
                                         <div class="second_tab">
                                             <h5 class="fw-bold text-secondary">Your first donation will support Garvika
@@ -670,7 +671,8 @@
                                             <p class="text-muted small note-header">Note: Receive monthly fund
                                                 utilization reports!</p>
                                             <div class="first_section_in_second_tab">
-                                                <h5 class="first_section_header">1. CHOOSE MONTHLY AMOUNT</h5>
+                                                <h5 class="first_section_header section_headers">1. CHOOSE MONTHLY
+                                                    AMOUNT</h5>
                                                 <hr>
                                                 <div class="d-flex justify-content-center gap-2">
                                                     <button class="btn rounded-pill px-4 py-2 amt6 amt">₹ 500</button>
@@ -678,9 +680,11 @@
                                                     <button class="btn rounded-pill px-4 py-2 amt8 amt">₹ 1000</button>
                                                     <button class="btn rounded-pill px-4 py-2 amt9 amt">₹ 1500</button>
                                                 </div>
-                                                <div class="amount_wrapper month_amt_wrap d-flex justify-content-center gap-2 m-0 p-0">
+                                                <div
+                                                    class="amount_wrapper month_amt_wrap d-flex justify-content-center gap-2 m-0 p-0">
                                                     <div class="dropdown">
-                                                        <button class="btn btn-light dropdown-toggle month-curr-dd currency-dropdown"
+                                                        <button
+                                                            class="btn btn-light dropdown-toggle month-curr-dd currency-dropdown"
                                                             type="button" data-bs-toggle="dropdown"
                                                             aria-expanded="false">
                                                             <i class="fa-solid fa-indian-rupee-sign"></i> INR
@@ -706,6 +710,106 @@
                                                             aria-label="Donation Amount" value=1500>
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <div class="second_section_in_second_tab">
+                                                <h5 class="second_section_header section_headers">2. CHOOSE MONTHLY PLAN</h5>
+                                                <hr>
+                                                <div class="donation-container">
+                                                    <div class="donation-row">
+                                                        <label for="donationType">Subsequent Donation to:</label>
+
+                                                        <select id="donationType" class="donation-select">
+                                                            <option>Critical Illness Fundraisers</option>
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="donation-info">
+                                                        <span class="info-icon"><i class="fa-solid fa-circle-info"></i></span>
+                                                        <div class="info-text">
+                                                            <p>Subsequent donations support patients fighting similar
+                                                                critical illnesses.</p>
+                                                            <p>Amount is auto-debited on the 2nd of every month.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="third_section_in_second_tab">
+                                                <h5 class="third_section_header section_headers">3. YOUR DETAILS</h5>
+                                                <hr>
+
+                                                <!-- second modal same form -->
+                                                <form action="" class="support_details_form">
+                                                <div class="support-input-field">
+                                                    <input class="support_input_fields support_name_field" type="text"
+                                                        id="support_name" required />
+                                                    <label class="support_label" for="support_name">Full Name*</label>
+                                                    <sub class="support_name_warning warning-sub d-none">Please enter
+                                                        your full name</sub>
+                                                </div>
+                                                <div class="anonymous-container">
+                                                    <input type="checkbox" id="support_anonymous_checkbox">
+                                                    <label for="support_anonymous_checkbox">Contribute Anonymously</label>
+                                                    <sub class="support_anonymous_sub d-none">Your name will remain anonymous on
+                                                        the fundraiser page</sub>
+                                                </div>
+
+                                                <div class="donation-details-input-field">
+                                                    <input class="donation_details_input_fields support_email_field"
+                                                        type="email" placeholder=" " id="support_email" required />
+                                                    <label class="support_label" for="support_email">Email*</label>
+                                                    <sub class="support_email_warning warning-sub d-none">Please enter a
+                                                        valid email address</sub>
+                                                </div>
+
+                                                <div class="support-phone-container">
+                                                    <div class="support-country-container">
+                                                        <select class="support-country-select">
+                                                            <option>(+91) India</option>
+                                                            <option>(+1) United States</option>
+                                                            <option>(+44) United Kingdom</option>
+                                                        </select>
+                                                        <span class="support-dropdown-arrow"><i
+                                                                class="fa-solid fa-angle-down"></i></span>
+                                                    </div>
+                                                    <div class="donation-details-input-field">
+                                                        <input class="donation_details_input_fields support_phone_field"
+                                                            type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                                            placeholder=" " id="support_phone" required />
+                                                        <label class="support_label" for="support_phone">Phone
+                                                            Number*</label>
+                                                        <sub class="support_phone_warning warning-sub d-none">Please enter a
+                                                            valid phone number</sub>
+                                                    </div>
+                                                </div>
+                                                <div class="support-state-container">
+                                                    <label for="state" class="support-state-label">Billing State</label>
+                                                    <input type="text" value="Maharashtra" class="support-state-input">
+                                                </div>
+                                                <div class="support-citizen-container">
+                                                    <label for="citizen" class="support-citizen-label support-title-label">Are you an
+                                                        Indian Citizen?*</label>
+                                                    <input type="radio" name="citizen" id="support_isCitizen"
+                                                        class="support-citizen-radio" checked>
+                                                    <label for="support_isCitizen" class="support-citizen-label">Yes</label>
+                                                    <input type="radio" name="citizen" id="support_isNotCitizen"
+                                                        class="support-citizen-radio">
+                                                    <label for="support_isNotCitizen" class="support-citizen-label">No</label>
+                                                </div>
+                                                <div class="support-notify-container">
+                                                    <input type="checkbox" name="notify_updates"
+                                                        class="support-notify-checkbox" id="support_notify_updates">
+                                                    <label for="support_notify_updates" class="support-notify-label">I want to
+                                                        receive transaction updates / alerts from Impact Guru</label>
+                                                </div>
+
+                                                <div class="policy_sub_container">
+                                                    <sub class="policy_sub">By proceeding, you are agreeing to Impact
+                                                        Guru’s <a href="" class="policy_anchor">Terms of Use, Privacy
+                                                            Policy,</a> and <a href="" class="policy_anchor">Cookie
+                                                            Policy</a></sub>
+                                                </div>
+                                            </form>
                                             </div>
                                         </div>
                                     </div>
@@ -968,4 +1072,5 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../scripts/page_script/script.js"></script>
 </body>
+
 </html>
