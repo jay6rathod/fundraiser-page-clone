@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../styling/component_styling/navbar.css">
+    <title>Navbar</title>
+</head>
+
+<body>
+    <nav class="navbar-nav navi" id="nav">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <ul class="navi-list navbar-nav flex-row align-items-center gap-3">
+                <li><a href="#" onclick="location.reload()"><img
+                            src="https://cdn.impactguru.com/themes/front/page/images/icons/impactguru.png" alt=""></a>
+                </li>
+                <li>
+                    <form class="d-flex" role="search">
+                        <div class="search-wrapper">
+                            <button class="search-icon icon icon-btn"><i class=" fa-solid fa-magnifying-glass"></i></button>
+                            <input class="form-control me-2 search-bar" type="search" placeholder="Search"
+                                aria-label="Search" />
+                        </div>
+                    </form>
+                </li>
+                <li><a href="">Start a free fundraiser</a></li>
+                <li><a href="">How it Works</a></li>
+                <li><a href="">Browse Fundraiser</a></li>
+                <li><button class="glowBtn">Help Praveena</button></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-right-to-bracket"></i>Login</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user-plus"></i> Sign up</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="fa-solid fa-indian-rupee-sign"></i> INR
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-indian-rupee-sign"></i> INR</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-dollar-sign"></i> USD</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-sterling-sign"></i> GBP</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-euro-sign"></i> Euro</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <hr>
+
+    <script src="../scripts/component_script/navbar.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>
