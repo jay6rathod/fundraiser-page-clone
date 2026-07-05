@@ -1956,6 +1956,42 @@ mark {
   margin-top: 10px;
 }
 
+
+.share_linger_btn_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.share-icon-btn {
+    width: 45px; 
+    height: 45px;
+    border-radius: 50%; 
+    border: none; 
+    color: white;
+    font-size: 20px; 
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.social-dropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+    max-height: 0; 
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.4s ease;
+}
+
+.social-dropdown.show {
+    max-height: 350px; 
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: 15px;
+}
+
 /* Popup message styling */
 /* .welcome-card {
   display: flex;

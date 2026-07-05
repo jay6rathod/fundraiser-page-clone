@@ -147,83 +147,390 @@ window.addEventListener("scroll", () => {
     }
 })
 
-const amtInput = document.querySelector(".amount-input-field");
 
-$(document).ready(function(){
-    $(".amt1").click(function (){
-        amtInput.value = 1800;
-        $(".amt1").addClass("amt_active");
-        $(".amt2").removeClass("amt_active");
-        $(".amt3").removeClass("amt_active");
-        $(".amt4").removeClass("amt_active");
-    })
-    $(".amt2").click(function (){
-        amtInput.value = 4000;
-        $(".amt2").addClass("amt_active");
-        $(".amt1").removeClass("amt_active");
-        $(".amt3").removeClass("amt_active");
-        $(".amt4").removeClass("amt_active");
-    })
-    $(".amt3").click(function (){
-        amtInput.value = 7500;
-        $(".amt3").addClass("amt_active");
-        $(".amt2").removeClass("amt_active");
-        $(".amt1").removeClass("amt_active");
-        $(".amt4").removeClass("amt_active");
-        $(".request_message_wrapper").removeClass("d-none")
-    })
-    $(".amt4").click(function (){
-        amtInput.value = 9999;
-        $(".amt4").addClass("amt_active");
-        $(".amt2").removeClass("amt_active");
-        $(".amt3").removeClass("amt_active");
-        $(".amt1").removeClass("amt_active");
-    })
-    $(".amt5").click(function () {
-        amtInput.value = 7900;
-        $("#initialMessage").addClass("d-none");
-        $("#thankYouMessage").removeClass("d-none");
-        setTimeout(() => {
-            $("#thankYouMessage").addClass("d-none");
-        }, 3000);
-    })
-})
+// function calculateTotal(amt, { tipPercent = 0, fixedTip = 0 } = {}) {
+//     if (fixedTip > 0) {
+//         return amt + fixedTip;
+//     }
 
-$(".close-button").click(() => {
-    $(".request_message_wrapper").addClass("d-none");
-})
+//     return amt + Math.ceil(amt * tipPercent / 100);
+// }
+
+// console.log(calculateTotal(9999,21));
+
+// const amtInput = document.querySelector(".amount-input-field");
+// let totalAmt = 0;
+
+// let onceAmt = 0;
+// let oncePerc = 0;
+// let onceTipAmt = 0;
+
+// $(document).ready(function(){
+//     $(".amt1").click(function (){
+//         onceAmt = 1800;
+//         oncePerc = 0;
+//         amtInput.value = onceAmt;
+//         $(".amt1").addClass("amt_active");
+//         $(".amt2, .amt3, .amt4").removeClass("amt_active");
+//         $(".donate-modal-btn").text(`Donate Now (₹${totalAmt})`);
+//         $(".btn11p").text("₹ 300");
+//         $(".btn16p").text("₹ 350");
+//         $(".btn21p").text("₹ 400");
+//         totalAmt = calculateTotal(onceAmt, fixedTip);
+//         console.log(totalAmt)
+//     })
+    
+//     $(".amt2").click(function (){
+//         onceAmt = 4000;
+//         amtInput.value = onceAmt;
+//         $(".amt2").addClass("amt_active");
+//         $(".amt1, .amt3, .amt4").removeClass("amt_active");
+//         $(".btn11p").text("11%");
+//         $(".btn16p").text("16%");
+//         $(".btn21p").text("21%");
+//         totalAmt = calculateTotal(onceAmt, oncePerc);
+//         console.log(totalAmt)
+//     })
+//     $(".amt3").click(function (){
+//         onceAmt = 7500;
+//         amtInput.value = onceAmt;
+//         $(".amt3").addClass("amt_active");
+//         $(".amt2, .amt1, .amt4").removeClass("amt_active");
+//         $(".btn11p").text("11%");
+//         $(".btn16p").text("16%");
+//         $(".btn21p").text("21%");
+//         totalAmt = calculateTotal(onceAmt, oncePerc);
+//         console.log(totalAmt)
+//         $(".request_message_wrapper").removeClass("d-none")
+//     })
+//     $(".amt4").click(function (){
+//         onceAmt = 9999;
+//         amtInput.value = onceAmt;
+//         $(".amt4").addClass("amt_active");
+//         $(".amt2, .amt3, .amt1").removeClass("amt_active");
+//         $(".btn11p").text("11%");
+//         $(".btn16p").text("16%");
+//         $(".btn21p").text("21%");
+//         totalAmt = calculateTotal(onceAmt, oncePerc);
+//         console.log(totalAmt)
+//     })
+//     $(".amt5").click(function () {
+//         amtInput.value = 7900;
+//         $("#initialMessage").addClass("d-none");
+//         $("#thankYouMessage").removeClass("d-none");
+//         setTimeout(() => {
+//             $("#thankYouMessage").addClass("d-none");
+//         }, 3000);
+//     })
+// })
+
+// $(".close-button").click(() => {
+//     $(".request_message_wrapper").addClass("d-none");
+// })
+
+// // $(".other_amt_btn").click(function() {
+// //     $(this).hide(); 
+// //     $(".other_amt_input").removeClass("d-none")
+// // });
+
 
 // $(".other_amt_btn").click(function() {
-//     $(this).hide(); 
-//     $(".other_amt_input").removeClass("d-none")
+//     $(".other_amt_wrapper").addClass("hidden-element"); 
+//     $(".other_amt_input").removeClass("hidden-element"); 
+//     $(".num-amt-btn").removeClass("active-p-btns"); 
+//     $(".other_amt_input .oai").focus(); 
+//     fixedTip = other_amt_input.value;
+//     totalAmt = calculateTotal(onceAmt, fixedTip);
+//     console.log(totalAmt)
 // });
 
-$(".other_amt_btn").click(function() {
-    $(".other_amt_wrapper").addClass("hidden-element"); 
-    $(".other_amt_input").removeClass("hidden-element"); 
-    $(".num-amt-btn").removeClass("active-p-btns"); 
-    $(".other_amt_input .oai").focus(); 
+// $(".num-amt-btn").click(() => {
+//     $(".other_amt_wrapper").removeClass("hidden-element"); 
+//     $(".other_amt_input").addClass("hidden-element");
+// }) 
+
+// $(".btn11p").click(() => {
+//     oncePerc = 11;
+//     fixedTip = 300;
+//     $(".num-amt-btn").removeClass("active-p-btns");
+//     $(".btn11p").addClass("active-p-btns");
+//     totalAmt = calculateTotal(onceAmt, oncePerc);
+//         console.log(totalAmt)
+// })
+
+// $(".btn16p").click(() => {
+//     oncePerc = 16;
+//     fixedTip = 350;
+//     $(".num-amt-btn").removeClass("active-p-btns");
+//     $(".btn16p").addClass("active-p-btns");
+//     totalAmt = calculateTotal(onceAmt, oncePerc);
+//         console.log(totalAmt)
+// })
+
+// $(".btn21p").click(() => {
+//     oncePerc = 21;
+//     fixedTip = 400;
+//     $(".num-amt-btn").removeClass("active-p-btns");
+//     $(".btn21p").addClass("active-p-btns");
+//     totalAmt = calculateTotal(onceAmt, oncePerc);
+//         console.log(totalAmt)
+// })
+
+function calculateTip(amount) {
+
+    if (fixedTip > 0) {
+        return fixedTip;
+    }
+
+    return Math.ceil(amount * (tipPercent / 100));
+}
+
+let tipPercent = 21;
+let fixedTip = 0;
+
+function updateTotal() {
+
+    const amount = Number($(".amount-input-field").val()) || 0;
+
+    const tipAmount = calculateTip(amount);
+
+    const total = amount + tipAmount;
+
+    // Donate button
+    $(".donate-modal-btn").text(`Donate Now (₹${total})`);
+
+    // Total heading
+    $(".total_amt_head").text(`Total: ₹${total}`);
+
+    // Breakdown
+    $(".total-breakdown").text(
+        `(₹${amount} donation amount + ₹${tipAmount} Tip Amount)`
+    );
+
+    console.clear();
+    console.log("Donation :", amount);
+    console.log("Tip % :", tipPercent);
+    console.log("Fixed Tip :", fixedTip);
+    console.log("Tip Amount :", tipAmount);
+    console.log("Total :", total);
+}
+
+$(document).ready(function () {
+
+    // --------------------
+    // Amount Buttons
+    // --------------------
+
+    $(".amt1").click(function () {
+
+        $(".amount-input-field").val(1800).trigger("input");
+
+        $(".amt1").addClass("amt_active");
+        $(".amt2,.amt3,.amt4").removeClass("amt_active");
+
+        $(".btn11p").text("₹300");
+        $(".btn16p").text("₹350");
+        $(".btn21p").text("₹400");
+
+        fixedTip = 300;
+        tipPercent = 0;
+
+        $(".request_message_wrapper").addClass("d-none");
+
+        updateTotal();
+
+    });
+
+    $(".amt2").click(function () {
+
+        $(".amount-input-field").val(4000).trigger("input");
+
+        $(".amt2").addClass("amt_active");
+        $(".amt1,.amt3,.amt4").removeClass("amt_active");
+
+        $(".btn11p").text("11%");
+        $(".btn16p").text("16%");
+        $(".btn21p").text("21%");
+
+        fixedTip = 0;
+        tipPercent = 11;
+
+        $(".request_message_wrapper").addClass("d-none");
+
+        updateTotal();
+
+    });
+
+    $(".amt3").click(function () {
+
+        $(".amount-input-field").val(7500).trigger("input");
+
+        $(".amt3").addClass("amt_active");
+        $(".amt1,.amt2,.amt4").removeClass("amt_active");
+
+        $(".btn11p").text("11%");
+        $(".btn16p").text("16%");
+        $(".btn21p").text("21%");
+
+        fixedTip = 0;
+        tipPercent = 11;
+
+        $(".request_message_wrapper").removeClass("d-none");
+
+        updateTotal();
+
+    });
+
+    $(".amt4").click(function () {
+
+        $(".amount-input-field").val(9999).trigger("input");
+
+        $(".amt4").addClass("amt_active");
+        $(".amt1,.amt2,.amt3").removeClass("amt_active");
+
+        $(".btn11p").text("11%");
+        $(".btn16p").text("16%");
+        $(".btn21p").text("21%");
+
+        fixedTip = 0;
+        tipPercent = 11;
+
+        $(".request_message_wrapper").addClass("d-none");
+
+        updateTotal();
+
+    });
+
+    // --------------------
+    // User edits donation amount
+    // --------------------
+
+    $(".amount-input-field").on("input", function () {
+
+        updateTotal();
+
+    });
+
+    // --------------------
+    // Tip Buttons
+    // --------------------
+
+    $(".btn11p").click(function () {
+
+        $(".num-amt-btn").removeClass("active-p-btns");
+        $(this).addClass("active-p-btns");
+
+        if ($(this).text().includes("%")) {
+            tipPercent = 11;
+            fixedTip = 0;
+        } else {
+            fixedTip = 300;
+            tipPercent = 0;
+        }
+
+        updateTotal();
+
+    });
+
+    $(".btn16p").click(function () {
+
+        $(".num-amt-btn").removeClass("active-p-btns");
+        $(this).addClass("active-p-btns");
+
+        if ($(this).text().includes("%")) {
+            tipPercent = 16;
+            fixedTip = 0;
+        } else {
+            fixedTip = 350;
+            tipPercent = 0;
+        }
+
+        updateTotal();
+
+    });
+
+    $(".btn21p").click(function () {
+
+        $(".num-amt-btn").removeClass("active-p-btns");
+        $(this).addClass("active-p-btns");
+
+        if ($(this).text().includes("%")) {
+            tipPercent = 21;
+            fixedTip = 0;
+        } else {
+            fixedTip = 400;
+            tipPercent = 0;
+        }
+
+        updateTotal();
+
+    });
+
+    // --------------------
+    // Other Tip
+    // --------------------
+
+    $(".other_amt_btn").click(function () {
+
+        $(".other_amt_wrapper").addClass("hidden-element");
+        $(".other_amt_input").removeClass("hidden-element");
+
+        $(".num-amt-btn").removeClass("active-p-btns");
+
+        $(".oai").focus();
+
+    });
+
+    $(".oai").on("input", function () {
+
+        fixedTip = Number($(this).val()) || 0;
+        tipPercent = 0;
+
+        updateTotal();
+
+    });
+
+    $(".num-amt-btn").click(function () {
+
+        $(".other_amt_wrapper").removeClass("hidden-element");
+        $(".other_amt_input").addClass("hidden-element");
+
+    });
+
+    // --------------------
+    // Popup
+    // --------------------
+
+    $(".close-button").click(function () {
+
+        $(".request_message_wrapper").addClass("d-none");
+
+    });
+
+    // --------------------
+    // Donate Button
+    // --------------------
+
+    $(".amt5").click(function () {
+
+        $(".amount-input-field").val(7900);
+
+        updateTotal();
+
+        $("#initialMessage").addClass("d-none");
+        $("#thankYouMessage").removeClass("d-none");
+
+        setTimeout(function () {
+
+            $("#thankYouMessage").addClass("d-none");
+
+        }, 3000);
+
+    });
+
+    updateTotal();
+
 });
-
-$(".num-amt-btn").click(() => {
-    $(".other_amt_wrapper").removeClass("hidden-element"); 
-    $(".other_amt_input").addClass("hidden-element");
-}) 
-
-$(".btn11p").click(() => {
-    $(".num-amt-btn").removeClass("active-p-btns");
-    $(".btn11p").addClass("active-p-btns");
-})
-
-$(".btn16p").click(() => {
-    $(".num-amt-btn").removeClass("active-p-btns");
-    $(".btn16p").addClass("active-p-btns");
-})
-
-$(".btn21p").click(() => {
-    $(".num-amt-btn").removeClass("active-p-btns");
-    $(".btn21p").addClass("active-p-btns");
-})
 
 
 // Form logic script
@@ -291,30 +598,26 @@ $(document).ready(function() {
     $(".amt6").click(function (){
         monthAmtInput.value = 500;
         $(".amt6").addClass("amt_active");
-        $(".amt7").removeClass("amt_active");
-        $(".amt8").removeClass("amt_active");
-        $(".amt9").removeClass("amt_active");
+        $(".amt7, .amt8, .amt9").removeClass("amt_active");
+        $(".donate-modal-btn").text(`Donate Now (₹${monthAmtInput.value})`);
     })
     $(".amt7").click(function (){
         monthAmtInput.value = 750;
         $(".amt7").addClass("amt_active");
-        $(".amt6").removeClass("amt_active");
-        $(".amt8").removeClass("amt_active");
-        $(".amt9").removeClass("amt_active");
+        $(".amt6, .amt8, .amt9").removeClass("amt_active");
+        $(".donate-modal-btn").text(`Donate Now (₹${monthAmtInput.value})`);
     })
     $(".amt8").click(function (){
         monthAmtInput.value = 1000;
         $(".amt8").addClass("amt_active");
-        $(".amt7").removeClass("amt_active");
-        $(".amt6").removeClass("amt_active");
-        $(".amt9").removeClass("amt_active");
+        $(".amt7, .amt6, .amt9").removeClass("amt_active");
+        $(".donate-modal-btn").text(`Donate Now (₹${monthAmtInput.value})`);
     })
     $(".amt9").click(function (){
         monthAmtInput.value = 1500;
         $(".amt9").addClass("amt_active");
-        $(".amt7").removeClass("amt_active");
-        $(".amt8").removeClass("amt_active");
-        $(".amt6").removeClass("amt_active");
+        $(".amt7, .amt8, .amt6").removeClass("amt_active");
+        $(".donate-modal-btn").text(`Donate Now (₹${monthAmtInput.value})`);
     })
 })
 
@@ -374,6 +677,11 @@ $(".support-state-input").on('blur', function () {
     if ($(this).val().trim() === '') {
         $(this).val('Maharashtra');
     }
+});
+
+
+$('.share_btn').on('click', function() {
+    $('#socialDropdown').toggleClass('show');
 });
 
 
