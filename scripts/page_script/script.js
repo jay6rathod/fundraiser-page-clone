@@ -591,6 +591,22 @@ $(".dropdown-item.currency-dropdown").on("click", function (e) {
     updateTotal();
 });
 
+function toggleFilledClass($el) {
+    if ($el.val().trim() !== "") {
+        $el.addClass("filled");
+    } else {
+        $el.removeClass("filled");
+    }
+}
+
+$(".donation_details_input_fields").each(function () {
+    toggleFilledClass($(this));
+});
+
+$(".donation_details_input_fields").on("input blur", function () {
+    toggleFilledClass($(this));
+});
+
 // // Loads a ad type popup when user reloads
 // $(document).ready(function() {
 //     const $popup = $(".welcome-card");

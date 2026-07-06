@@ -1442,19 +1442,11 @@ mark {
 }
 
 .donation_details_input_fields:focus~label,
-.donation_details_input_fields:valid~label {
+.donation_details_input_fields.filled~label {
   font-size: .8rem;
   top: -24px;
   color: #8e8e8e;
 }
-
-.email_field:focus~label,
-.email_field:not(:placeholder-shown)~label {
-  font-size: .8rem;
-  top: -24px;
-  color: #8e8e8e;
-}
-
 
 .warning-sub{
   color: red;
