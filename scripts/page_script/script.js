@@ -148,133 +148,15 @@ window.addEventListener("scroll", () => {
 })
 
 
-// function calculateTotal(amt, { tipPercent = 0, fixedTip = 0 } = {}) {
-//     if (fixedTip > 0) {
-//         return amt + fixedTip;
-//     }
 
-//     return amt + Math.ceil(amt * tipPercent / 100);
-// }
+const currencyConfig = {
+    INR: { symbol: "₹", presets: [1800, 4000, 7500, 9999], tips: [300, 350, 400], tipPercents: [11, 16, 21] },
+    USD: { symbol: "$", presets: [100, 150, 200, 250], tips: [10, 15, 20], tipPercents: [19, 22, 25] },
+    GBP: { symbol: "£", presets: [50, 100, 150, 200], tips: [8, 12, 16], tipPercents: [19, 22, 25] },
+    EUROS: { symbol: "€", presets: [50, 100, 150, 200], tips: [9, 13, 17], tipPercents: [19, 22, 25] }
+};
 
-// console.log(calculateTotal(9999,21));
-
-// const amtInput = document.querySelector(".amount-input-field");
-// let totalAmt = 0;
-
-// let onceAmt = 0;
-// let oncePerc = 0;
-// let onceTipAmt = 0;
-
-// $(document).ready(function(){
-//     $(".amt1").click(function (){
-//         onceAmt = 1800;
-//         oncePerc = 0;
-//         amtInput.value = onceAmt;
-//         $(".amt1").addClass("amt_active");
-//         $(".amt2, .amt3, .amt4").removeClass("amt_active");
-//         $(".donate-modal-btn").text(`Donate Now (₹${totalAmt})`);
-//         $(".btn11p").text("₹ 300");
-//         $(".btn16p").text("₹ 350");
-//         $(".btn21p").text("₹ 400");
-//         totalAmt = calculateTotal(onceAmt, fixedTip);
-//         console.log(totalAmt)
-//     })
-    
-//     $(".amt2").click(function (){
-//         onceAmt = 4000;
-//         amtInput.value = onceAmt;
-//         $(".amt2").addClass("amt_active");
-//         $(".amt1, .amt3, .amt4").removeClass("amt_active");
-//         $(".btn11p").text("11%");
-//         $(".btn16p").text("16%");
-//         $(".btn21p").text("21%");
-//         totalAmt = calculateTotal(onceAmt, oncePerc);
-//         console.log(totalAmt)
-//     })
-//     $(".amt3").click(function (){
-//         onceAmt = 7500;
-//         amtInput.value = onceAmt;
-//         $(".amt3").addClass("amt_active");
-//         $(".amt2, .amt1, .amt4").removeClass("amt_active");
-//         $(".btn11p").text("11%");
-//         $(".btn16p").text("16%");
-//         $(".btn21p").text("21%");
-//         totalAmt = calculateTotal(onceAmt, oncePerc);
-//         console.log(totalAmt)
-//         $(".request_message_wrapper").removeClass("d-none")
-//     })
-//     $(".amt4").click(function (){
-//         onceAmt = 9999;
-//         amtInput.value = onceAmt;
-//         $(".amt4").addClass("amt_active");
-//         $(".amt2, .amt3, .amt1").removeClass("amt_active");
-//         $(".btn11p").text("11%");
-//         $(".btn16p").text("16%");
-//         $(".btn21p").text("21%");
-//         totalAmt = calculateTotal(onceAmt, oncePerc);
-//         console.log(totalAmt)
-//     })
-//     $(".amt5").click(function () {
-//         amtInput.value = 7900;
-//         $("#initialMessage").addClass("d-none");
-//         $("#thankYouMessage").removeClass("d-none");
-//         setTimeout(() => {
-//             $("#thankYouMessage").addClass("d-none");
-//         }, 3000);
-//     })
-// })
-
-// $(".close-button").click(() => {
-//     $(".request_message_wrapper").addClass("d-none");
-// })
-
-// // $(".other_amt_btn").click(function() {
-// //     $(this).hide(); 
-// //     $(".other_amt_input").removeClass("d-none")
-// // });
-
-
-// $(".other_amt_btn").click(function() {
-//     $(".other_amt_wrapper").addClass("hidden-element"); 
-//     $(".other_amt_input").removeClass("hidden-element"); 
-//     $(".num-amt-btn").removeClass("active-p-btns"); 
-//     $(".other_amt_input .oai").focus(); 
-//     fixedTip = other_amt_input.value;
-//     totalAmt = calculateTotal(onceAmt, fixedTip);
-//     console.log(totalAmt)
-// });
-
-// $(".num-amt-btn").click(() => {
-//     $(".other_amt_wrapper").removeClass("hidden-element"); 
-//     $(".other_amt_input").addClass("hidden-element");
-// }) 
-
-// $(".btn11p").click(() => {
-//     oncePerc = 11;
-//     fixedTip = 300;
-//     $(".num-amt-btn").removeClass("active-p-btns");
-//     $(".btn11p").addClass("active-p-btns");
-//     totalAmt = calculateTotal(onceAmt, oncePerc);
-//         console.log(totalAmt)
-// })
-
-// $(".btn16p").click(() => {
-//     oncePerc = 16;
-//     fixedTip = 350;
-//     $(".num-amt-btn").removeClass("active-p-btns");
-//     $(".btn16p").addClass("active-p-btns");
-//     totalAmt = calculateTotal(onceAmt, oncePerc);
-//         console.log(totalAmt)
-// })
-
-// $(".btn21p").click(() => {
-//     oncePerc = 21;
-//     fixedTip = 400;
-//     $(".num-amt-btn").removeClass("active-p-btns");
-//     $(".btn21p").addClass("active-p-btns");
-//     totalAmt = calculateTotal(onceAmt, oncePerc);
-//         console.log(totalAmt)
-// })
+let currentCurrency = "INR";
 
 function calculateTip(amount) {
 
@@ -290,120 +172,120 @@ let fixedTip = 0;
 
 function updateTotal() {
 
+    const symbol = currencyConfig[currentCurrency].symbol;
     const amount = Number($(".amount-input-field").val()) || 0;
 
     const tipAmount = calculateTip(amount);
 
     const total = amount + tipAmount;
 
-    // Donate button
-    $(".donate-modal-btn").text(`Donate Now (₹${total})`);
+    $(".donate-modal-btn").text(`Donate Now (${symbol}${total})`);
+    $(".oai_icon").text(`${symbol}`);
 
-    // Total heading
-    $(".total_amt_head").text(`Total: ₹${total}`);
+    $(".total_amt_head").text(`Total: ${symbol}${total}`);  
 
-    // Breakdown
     $(".total-breakdown").text(
-        `(₹${amount} donation amount + ₹${tipAmount} Tip Amount)`
+        `(${symbol}${amount} donation amount + ${symbol}${tipAmount} Tip Amount)`
     );
 
-    console.clear();
-    console.log("Donation :", amount);
-    console.log("Tip % :", tipPercent);
-    console.log("Fixed Tip :", fixedTip);
-    console.log("Tip Amount :", tipAmount);
-    console.log("Total :", total);
 }
 
 $(document).ready(function () {
 
-    // --------------------
-    // Amount Buttons
-    // --------------------
 
-    $(".amt1").click(function () {
+$(".amt1").click(function () {
 
-        $(".amount-input-field").val(1800).trigger("input");
+    const { presets, tips } = currencyConfig[currentCurrency];
 
-        $(".amt1").addClass("amt_active");
-        $(".amt2,.amt3,.amt4").removeClass("amt_active");
+    $(".amount-input-field").val(presets[0]).trigger("input");
 
-        $(".btn11p").text("₹300");
-        $(".btn16p").text("₹350");
-        $(".btn21p").text("₹400");
+    $(".amt1").addClass("amt_active");
+    $(".amt2,.amt3,.amt4").removeClass("amt_active");
 
-        fixedTip = 300;
-        tipPercent = 0;
+    const symbol = currencyConfig[currentCurrency].symbol;
+    $(".btn11p").text(`${symbol}${tips[0]}`);
+    $(".btn16p").text(`${symbol}${tips[1]}`);
+    $(".btn21p").text(`${symbol}${tips[2]}`);
 
-        $(".request_message_wrapper").addClass("d-none");
+    fixedTip = tips[0];
+    tipPercent = 0;
 
-        updateTotal();
+    $(".request_message_wrapper").addClass("d-none");
 
-    });
+    updateTotal();
 
-    $(".amt2").click(function () {
+});
 
-        $(".amount-input-field").val(4000).trigger("input");
+$(".amt2").click(function () {
 
-        $(".amt2").addClass("amt_active");
-        $(".amt1,.amt3,.amt4").removeClass("amt_active");
+    const { presets, tipPercents } = currencyConfig[currentCurrency];
 
-        $(".btn11p").text("11%");
-        $(".btn16p").text("16%");
-        $(".btn21p").text("21%");
+    $(".amount-input-field").val(presets[1]).trigger("input");
 
-        fixedTip = 0;
-        tipPercent = 11;
+    $(".amt2").addClass("amt_active");
+    $(".amt1,.amt3,.amt4").removeClass("amt_active");
 
-        $(".request_message_wrapper").addClass("d-none");
+    $(".btn11p").text(`${tipPercents[0]}%`);
+    $(".btn16p").text(`${tipPercents[1]}%`);
+    $(".btn21p").text(`${tipPercents[2]}%`);
 
-        updateTotal();
+    fixedTip = 0;
+    tipPercent = tipPercents[0];
 
-    });
+    $(".request_message_wrapper").addClass("d-none");
 
-    $(".amt3").click(function () {
+    updateTotal();
 
-        $(".amount-input-field").val(7500).trigger("input");
+});
 
-        $(".amt3").addClass("amt_active");
-        $(".amt1,.amt2,.amt4").removeClass("amt_active");
+$(".amt3").click(function () {
 
-        $(".btn11p").text("11%");
-        $(".btn16p").text("16%");
-        $(".btn21p").text("21%");
+    const { presets, tipPercents } = currencyConfig[currentCurrency];
 
-        fixedTip = 0;
-        tipPercent = 11;
+    $(".amount-input-field").val(presets[2]).trigger("input");
 
+    $(".amt3").addClass("amt_active");
+    $(".amt1,.amt2,.amt4").removeClass("amt_active");
+
+    $(".btn11p").text(`${tipPercents[0]}%`);
+    $(".btn16p").text(`${tipPercents[1]}%`);
+    $(".btn21p").text(`${tipPercents[2]}%`);
+
+    fixedTip = 0;
+    tipPercent = tipPercents[0];
+
+    // The "request" popup only makes sense for INR donations.
+    if (currentCurrency === "INR") {
         $(".request_message_wrapper").removeClass("d-none");
-
-        updateTotal();
-
-    });
-
-    $(".amt4").click(function () {
-
-        $(".amount-input-field").val(9999).trigger("input");
-
-        $(".amt4").addClass("amt_active");
-        $(".amt1,.amt2,.amt3").removeClass("amt_active");
-
-        $(".btn11p").text("11%");
-        $(".btn16p").text("16%");
-        $(".btn21p").text("21%");
-
-        fixedTip = 0;
-        tipPercent = 11;
-
+    } else {
         $(".request_message_wrapper").addClass("d-none");
+    }
 
-        updateTotal();
+    updateTotal();
 
-    });
+});
 
-    // --------------------
-    // User edits donation amount
-    // --------------------
+$(".amt4").click(function () {
+
+    const { presets, tipPercents } = currencyConfig[currentCurrency];
+
+    $(".amount-input-field").val(presets[3]).trigger("input");
+
+    $(".amt4").addClass("amt_active");
+    $(".amt1,.amt2,.amt3").removeClass("amt_active");
+
+    $(".btn11p").text(`${tipPercents[0]}%`);
+    $(".btn16p").text(`${tipPercents[1]}%`);
+    $(".btn21p").text(`${tipPercents[2]}%`);
+
+    fixedTip = 0;
+    tipPercent = tipPercents[0];
+
+    $(".request_message_wrapper").addClass("d-none");
+
+    updateTotal();
+
+});
 
     $(".amount-input-field").on("input", function () {
 
@@ -411,64 +293,56 @@ $(document).ready(function () {
 
     });
 
-    // --------------------
-    // Tip Buttons
-    // --------------------
+$(".btn11p").click(function () {
 
-    $(".btn11p").click(function () {
+    $(".num-amt-btn").removeClass("active-p-btns");
+    $(this).addClass("active-p-btns");
 
-        $(".num-amt-btn").removeClass("active-p-btns");
-        $(this).addClass("active-p-btns");
+    if ($(this).text().includes("%")) {
+        tipPercent = currencyConfig[currentCurrency].tipPercents[0];
+        fixedTip = 0;
+    } else {
+        fixedTip = currencyConfig[currentCurrency].tips[0];
+        tipPercent = 0;
+    }
 
-        if ($(this).text().includes("%")) {
-            tipPercent = 11;
-            fixedTip = 0;
-        } else {
-            fixedTip = 300;
-            tipPercent = 0;
-        }
+    updateTotal();
 
-        updateTotal();
+});
 
-    });
+$(".btn16p").click(function () {
 
-    $(".btn16p").click(function () {
+    $(".num-amt-btn").removeClass("active-p-btns");
+    $(this).addClass("active-p-btns");
 
-        $(".num-amt-btn").removeClass("active-p-btns");
-        $(this).addClass("active-p-btns");
+    if ($(this).text().includes("%")) {
+        tipPercent = currencyConfig[currentCurrency].tipPercents[1];
+        fixedTip = 0;
+    } else {
+        fixedTip = currencyConfig[currentCurrency].tips[1];
+        tipPercent = 0;
+    }
 
-        if ($(this).text().includes("%")) {
-            tipPercent = 16;
-            fixedTip = 0;
-        } else {
-            fixedTip = 350;
-            tipPercent = 0;
-        }
+    updateTotal();
 
-        updateTotal();
+});
 
-    });
+$(".btn21p").click(function () {
 
-    $(".btn21p").click(function () {
+    $(".num-amt-btn").removeClass("active-p-btns");
+    $(this).addClass("active-p-btns");
 
-        $(".num-amt-btn").removeClass("active-p-btns");
-        $(this).addClass("active-p-btns");
+    if ($(this).text().includes("%")) {
+        tipPercent = currencyConfig[currentCurrency].tipPercents[2];
+        fixedTip = 0;
+    } else {
+        fixedTip = currencyConfig[currentCurrency].tips[2];
+        tipPercent = 0;
+    }
 
-        if ($(this).text().includes("%")) {
-            tipPercent = 21;
-            fixedTip = 0;
-        } else {
-            fixedTip = 400;
-            tipPercent = 0;
-        }
+    updateTotal();
 
-        updateTotal();
-
-    });
-
-    // --------------------
-    // Other Tip
-    // --------------------
+});
 
     $(".other_amt_btn").click(function () {
 
@@ -497,19 +371,11 @@ $(document).ready(function () {
 
     });
 
-    // --------------------
-    // Popup
-    // --------------------
-
     $(".close-button").click(function () {
 
         $(".request_message_wrapper").addClass("d-none");
 
     });
-
-    // --------------------
-    // Donate Button
-    // --------------------
 
     $(".amt5").click(function () {
 
@@ -684,7 +550,46 @@ $('.share_btn').on('click', function() {
     $('#socialDropdown').toggleClass('show');
 });
 
+$(".dropdown-item.currency-dropdown").on("click", function (e) {
+    e.preventDefault();
 
+    let selectedCurrency = $(this).text().trim();
+
+    console.log(selectedCurrency);
+
+    // Update the button text
+    $(".btn.currency-dropdown").html($(this).html());
+
+    const config = currencyConfig[selectedCurrency];
+
+    if (!config) {
+        console.log("Unknown currency:", selectedCurrency);
+        return;
+    }
+
+    currentCurrency = selectedCurrency;
+
+    const { symbol, presets } = config;
+
+    $(".amt1").text(`${symbol} ${presets[0]}`);
+    $(".amt2").text(`${symbol} ${presets[1]}`);
+    $(".amt3").text(`${symbol} ${presets[2]}`);
+    $(".amt4").text(`${symbol} ${presets[3]}`);
+
+    tipPercent = config.tipPercents[2];
+    fixedTip = 0;
+    $(".num-amt-btn").removeClass("active-p-btns");
+    $(".btn11p").text(`${config.tipPercents[0]}%`);
+    $(".btn16p").text(`${config.tipPercents[1]}%`);
+    $(".btn21p").text(`${config.tipPercents[2]}%`);
+
+
+    if (currentCurrency !== "INR") {
+        $(".request_message_wrapper").addClass("d-none");
+    }
+
+    updateTotal();
+});
 
 // // Loads a ad type popup when user reloads
 // $(document).ready(function() {

@@ -1376,7 +1376,10 @@ mark {
 
 .oai_icon{
   position: absolute;
+  font-size: 30px;
   right: 120px;
+  color: #198754;
+  font-weight: 700;
   margin-top: 8px;
   font-size: .7rem;
 }
