@@ -254,7 +254,6 @@ $(".amt3").click(function () {
     fixedTip = 0;
     tipPercent = tipPercents[0];
 
-    // The "request" popup only makes sense for INR donations.
     if (currentCurrency === "INR") {
         $(".request_message_wrapper").removeClass("d-none");
     } else {
@@ -396,6 +395,32 @@ $(".btn21p").click(function () {
 
     updateTotal();
 
+});
+
+// Second tab donation modal currency script
+$(".dropdown-menu .dropdown-item").click(function (e) {
+    e.preventDefault();
+
+    const currency = $(this).text().trim();
+
+    const currencies = {
+        INR: { symbol: "₹", values: [500, 750, 1000, 1500] },
+        USD: { symbol: "$", values: [50, 100, 150, 200] },
+        GBP: { symbol: "£", values: [50, 100, 150, 200] },
+        EUROS: { symbol: "€", values: [50, 100, 150, 200] }
+    };
+
+    const data = currencies[currency];
+
+    $(".mon-amt").each(function (index) {
+        $(this).text(`${data.symbol} ${data.values[index]}`);
+    });
+    
+    $(".amt").click(function () {
+        const amount = $(this).text().split(" ")[1];
+        $(".monthly-amount-input-field").val(amount);
+        $(".donate-modal-btn").text(`Donate Now (${data.symbol} ${amount}/MONTH)`);
+});
 });
 
 
@@ -606,6 +631,8 @@ $(".donation_details_input_fields").each(function () {
 $(".donation_details_input_fields").on("input blur", function () {
     toggleFilledClass($(this));
 });
+
+
 
 // // Loads a ad type popup when user reloads
 // $(document).ready(function() {
