@@ -1141,6 +1141,10 @@ mark {
     border-color: #218861;
   }
 
+.donateModalHeader{
+  background-color: #F2F2F2;
+}
+
 #confirmCloseModal .modal-heart-img {
   width: 180px; 
   height: auto;
@@ -1996,6 +2000,7 @@ mark {
     justify-content: center;
     align-items: center;
     min-height: 60px;
+    background-color: #F2F2F2;
 }
 
 .paymentHead .back-btn-pm {

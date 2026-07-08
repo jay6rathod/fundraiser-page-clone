@@ -15,12 +15,12 @@ function toggleReadMoreContainer() {
     const read_more_btn = document.querySelector('.read-more-btn1');
     const blur_overlay = document.querySelector('.overlay1');
 
-    if(hiddenPart.style.display === "block"){
+    if (hiddenPart.style.display === "block") {
         hiddenPart.style.display = "none";
         read_more_btn.style.display = "block"
         blur_overlay.style.display = "block"
     }
-    else{
+    else {
         hiddenPart.style.display = "block";
         read_more_btn.style.display = "none"
         blur_overlay.style.display = "none"
@@ -34,14 +34,14 @@ function toggleReadMore() {
     const read_less_btn = document.querySelector('.read-less-btn2');
     const blur_overlay = document.querySelector('.overlay2');
 
-    if(hiddenPart.style.display === "block"){
+    if (hiddenPart.style.display === "block") {
         hiddenPart.style.display = "none";
         read_more_btn.style.display = "block"
         blur_overlay.style.display = "block"
         read_less_btn.style.display = "none"
         // read_more_btn.innerHTML = "Read More"
     }
-    else{
+    else {
         hiddenPart.style.display = "block";
         read_more_btn.style.display = "none"
         blur_overlay.style.display = "none"
@@ -52,9 +52,9 @@ function toggleReadMore() {
 
 
 // This is the script for the image selector in the document section
-$(document).ready(function(){
+$(document).ready(function () {
 
-    $(".doc_img_selectors").click(function(){
+    $(".doc_img_selectors").click(function () {
 
         let imgNum = $(this).data("img");
 
@@ -125,7 +125,7 @@ const miniNav = document.querySelector(".mini_nav");
 
 window.addEventListener("scroll", () => {
     const storyTop = story.offsetTop;
-    const commentsTop = comments.offsetTop; 
+    const commentsTop = comments.offsetTop;
     const commentsBottom = commentsTop + comments.offsetHeight;
 
     if (window.scrollY >= storyTop && window.scrollY < commentsBottom) {
@@ -140,9 +140,9 @@ const lingerShare = document.querySelector(".share_linger_btn_container");
 window.addEventListener("scroll", () => {
     const storyTop = story.offsetTop;
 
-    if(window.scrollY >= storyTop){
+    if (window.scrollY >= storyTop) {
         lingerShare.classList.add("disappear");
-    }else{
+    } else {
         lingerShare.classList.remove("disappear");
     }
 })
@@ -174,7 +174,7 @@ function updateTotal() {
 
     const symbol = currencyConfig[currentCurrency].symbol;
     const amount = Number($(".amount-input-field").val()) || 0;
-
+    
     const tipAmount = calculateTip(amount);
 
     const total = amount + tipAmount;
@@ -182,7 +182,7 @@ function updateTotal() {
     $(".donate-modal-btn").text(`Donate Now (${symbol}${total})`);
     $(".oai_icon").text(`${symbol}`);
 
-    $(".total_amt_head").text(`Total: ${symbol}${total}`);  
+    $(".total_amt_head").text(`Total: ${symbol}${total}`);
 
     $(".total-breakdown").text(
         `(${symbol}${amount} donation amount + ${symbol}${tipAmount} Tip Amount)`
@@ -193,98 +193,98 @@ function updateTotal() {
 $(document).ready(function () {
 
 
-$(".amt1").click(function () {
+    $(".amt1").click(function () {
 
-    const { presets, tips } = currencyConfig[currentCurrency];
+        const { presets, tips } = currencyConfig[currentCurrency];
 
-    $(".amount-input-field").val(presets[0]).trigger("input");
+        $(".amount-input-field").val(presets[0]).trigger("input");
 
-    $(".amt1").addClass("amt_active");
-    $(".amt2,.amt3,.amt4").removeClass("amt_active");
+        $(".amt1").addClass("amt_active");
+        $(".amt2,.amt3,.amt4").removeClass("amt_active");
 
-    const symbol = currencyConfig[currentCurrency].symbol;
-    $(".btn11p").text(`${symbol}${tips[0]}`);
-    $(".btn16p").text(`${symbol}${tips[1]}`);
-    $(".btn21p").text(`${symbol}${tips[2]}`);
+        const symbol = currencyConfig[currentCurrency].symbol;
+        $(".btn11p").text(`${symbol}${tips[0]}`);
+        $(".btn16p").text(`${symbol}${tips[1]}`);
+        $(".btn21p").text(`${symbol}${tips[2]}`);
 
-    fixedTip = tips[0];
-    tipPercent = 0;
+        fixedTip = tips[0];
+        tipPercent = 0;
 
-    $(".request_message_wrapper").addClass("d-none");
-
-    updateTotal();
-
-});
-
-$(".amt2").click(function () {
-
-    const { presets, tipPercents } = currencyConfig[currentCurrency];
-
-    $(".amount-input-field").val(presets[1]).trigger("input");
-
-    $(".amt2").addClass("amt_active");
-    $(".amt1,.amt3,.amt4").removeClass("amt_active");
-
-    $(".btn11p").text(`${tipPercents[0]}%`);
-    $(".btn16p").text(`${tipPercents[1]}%`);
-    $(".btn21p").text(`${tipPercents[2]}%`);
-
-    fixedTip = 0;
-    tipPercent = tipPercents[0];
-
-    $(".request_message_wrapper").addClass("d-none");
-
-    updateTotal();
-
-});
-
-$(".amt3").click(function () {
-
-    const { presets, tipPercents } = currencyConfig[currentCurrency];
-
-    $(".amount-input-field").val(presets[2]).trigger("input");
-
-    $(".amt3").addClass("amt_active");
-    $(".amt1,.amt2,.amt4").removeClass("amt_active");
-
-    $(".btn11p").text(`${tipPercents[0]}%`);
-    $(".btn16p").text(`${tipPercents[1]}%`);
-    $(".btn21p").text(`${tipPercents[2]}%`);
-
-    fixedTip = 0;
-    tipPercent = tipPercents[0];
-
-    if (currentCurrency === "INR") {
-        $(".request_message_wrapper").removeClass("d-none");
-    } else {
         $(".request_message_wrapper").addClass("d-none");
-    }
 
-    updateTotal();
+        updateTotal();
 
-});
+    });
 
-$(".amt4").click(function () {
+    $(".amt2").click(function () {
 
-    const { presets, tipPercents } = currencyConfig[currentCurrency];
+        const { presets, tipPercents } = currencyConfig[currentCurrency];
 
-    $(".amount-input-field").val(presets[3]).trigger("input");
+        $(".amount-input-field").val(presets[1]).trigger("input");
 
-    $(".amt4").addClass("amt_active");
-    $(".amt1,.amt2,.amt3").removeClass("amt_active");
+        $(".amt2").addClass("amt_active");
+        $(".amt1,.amt3,.amt4").removeClass("amt_active");
 
-    $(".btn11p").text(`${tipPercents[0]}%`);
-    $(".btn16p").text(`${tipPercents[1]}%`);
-    $(".btn21p").text(`${tipPercents[2]}%`);
+        $(".btn11p").text(`${tipPercents[0]}%`);
+        $(".btn16p").text(`${tipPercents[1]}%`);
+        $(".btn21p").text(`${tipPercents[2]}%`);
 
-    fixedTip = 0;
-    tipPercent = tipPercents[0];
+        fixedTip = 0;
+        tipPercent = tipPercents[0];
 
-    $(".request_message_wrapper").addClass("d-none");
+        $(".request_message_wrapper").addClass("d-none");
 
-    updateTotal();
+        updateTotal();
 
-});
+    });
+
+    $(".amt3").click(function () {
+
+        const { presets, tipPercents } = currencyConfig[currentCurrency];
+
+        $(".amount-input-field").val(presets[2]).trigger("input");
+
+        $(".amt3").addClass("amt_active");
+        $(".amt1,.amt2,.amt4").removeClass("amt_active");
+
+        $(".btn11p").text(`${tipPercents[0]}%`);
+        $(".btn16p").text(`${tipPercents[1]}%`);
+        $(".btn21p").text(`${tipPercents[2]}%`);
+
+        fixedTip = 0;
+        tipPercent = tipPercents[0];
+
+        if (currentCurrency === "INR") {
+            $(".request_message_wrapper").removeClass("d-none");
+        } else {
+            $(".request_message_wrapper").addClass("d-none");
+        }
+
+        updateTotal();
+
+    });
+
+    $(".amt4").click(function () {
+
+        const { presets, tipPercents } = currencyConfig[currentCurrency];
+
+        $(".amount-input-field").val(presets[3]).trigger("input");
+
+        $(".amt4").addClass("amt_active");
+        $(".amt1,.amt2,.amt3").removeClass("amt_active");
+
+        $(".btn11p").text(`${tipPercents[0]}%`);
+        $(".btn16p").text(`${tipPercents[1]}%`);
+        $(".btn21p").text(`${tipPercents[2]}%`);
+
+        fixedTip = 0;
+        tipPercent = tipPercents[0];
+
+        $(".request_message_wrapper").addClass("d-none");
+
+        updateTotal();
+
+    });
 
     $(".amount-input-field").on("input", function () {
 
@@ -292,56 +292,56 @@ $(".amt4").click(function () {
 
     });
 
-$(".btn11p").click(function () {
+    $(".btn11p").click(function () {
 
-    $(".num-amt-btn").removeClass("active-p-btns");
-    $(this).addClass("active-p-btns");
+        $(".num-amt-btn").removeClass("active-p-btns");
+        $(this).addClass("active-p-btns");
 
-    if ($(this).text().includes("%")) {
-        tipPercent = currencyConfig[currentCurrency].tipPercents[0];
-        fixedTip = 0;
-    } else {
-        fixedTip = currencyConfig[currentCurrency].tips[0];
-        tipPercent = 0;
-    }
+        if ($(this).text().includes("%")) {
+            tipPercent = currencyConfig[currentCurrency].tipPercents[0];
+            fixedTip = 0;
+        } else {
+            fixedTip = currencyConfig[currentCurrency].tips[0];
+            tipPercent = 0;
+        }
 
-    updateTotal();
+        updateTotal();
 
-});
+    });
 
-$(".btn16p").click(function () {
+    $(".btn16p").click(function () {
 
-    $(".num-amt-btn").removeClass("active-p-btns");
-    $(this).addClass("active-p-btns");
+        $(".num-amt-btn").removeClass("active-p-btns");
+        $(this).addClass("active-p-btns");
 
-    if ($(this).text().includes("%")) {
-        tipPercent = currencyConfig[currentCurrency].tipPercents[1];
-        fixedTip = 0;
-    } else {
-        fixedTip = currencyConfig[currentCurrency].tips[1];
-        tipPercent = 0;
-    }
+        if ($(this).text().includes("%")) {
+            tipPercent = currencyConfig[currentCurrency].tipPercents[1];
+            fixedTip = 0;
+        } else {
+            fixedTip = currencyConfig[currentCurrency].tips[1];
+            tipPercent = 0;
+        }
 
-    updateTotal();
+        updateTotal();
 
-});
+    });
 
-$(".btn21p").click(function () {
+    $(".btn21p").click(function () {
 
-    $(".num-amt-btn").removeClass("active-p-btns");
-    $(this).addClass("active-p-btns");
+        $(".num-amt-btn").removeClass("active-p-btns");
+        $(this).addClass("active-p-btns");
 
-    if ($(this).text().includes("%")) {
-        tipPercent = currencyConfig[currentCurrency].tipPercents[2];
-        fixedTip = 0;
-    } else {
-        fixedTip = currencyConfig[currentCurrency].tips[2];
-        tipPercent = 0;
-    }
+        if ($(this).text().includes("%")) {
+            tipPercent = currencyConfig[currentCurrency].tipPercents[2];
+            fixedTip = 0;
+        } else {
+            fixedTip = currencyConfig[currentCurrency].tips[2];
+            tipPercent = 0;
+        }
 
-    updateTotal();
+        updateTotal();
 
-});
+    });
 
     $(".other_amt_btn").click(function () {
 
@@ -351,7 +351,7 @@ $(".btn21p").click(function () {
         $(".num-amt-btn").removeClass("active-p-btns");
 
         $(".oai").focus();
-
+        
     });
 
     $(".oai").on("input", function () {
@@ -415,44 +415,46 @@ $(".dropdown-menu .dropdown-item").click(function (e) {
     $(".mon-amt").each(function (index) {
         $(this).text(`${data.symbol} ${data.values[index]}`);
     });
-    
+
     $(".amt").click(function () {
         const amount = $(this).text().split(" ")[1];
         $(".monthly-amount-input-field").val(amount);
         $(".donate-modal-btn").text(`Donate Now (${data.symbol} ${amount}/MONTH)`);
-});
+    });
 });
 
 
 // Form logic script
 // for name 
-$('.name_field').on('input', function() {
-    if ($.trim($(this).val()) == '') {
+$('.name_field').on('input', function () {
+    if ($.trim($(this).val()) === '') {
+        console.log("display not none")
         $(".full_name_warning_sub").removeClass("d-none");
     } else {
-        $(".full_name_warning_sub").addClass("d-none"); 
+        console.log("display none")
+        $(".full_name_warning_sub").addClass("d-none");
     }
 });
 
 // for email
-$('.email_field').on('input', function() {
+$('.email_field').on('input', function () {
     if ($.trim($(this).val()) == '') {
         $(".email_warning_sub").removeClass("d-none");
     }
-    else if(!this.checkValidity()){
+    else if (!this.checkValidity()) {
         $(".email_warning_sub").removeClass("d-none");
     }
     else {
-        $(".email_warning_sub").addClass("d-none"); 
+        $(".email_warning_sub").addClass("d-none");
     }
 });
 
 $('#anonymous_checkbox').change(function () {
     if ($(this).prop('checked')) {
         $(".anonymous_sub").removeClass("d-none")
-        setTimeout(() => 
+        setTimeout(() =>
             $(".anonymous_sub").addClass("d-none")
-        , 5000)
+            , 5000)
         console.log("Checked");
     }
 });
@@ -485,26 +487,26 @@ $(".state_input").on('blur', function () {
 
 const monthAmtInput = document.querySelector(".monthly-amount-input-field");
 
-$(document).ready(function() {
-    $(".amt6").click(function (){
+$(document).ready(function () {
+    $(".amt6").click(function () {
         monthAmtInput.value = 500;
         $(".amt6").addClass("amt_active");
         $(".amt7, .amt8, .amt9").removeClass("amt_active");
         $(".donate-modal-btn").text(`Donate Now (₹${monthAmtInput.value})`);
     })
-    $(".amt7").click(function (){
+    $(".amt7").click(function () {
         monthAmtInput.value = 750;
         $(".amt7").addClass("amt_active");
         $(".amt6, .amt8, .amt9").removeClass("amt_active");
         $(".donate-modal-btn").text(`Donate Now (₹${monthAmtInput.value})`);
     })
-    $(".amt8").click(function (){
+    $(".amt8").click(function () {
         monthAmtInput.value = 1000;
         $(".amt8").addClass("amt_active");
         $(".amt7, .amt6, .amt9").removeClass("amt_active");
         $(".donate-modal-btn").text(`Donate Now (₹${monthAmtInput.value})`);
     })
-    $(".amt9").click(function (){
+    $(".amt9").click(function () {
         monthAmtInput.value = 1500;
         $(".amt9").addClass("amt_active");
         $(".amt7, .amt8, .amt6").removeClass("amt_active");
@@ -515,33 +517,33 @@ $(document).ready(function() {
 // Second modal same form script
 // Form logic script
 // for name 
-$('.support_name_field').on('input', function() {
+$('.support_name_field').on('input', function () {
     if ($.trim($(this).val()) == '') {
         $(".support_name_warning").removeClass("d-none");
     } else {
-        $(".support_name_warning").addClass("d-none"); 
+        $(".support_name_warning").addClass("d-none");
     }
 });
 
 // for email
-$('.support_email_field').on('input', function() {
+$('.support_email_field').on('input', function () {
     if ($.trim($(this).val()) == '') {
         $(".support_email_warning").removeClass("d-none");
     }
-    else if(!this.checkValidity()){
+    else if (!this.checkValidity()) {
         $(".support_email_warning").removeClass("d-none");
     }
     else {
-        $(".support_email_warning").addClass("d-none"); 
+        $(".support_email_warning").addClass("d-none");
     }
 });
 
 $('#support_anonymous_checkbox').change(function () {
     if ($(this).prop('checked')) {
         $(".support_anonymous_sub").removeClass("d-none")
-        setTimeout(() => 
+        setTimeout(() =>
             $(".support_anonymous_sub").addClass("d-none")
-        , 5000)
+            , 5000)
         console.log("Checked");
     }
 });
@@ -571,7 +573,7 @@ $(".support-state-input").on('blur', function () {
 });
 
 
-$('.share_btn').on('click', function() {
+$('.share_btn').on('click', function () {
     $('#socialDropdown').toggleClass('show');
 });
 
@@ -649,3 +651,68 @@ $(".donation_details_input_fields").on("input blur", function () {
 //         $("body").removeClass("dimmed noscroll");
 //     });
 // });
+
+
+// Making sure the payment modal doesn't pop up until all the conditions are satisfied
+
+$(".donate-modal-btn").click(function (e) {
+    $(".name_field").on("input", function () {
+        if ($(this).val().trim() === "") {
+            $(".full_name_warning_sub").removeClass("d-none");
+        }
+        else {
+            $(".full_name_warning_sub").addClass("d-none");
+        }
+    })
+
+    $(".email_field").on("input", function () {
+        if ($(this).val().trim() === "" && !($(".email_field").val().includes("@"))) {
+            $(".email_warning_sub").removeClass("d-none");
+        }
+        else {
+            $(".email_warning_sub").addClass("d-none");
+        }
+    })
+
+
+    $(".phno_field").on("input", function () {
+        const phoneVal = $(this).val().trim();
+        const firstChar = phoneVal.charAt(0);
+
+        const isValidLen = (phoneVal.length === 10)
+        const isValidStart = (firstChar === "7" || firstChar === "8" || firstChar === "9")
+        if (!isValidLen && !isValidStart) {
+            $(".phno_warning_sub").removeClass("d-none");
+        }
+        else {
+            $(".phno_warning_sub").addClass("d-none");
+        }
+    })
+
+    $(".name_field, .email_field, .phno_field").trigger("input");
+
+    const nameValidity = $(".full_name_warning_sub").hasClass("d-none");
+    const emailValidity = $(".email_warning_sub").hasClass("d-none");
+    const phnoValidity = $(".phno_warning_sub").hasClass("d-none");
+
+    if (!nameValidity || !emailValidity || !phnoValidity) {
+        console.log("Form validity failed")
+        $(".payment-modal").removeAttr("id")
+    }
+    else {
+        $(".payment-modal").attr('id', "paymentModal")
+    }
+
+    const modalElement = document.getElementById("paymentModal")
+    const donateModalElem = document.getElementById("donateModal")
+    if (modalElement && donateModalElem) {
+        const donateModal = bootstrap.Modal.getOrCreateInstance(donateModalElem);
+        donateModal.hide();
+
+        const paymentModal = bootstrap.Modal.getOrCreateInstance(modalElement);
+        paymentModal.show();
+
+    } else {
+        console.error("Could not find #paymentModal in the DOM.");
+    }
+})

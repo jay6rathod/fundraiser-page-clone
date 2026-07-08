@@ -462,7 +462,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
 
-                            <div class="modal-header">
+                            <div class="modal-header donateModalHeader">
                                 <h5 class="modal-title" id="donateModalLabel">Transaction Details</h5>
 
                                 <button type="button" class="btn-close" data-bs-toggle="modal"
@@ -515,9 +515,9 @@
                                                 </ul>
                                             </div>
                                             <div class="amount_input_wrapper">
-                                                <input type="number"
+                                                <input type="tel"
                                                     class="form-control rounded-pill amount-input-field currency-dropdown"
-                                                    aria-label="Donation Amount" value=9999>
+                                                    aria-label="Donation Amount" value=9999 maxlength="10">
                                             </div>
                                         </div>
 
@@ -581,8 +581,9 @@
 
                                                     <li class="flex-fill other_amt_input hidden-element">
                                                         <span class="oai_icon">₹</span>
-                                                        <input type="number"
-                                                            class="form-control rounded-pill text-center oai">
+                                                        <input type="tel"
+                                                            class="form-control rounded-pill text-center oai"
+                                                            maxlength="10">
                                                     </li>
                                                 </ul>
 
@@ -630,7 +631,7 @@
                                                     <div class="donation-details-input-field">
                                                         <input class="donation_details_input_fields phno_field"
                                                             type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                                                            placeholder=" " id="phno" required />
+                                                            placeholder=" " id="phno" required maxlength="10" />
                                                         <label class="donation_details_label" for="phno">Phone
                                                             Number*</label>
                                                         <sub class="phno_warning_sub warning-sub d-none">Please enter a
@@ -716,9 +717,9 @@
                                                         </ul>
                                                     </div>
                                                     <div class="month_amount_input_wrapper">
-                                                        <input type="number"
+                                                        <input type="tel"
                                                             class="form-control rounded-pill monthly-amount-input-field currency-dropdown"
-                                                            aria-label="Donation Amount" value=1500>
+                                                            aria-label="Donation Amount" value=1500 maxlength="10">
                                                     </div>
                                                 </div>
                                             </div>
@@ -842,20 +843,12 @@
                                             </div>
                                         </div>
                                     </div>
-
-
-
-
-
-
-
                                 </div>
 
                             </div>
 
                             <div class="modal-footer modfoot">
-                                <button type="button" class="btn rounded-pill border donate-modal-btn"
-                                    data-bs-toggle="modal" data-bs-target="#paymentModal">
+                                <button type="button" class="btn rounded-pill border donate-modal-btn">
                                     Donate Now
                                 </button>
                             </div>
@@ -1104,12 +1097,13 @@
 
     <!-- Second step of after clicking Donate button in the first tab of the modal above -->
     <div class="actual_donation_step_modal_for_one_time_payment">
-        <div class="modal fade p-0" id="paymentModal" tabindex="-1" aria-hidden="true"
+        <div class="modal fade p-0 payment-modal" id="paymentModal" tabindex="-1" aria-hidden="true"
             aria-labelledby="paymentModalOnceLabel">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header paymentHead">
-                        <div class="back-btn-pm" data-bs-toggle="modal" data-bs-target="#donateModal"><i class="fa-solid fa-arrow-left"></i>
+                        <div class="back-btn-pm" data-bs-toggle="modal" data-bs-target="#donateModal"><i
+                                class="fa-solid fa-arrow-left"></i>
                         </div>
                         <h5 class="modal-title" id="paymentModalOnceLabel">Choose
                             Payment mode</h5>
@@ -1123,36 +1117,55 @@
                     <div class="modal-body-fluid">
                         <ul class="nav nav-pills custom-tabs d-flex w-100" id="donationTabs" role="tablist">
 
-                                    <li class="nav-item flex-fill" role="presentation">
-                                        <button class="nav-link active" id="card-payment-tab" data-bs-toggle="tab"
-                                            data-bs-target="#card-payment" type="button" role="tab">
-                                            <div class="card-ui-wrapper">
-                                                <i class="fa-regular fa-credit-card"></i><br>
-                                                <span>Debit/Credit Card</span>
-                                            </div>
-                                        </button>
-                                    </li>
+                            <li class="nav-item flex-fill" role="presentation">
+                                <button class="nav-link active" id="card-payment-tab" data-bs-toggle="tab"
+                                    data-bs-target="#card-payment" type="button" role="tab">
+                                    <div class="card-ui-wrapper">
+                                        <i class="fa-regular fa-credit-card"></i><br>
+                                        <span>Debit/Credit Card</span>
+                                    </div>
+                                </button>
+                            </li>
 
-                                    <li class="nav-item flex-fill position-relative" role="presentation">
-                                        <button class="nav-link" id="net-banking-tab" data-bs-toggle="tab"
-                                            data-bs-target="#net-banking" type="button" role="tab">
-                                            <div class="net-bank-ui-wrapper">
-                                                <i class="fa-solid fa-building-columns"></i><br>
-                                                <span>Debit/Credit Card</span>
-                                            </div>
-                                        </button>
-                                    </li>
-                                    
-                                    <li class="nav-item flex-fill position-relative" role="presentation">
-                                        <button class="nav-link" id="upi-tab" data-bs-toggle="tab"
-                                            data-bs-target="#upi" type="button" role="tab">
-                                            <div class="card-ui-wrapper">
-                                                <img src="../assets/upi-icon.png" class="upi-logo-pm" alt="upi logo in payment modal"><br>
-                                                <span></span>
-                                            </div>
-                                        </button>
-                                    </li>
-                                </ul>
+                            <li class="nav-item flex-fill position-relative" role="presentation">
+                                <button class="nav-link" id="net-banking-tab" data-bs-toggle="tab"
+                                    data-bs-target="#net-banking" type="button" role="tab">
+                                    <div class="net-bank-ui-wrapper">
+                                        <i class="fa-solid fa-building-columns"></i><br>
+                                        <span>Debit/Credit Card</span>
+                                    </div>
+                                </button>
+                            </li>
+
+                            <li class="nav-item flex-fill position-relative" role="presentation">
+                                <button class="nav-link" id="upi-tab" data-bs-toggle="tab" data-bs-target="#upi"
+                                    type="button" role="tab">
+                                    <div class="card-ui-wrapper">
+                                        <img src="../assets/upi-icon.png" class="upi-logo-pm"
+                                            alt="upi logo in payment modal"><br>
+                                        <span></span>
+                                    </div>
+                                </button>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content border-top-0 fluid" id="donationTabsContent">
+                            <div class="tab-pane fade show active p-4" id="card-payment" role="tabpanel">
+                                <div class="donation-details-input-field">
+                                    <input class="donation_details_input_fields card-num" type="text" id="name"
+                                        required />
+                                    <label class="donation_details_label" for="cardNum">Card Number</label>
+                                    <sub class="full_name_warning_sub warning-sub d-none">Enter a Valid card</sub>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade p-4" id="net-banking" role="tabpanel">
+                                <h1>Net Banking payment</h1>
+                            </div>
+                            <div class="tab-pane fade p-4" id="upi" role="tabpanel">
+                                <h1>UPI payment</h1>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
