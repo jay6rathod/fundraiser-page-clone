@@ -1987,6 +1987,70 @@ mark {
     margin-top: 15px;
 }
 
+
+/* Payment Modal css */
+
+.paymentHead {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px;
+}
+
+.paymentHead .back-btn-pm {
+    position: absolute;
+    left: 1rem;
+    cursor: pointer;
+}
+
+.paymentHead .btn-close {
+    position: absolute;
+    right: 1rem;
+}
+
+.paymentHead .modal-title {
+    margin: 0;
+}
+
+.custom-tabs {
+    display: flex !important;
+    width: 100%;
+    flex-wrap: nowrap !important;
+}
+
+.custom-tabs .nav-item {
+    flex: 1 1 0;
+    width: 0;
+}
+
+.custom-tabs > .nav-item > .nav-link {
+    width: 100%;
+    min-height: 85px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 0;
+}
+
+.custom-tabs .nav-link.active {
+    background: transparent !important;
+    color: #198754 !important;
+    border-bottom: 2px solid #198754;
+}
+
+.card-ui-wrapper,
+.net-bank-ui-wrapper {
+    font-size: 0.9rem;
+}
+
+.upi-logo-pm{
+  height: 60px;
+  width: auto;
+}
+
 /* Popup message styling */
 /* .welcome-card {
   display: flex;
