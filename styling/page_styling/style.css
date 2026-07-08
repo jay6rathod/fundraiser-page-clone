@@ -2043,7 +2043,7 @@ mark {
 .custom-tabs .nav-link.active {
     background: transparent !important;
     color: #198754 !important;
-    border-bottom: 2px solid #198754;
+    border-bottom: 5px solid #198754;
 }
 
 .card-ui-wrapper,
@@ -2054,6 +2054,28 @@ mark {
 .upi-logo-pm{
   height: 60px;
   width: auto;
+}
+
+
+.upi-spans{
+  font-size: .7rem;
+  color: rgb(37, 37, 37);
+  text-align: center;
+  margin: 10px;
+}
+
+.paymentModeModal{
+  min-height: 400px;
+}
+
+.note-subs > sub{
+  text-align: left;
+  font-size: .5rem;
+  color: rgb(153, 152, 152);
+}
+
+.warning-spans{
+  margin: 20px;
 }
 
 /* Popup message styling */

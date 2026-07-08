@@ -1149,20 +1149,32 @@
                             </li>
                         </ul>
 
-                        <div class="tab-content border-top-0 fluid" id="donationTabsContent">
+                        <div class="tab-content border-top-0 fluid paymentModeModal" id="donationTabsContent">
+                            <!-- card payment -->
                             <div class="tab-pane fade show active p-4" id="card-payment" role="tabpanel">
                                 <div class="donation-details-input-field">
                                     <input class="donation_details_input_fields card-num" type="text" id="name"
                                         required />
                                     <label class="donation_details_label" for="cardNum">Card Number</label>
-                                    <sub class="full_name_warning_sub warning-sub d-none">Enter a Valid card</sub>
+                                    <sub class="card_num_warning warning-sub d-none">Enter a Valid card</sub>
                                 </div>
                             </div>
+
+                            <!-- net banking payment -->
                             <div class="tab-pane fade p-4" id="net-banking" role="tabpanel">
                                 <h1>Net Banking payment</h1>
                             </div>
-                            <div class="tab-pane fade p-4" id="upi" role="tabpanel">
-                                <h1>UPI payment</h1>
+
+                            <!-- UPI payment -->
+                            <div class="tab-pane fade p-4 upiTab" id="upi" role="tabpanel">
+                                <div class="warning-spans">
+                                    <span class="upi-spans">QR not available. Please complete transaction via mobile device.</span><br>
+                                    <span class="upi-spans upi-breakdown"></span><br>
+                                </div>
+                                <div class="note-subs">
+                                    <sub><i class="fa-solid fa-shield-halved"></i> 100% Safe & Secure Payment Methods</sub><br>
+                                    <sub>Note: After clicking on the “Contribute” button you might be taken to your bank’s website for 3D secure authentication using a pop - up window.</sub>
+                                </div>
                             </div>
                         </div>
 

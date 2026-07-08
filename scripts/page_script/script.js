@@ -174,7 +174,7 @@ function updateTotal() {
 
     const symbol = currencyConfig[currentCurrency].symbol;
     const amount = Number($(".amount-input-field").val()) || 0;
-    
+
     const tipAmount = calculateTip(amount);
 
     const total = amount + tipAmount;
@@ -187,6 +187,8 @@ function updateTotal() {
     $(".total-breakdown").text(
         `(${symbol}${amount} donation amount + ${symbol}${tipAmount} Tip Amount)`
     );
+
+    $(".upi-breakdown").text(`You are donating ${symbol}${amount} with ${symbol}${tipAmount} tip`)
 
 }
 
@@ -351,7 +353,7 @@ $(document).ready(function () {
         $(".num-amt-btn").removeClass("active-p-btns");
 
         $(".oai").focus();
-        
+
     });
 
     $(".oai").on("input", function () {
@@ -655,64 +657,66 @@ $(".donation_details_input_fields").on("input blur", function () {
 
 // Making sure the payment modal doesn't pop up until all the conditions are satisfied
 
-$(".donate-modal-btn").click(function (e) {
-    $(".name_field").on("input", function () {
-        if ($(this).val().trim() === "") {
-            $(".full_name_warning_sub").removeClass("d-none");
+$(document).ready(function () {
+    $(".donate-modal-btn").click(function (e) {
+        $(".name_field").on("input", function () {
+            if ($(this).val().trim() === "") {
+                $(".full_name_warning_sub").removeClass("d-none");
+            }
+            else {
+                $(".full_name_warning_sub").addClass("d-none");
+            }
+        })
+
+        $(".email_field").on("input", function () {
+            if ($(this).val().trim() === "" && !($(".email_field").val().includes("@"))) {
+                $(".email_warning_sub").removeClass("d-none");
+            }
+            else {
+                $(".email_warning_sub").addClass("d-none");
+            }
+        })
+
+
+        $(".phno_field").on("input", function () {
+            const phoneVal = $(this).val().trim();
+            const firstChar = phoneVal.charAt(0);
+
+            const isValidLen = (phoneVal.length === 10)
+            const isValidStart = (firstChar === "7" || firstChar === "8" || firstChar === "9")
+            if (!isValidLen && !isValidStart) {
+                $(".phno_warning_sub").removeClass("d-none");
+            }
+            else {
+                $(".phno_warning_sub").addClass("d-none");
+            }
+        })
+
+        $(".name_field, .email_field, .phno_field").trigger("input");
+
+        const nameValidity = $(".full_name_warning_sub").hasClass("d-none");
+        const emailValidity = $(".email_warning_sub").hasClass("d-none");
+        const phnoValidity = $(".phno_warning_sub").hasClass("d-none");
+
+        if (!nameValidity || !emailValidity || !phnoValidity) {
+            console.log("Form validity failed")
+            $(".payment-modal").removeAttr("id")
         }
         else {
-            $(".full_name_warning_sub").addClass("d-none");
+            $(".payment-modal").attr('id', "paymentModal")
+        }
+
+        const modalElement = document.getElementById("paymentModal")
+        const donateModalElem = document.getElementById("donateModal")
+        if (modalElement && donateModalElem) {
+            const donateModal = bootstrap.Modal.getOrCreateInstance(donateModalElem);
+            donateModal.hide();
+
+            const paymentModal = bootstrap.Modal.getOrCreateInstance(modalElement);
+            paymentModal.show();
+
+        } else {
+            console.error("Could not find #paymentModal in the DOM.");
         }
     })
-
-    $(".email_field").on("input", function () {
-        if ($(this).val().trim() === "" && !($(".email_field").val().includes("@"))) {
-            $(".email_warning_sub").removeClass("d-none");
-        }
-        else {
-            $(".email_warning_sub").addClass("d-none");
-        }
-    })
-
-
-    $(".phno_field").on("input", function () {
-        const phoneVal = $(this).val().trim();
-        const firstChar = phoneVal.charAt(0);
-
-        const isValidLen = (phoneVal.length === 10)
-        const isValidStart = (firstChar === "7" || firstChar === "8" || firstChar === "9")
-        if (!isValidLen && !isValidStart) {
-            $(".phno_warning_sub").removeClass("d-none");
-        }
-        else {
-            $(".phno_warning_sub").addClass("d-none");
-        }
-    })
-
-    $(".name_field, .email_field, .phno_field").trigger("input");
-
-    const nameValidity = $(".full_name_warning_sub").hasClass("d-none");
-    const emailValidity = $(".email_warning_sub").hasClass("d-none");
-    const phnoValidity = $(".phno_warning_sub").hasClass("d-none");
-
-    if (!nameValidity || !emailValidity || !phnoValidity) {
-        console.log("Form validity failed")
-        $(".payment-modal").removeAttr("id")
-    }
-    else {
-        $(".payment-modal").attr('id', "paymentModal")
-    }
-
-    const modalElement = document.getElementById("paymentModal")
-    const donateModalElem = document.getElementById("donateModal")
-    if (modalElement && donateModalElem) {
-        const donateModal = bootstrap.Modal.getOrCreateInstance(donateModalElem);
-        donateModal.hide();
-
-        const paymentModal = bootstrap.Modal.getOrCreateInstance(modalElement);
-        paymentModal.show();
-
-    } else {
-        console.error("Could not find #paymentModal in the DOM.");
-    }
 })
