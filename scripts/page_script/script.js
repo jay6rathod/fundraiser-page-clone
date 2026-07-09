@@ -428,28 +428,28 @@ $(".dropdown-menu .dropdown-item").click(function (e) {
 
 // Form logic script
 // for name 
-$('.name_field').on('input', function () {
-    if ($.trim($(this).val()) === '') {
-        console.log("display not none")
-        $(".full_name_warning_sub").removeClass("d-none");
-    } else {
-        console.log("display none")
-        $(".full_name_warning_sub").addClass("d-none");
-    }
-});
+// $('.name_field').on('input', function () {
+//     if ($.trim($(this).val()) === '') {
+//         console.log("display not none")
+//         $(".full_name_warning_sub").removeClass("d-none");
+//     } else {
+//         console.log("display none")
+//         $(".full_name_warning_sub").addClass("d-none");
+//     }
+// });
 
 // for email
-$('.email_field').on('input', function () {
-    if ($.trim($(this).val()) == '') {
-        $(".email_warning_sub").removeClass("d-none");
-    }
-    else if (!this.checkValidity()) {
-        $(".email_warning_sub").removeClass("d-none");
-    }
-    else {
-        $(".email_warning_sub").addClass("d-none");
-    }
-});
+// $('.email_field').on('input', function () {
+//     if ($.trim($(this).val()) == '') {
+//         $(".email_warning_sub").removeClass("d-none");
+//     }
+//     else if (!this.checkValidity()) {
+//         $(".email_warning_sub").removeClass("d-none");
+//     }
+//     else {
+//         $(".email_warning_sub").addClass("d-none");
+//     }
+// });
 
 $('#anonymous_checkbox').change(function () {
     if ($(this).prop('checked')) {
@@ -461,23 +461,23 @@ $('#anonymous_checkbox').change(function () {
     }
 });
 
-$('.phno_field').on('input', function () {
+// $('.phno_field').on('input', function () {
 
-    if ($(this).val().trim() === '') {
-        $('.phno_warning_sub')
-            .text('Please enter a phone number')
-            .removeClass('d-none');
-    }
-    else if (!this.checkValidity()) {
-        $('.phno_warning_sub')
-            .text('Please enter a valid phone number')
-            .removeClass('d-none');
-    }
-    else {
-        $('.phno_warning_sub').addClass('d-none');
-    }
+//     if ($(this).val().trim() === '') {
+//         $('.phno_warning_sub')
+//             .text('Please enter a phone number')
+//             .removeClass('d-none');
+//     }
+//     else if (!this.checkValidity()) {
+//         $('.phno_warning_sub')
+//             .text('Please enter a valid phone number')
+//             .removeClass('d-none');
+//     }
+//     else {
+//         $('.phno_warning_sub').addClass('d-none');
+//     }
 
-});
+// });
 
 $(".state_input").on('blur', function () {
     if ($(this).val().trim() === '') {
@@ -658,65 +658,250 @@ $(".donation_details_input_fields").on("input blur", function () {
 // Making sure the payment modal doesn't pop up until all the conditions are satisfied
 
 $(document).ready(function () {
-    $(".donate-modal-btn").click(function (e) {
-        $(".name_field").on("input", function () {
-            if ($(this).val().trim() === "") {
-                $(".full_name_warning_sub").removeClass("d-none");
-            }
-            else {
-                $(".full_name_warning_sub").addClass("d-none");
-            }
-        })
+    $(".name_field").val(localStorage.getItem("Name") || "");
+    $(".support_name_field").val(localStorage.getItem("Name") || "");
+    $(".email_field").val(localStorage.getItem("Email") || "");
+    $(".support_email_field").val(localStorage.getItem("Email") || "");
+    $(".phno_field").val(localStorage.getItem("Phno") || "");
+    $(".support_phone_field").val(localStorage.getItem("Phno") || "");
+    $(".state_input").val(localStorage.getItem("State") || "");
+    $(".support-state-input").val(localStorage.getItem("State") || "");
+    $(".country-code-select").val(localStorage.getItem("countryCode") || "(+91) India");
+    $(".support-country-select").val(localStorage.getItem("countryCode") || "(+91) India");
 
-        $(".email_field").on("input", function () {
-            if ($(this).val().trim() === "" && !($(".email_field").val().includes("@"))) {
-                $(".email_warning_sub").removeClass("d-none");
-            }
-            else {
-                $(".email_warning_sub").addClass("d-none");
-            }
-        })
-
-
-        $(".phno_field").on("input", function () {
-            const phoneVal = $(this).val().trim();
-            const firstChar = phoneVal.charAt(0);
-
-            const isValidLen = (phoneVal.length === 10)
-            const isValidStart = (firstChar === "7" || firstChar === "8" || firstChar === "9")
-            if (!isValidLen && !isValidStart) {
-                $(".phno_warning_sub").removeClass("d-none");
-            }
-            else {
-                $(".phno_warning_sub").addClass("d-none");
-            }
-        })
-
-        $(".name_field, .email_field, .phno_field").trigger("input");
-
-        const nameValidity = $(".full_name_warning_sub").hasClass("d-none");
-        const emailValidity = $(".email_warning_sub").hasClass("d-none");
-        const phnoValidity = $(".phno_warning_sub").hasClass("d-none");
-
-        if (!nameValidity || !emailValidity || !phnoValidity) {
-            console.log("Form validity failed")
-            $(".payment-modal").removeAttr("id")
+    $(".donation_details_input_fields").each(function () {
+        if ($(this).val().trim() !== "") {
+            $(this).addClass("filled")
         }
         else {
-            $(".payment-modal").attr('id', "paymentModal")
-        }
-
-        const modalElement = document.getElementById("paymentModal")
-        const donateModalElem = document.getElementById("donateModal")
-        if (modalElement && donateModalElem) {
-            const donateModal = bootstrap.Modal.getOrCreateInstance(donateModalElem);
-            donateModal.hide();
-
-            const paymentModal = bootstrap.Modal.getOrCreateInstance(modalElement);
-            paymentModal.show();
-
-        } else {
-            console.error("Could not find #paymentModal in the DOM.");
+            $(this).removeClass("filled")
         }
     })
+});
+
+$(document).ready(function () {
+    $(".donate-modal-btn").click(function (e) {
+        if ($("#give-once-tab").hasClass("active")) {
+            console.log("Give Once is active");
+            $(".name_field").on("input", function () {
+                if ($(this).val().trim() === "") {
+                    $(".full_name_warning_sub").removeClass("d-none");
+                }
+                else {
+                    $(".full_name_warning_sub").addClass("d-none");
+                    localStorage.setItem("Name", $(this).val());
+                }
+            })
+
+            $(".email_field").on("input", function () {
+                if (!this.checkValidity()) {
+                    $(".email_warning_sub").removeClass("d-none");
+                } else {
+                    $(".email_warning_sub").addClass("d-none");
+                    localStorage.setItem("Email", $(this).val());
+                }
+            });
+
+            $(".phno_field").on("input", function () {
+                const rawVal = $(this).val();
+                const phoneVal = rawVal.trim();
+                const firstChar = phoneVal.charAt(0);
+                const country = $(".country-code-select").val();
+                // for india
+                if (country === "(+91) India") {
+                    const isValidLen = (phoneVal.length === 10)
+                    const isValidStart = (firstChar === "6" || firstChar === "7" || firstChar === "8" || firstChar === "9")
+                    if (!isValidLen || !isValidStart) {
+                        $(".phno_warning_sub").removeClass("d-none");
+                    }
+                    else {
+                        $(".phno_warning_sub").addClass("d-none");
+                        localStorage.setItem("Phno", rawVal);
+                        localStorage.setItem("countryCode", country);
+                    }
+                }
+                // for usa 
+                else if (country === "(+1) United States") {
+                    const usPhoneVal = rawVal.replace(/[\s\-\(\)]/g, '').trim();
+                    const isValidLen = (phoneVal.length === 10);
+
+                    const usFirstChar = usPhoneVal.charAt(0);
+                    const isValidStart = (usFirstChar >= "2" && usFirstChar <= "9")
+
+                    if (!isValidLen || !isValidStart) {
+                        $(".phno_warning_sub").removeClass("d-none")
+                    }
+                    else {
+                        $(".phno_warning_sub").addClass("d-none")
+                        localStorage.setItem("Phno", rawVal);
+                        localStorage.setItem("countryCode", country);
+                    }
+                }
+
+                // for UK
+                else if (country === "(+44) United Kingdom") {
+                    const isValidLen = (phoneVal.length === 11);
+                    const startPrefix = phoneVal.substring(0, 2);
+                    const isValidStart = (startPrefix === "01" || startPrefix === "02" || startPrefix === "03" || startPrefix === "07")
+                    if (!isValidLen || !isValidStart) {
+                        $(".phno_warning_sub").removeClass("d-none");
+                    }
+                    else {
+                        $(".phno_warning_sub").addClass("d-none");
+                        localStorage.setItem("Phno", rawVal);
+                        localStorage.setItem("countryCode", country);
+                    }
+                }
+            })
+
+            $(".state_input").on("input", function () {
+                if ($(this).val().trim() === "") {
+                    $(this).val("Maharashtra")
+                }
+                else {
+                    localStorage.setItem("State", $(this).val());
+                }
+            })
+
+            $(".name_field, .email_field, .phno_field, .state_input").trigger("input");
+
+            const nameValidity = $(".full_name_warning_sub").hasClass("d-none");
+            const emailValidity = $(".email_warning_sub").hasClass("d-none");
+            const phnoValidity = $(".phno_warning_sub").hasClass("d-none");
+
+            if (!nameValidity || !emailValidity || !phnoValidity) {
+                console.log("Form validity failed")
+                return;
+            }
+            else {
+                $(".payment-modal").attr('id', "paymentModal")
+            }
+
+            const modalElement = document.getElementById("paymentModal")
+            const donateModalElem = document.getElementById("donateModal")
+            if (modalElement && donateModalElem) {
+                const donateModal = bootstrap.Modal.getOrCreateInstance(donateModalElem);
+                donateModal.hide();
+                document.activeElement.blur();
+                const paymentModal = bootstrap.Modal.getOrCreateInstance(modalElement);
+                paymentModal.show();
+
+            } else {
+                console.error("Could not find #paymentModal in the DOM.");
+            }
+
+        } else {
+            console.log("Give Monthly is active");
+            $(".support_name_field").on("input", function () {
+                if ($(this).val().trim() === "") {
+                    $(".support_name_warning").removeClass("d-none");
+                }
+                else {
+                    $(".support_name_warning").addClass("d-none");
+                    localStorage.setItem("Name", $(this).val());
+                }
+            })
+
+            $(".support_email_field").on("input", function () {
+                if (!this.checkValidity()) {
+                    $(".support_email_warning").removeClass("d-none");
+                } else {
+                    $(".support_email_warning").addClass("d-none");
+                    localStorage.setItem("Email", $(this).val());
+                }
+            });
+
+            $(".support_phone_field").on("input", function () {
+                const rawVal = $(this).val();
+                const phoneVal = rawVal.trim();
+                const firstChar = phoneVal.charAt(0);
+                const country = $(".support-country-select").val();
+                // for india
+                if (country === "(+91) India") {
+                    const isValidLen = (phoneVal.length === 10)
+                    const isValidStart = (firstChar === "6" || firstChar === "7" || firstChar === "8" || firstChar === "9")
+                    if (!isValidLen || !isValidStart) {
+                        $(".support_phone_warning").removeClass("d-none");
+                    }
+                    else {
+                        $(".support_phone_warning").addClass("d-none");
+                        localStorage.setItem("Phno", rawVal);
+                        localStorage.setItem("countryCode", country);
+                    }
+                }
+                // for usa 
+                else if (country === "(+1) United States") {
+                    const usPhoneVal = rawVal.replace(/[\s\-\(\)]/g, '').trim();
+                    const isValidLen = (phoneVal.length === 10);
+
+                    const usFirstChar = phoneVal.charAt(0);
+                    const isValidStart = (usFirstChar >= "2" && usFirstChar <= "9")
+
+                    if (!isValidLen || !isValidStart) {
+                        $(".support_phone_warning").removeClass("d-none")
+                    }
+                    else {
+                        $(".support_phone_warning").addClass("d-none")
+                        localStorage.setItem("Phno", rawVal);
+                        localStorage.setItem("countryCode", country);
+                    }
+                }
+
+                // for UK
+                else if (country === "(+44) United Kingdom") {
+                    const isValidLen = (phoneVal.length === 11);
+                    const startPrefix = phoneVal.substring(0, 2);
+                    const isValidStart = (startPrefix === "01" || startPrefix === "02" || startPrefix === "03" || startPrefix === "07")
+                    if (!isValidLen || !isValidStart) {
+                        $(".support_phone_warning").removeClass("d-none");
+                    }
+                    else {
+                        $(".support_phone_warning").addClass("d-none");
+                        localStorage.setItem("Phno", rawVal);
+                        localStorage.setItem("countryCode", country);
+                    }
+                }
+            })
+
+            $(".support-state-input").on("input", function () {
+                if ($(this).val().trim() === "") {
+                    $(this).val("Maharashtra")
+                }
+                else {
+                    localStorage.setItem("State", $(this).val());
+                }
+            })
+
+            $(".support_name_field, .support_email_field, .support_phone_field, .support-state-input").trigger("input");
+
+            const nameValidity = $(".support_name_warning").hasClass("d-none");
+            const emailValidity = $(".support_email_warning").hasClass("d-none");
+            const phnoValidity = $(".support_phone_warning").hasClass("d-none");
+
+            if (!nameValidity || !emailValidity || !phnoValidity) {
+                console.log("Form validity failed")
+                return;
+            }
+            else {
+                $(".payment-modal").attr('id', "paymentModal")
+            }
+
+            const modalElement = document.getElementById("paymentModal")
+            const donateModalElem = document.getElementById("donateModal")
+            if (modalElement && donateModalElem) {
+                const donateModal = bootstrap.Modal.getOrCreateInstance(donateModalElem);
+                donateModal.hide();
+                document.activeElement.blur();
+                const paymentModal = bootstrap.Modal.getOrCreateInstance(modalElement);
+                paymentModal.show();
+
+            } else {
+                console.error("Could not find #paymentModal in the DOM.");
+            }
+
+        }
+
+    })
 })
+
+

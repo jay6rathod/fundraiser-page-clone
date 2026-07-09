@@ -631,7 +631,7 @@
                                                     <div class="donation-details-input-field">
                                                         <input class="donation_details_input_fields phno_field"
                                                             type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                                                            placeholder=" " id="phno" required maxlength="10" />
+                                                            placeholder=" " id="phno" required maxlength="11" />
                                                         <label class="donation_details_label" for="phno">Phone
                                                             Number*</label>
                                                         <sub class="phno_warning_sub warning-sub d-none">Please enter a
@@ -777,25 +777,28 @@
                                                             type="email" placeholder=" " id="support_email" required />
                                                         <label class="support_label" for="support_email">Email*</label>
                                                         <sub class="support_email_warning warning-sub d-none">Please
-                                                            enter a
-                                                            valid email address</sub>
+                                                            enter a valid email address</sub>
                                                     </div>
 
                                                     <div class="support-phone-container">
                                                         <div class="support-country-container">
                                                             <select class="support-country-select">
-                                                                <option>(+91) India</option>
-                                                                <option>(+1) United States</option>
-                                                                <option>(+44) United Kingdom</option>
+                                                                <option class="support-country-options">(+91) India
+                                                                </option>
+                                                                <option class="support-country-options">(+1) United
+                                                                    States</option>
+                                                                <option class="support-country-options">(+44) United
+                                                                    Kingdom</option>
                                                             </select>
                                                             <span class="support-dropdown-arrow"><i
                                                                     class="fa-solid fa-angle-down"></i></span>
                                                         </div>
                                                         <div class="donation-details-input-field">
                                                             <input
-                                                                class="donation_details_input_fields support_phone_field"
+                                                                class="donation_details_inpu`t_fields support_phone_field"
                                                                 type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                                                                placeholder=" " id="support_phone" required />
+                                                                placeholder=" " id="support_phone" required
+                                                                maxlength="11" />
                                                             <label class="support_label" for="support_phone">Phone
                                                                 Number*</label>
                                                             <sub class="support_phone_warning warning-sub d-none">Please
@@ -1121,7 +1124,7 @@
                                 <button class="nav-link active" id="card-payment-tab" data-bs-toggle="tab"
                                     data-bs-target="#card-payment" type="button" role="tab">
                                     <div class="card-ui-wrapper">
-                                        <i class="fa-regular fa-credit-card"></i><br>
+                                        <i class="fa-regular fa-credit-card paymentIcons"></i><br>
                                         <span>Debit/Credit Card</span>
                                     </div>
                                 </button>
@@ -1131,7 +1134,7 @@
                                 <button class="nav-link" id="net-banking-tab" data-bs-toggle="tab"
                                     data-bs-target="#net-banking" type="button" role="tab">
                                     <div class="net-bank-ui-wrapper">
-                                        <i class="fa-solid fa-building-columns"></i><br>
+                                        <i class="fa-solid fa-building-columns paymentIcons"></i><br>
                                         <span>Debit/Credit Card</span>
                                     </div>
                                 </button>
@@ -1152,12 +1155,36 @@
                         <div class="tab-content border-top-0 fluid paymentModeModal" id="donationTabsContent">
                             <!-- card payment -->
                             <div class="tab-pane fade show active p-4" id="card-payment" role="tabpanel">
-                                <div class="donation-details-input-field">
-                                    <input class="donation_details_input_fields card-num" type="text" id="name"
-                                        required />
-                                    <label class="donation_details_label" for="cardNum">Card Number</label>
-                                    <sub class="card_num_warning warning-sub d-none">Enter a Valid card</sub>
+                                <form action="" class="payment_details_form">
+                                    <div class="payment-details-input-field">
+                                        <input class="payment_details_input_fields card-num" type="text" id="cardNum"
+                                            placeholder=" " required />
+                                        <label class="payment_details_label" for="cardNum">Card Number</label>
+                                        <span class="card-input-icon"><i class="fa-solid fa-credit-card"></i></span>
+                                        <sub class="card_num_warning warning-sub d-none">Enter a Valid card</sub>
+                                    </div>
+
+                                    <div class="more_card_details_wrapper">
+                                        <div class="payment-details-input-field">
+                                            <input class="payment_details_input_fields card-exp" type="text"
+                                                id="cardExp" placeholder="" required maxlength="4"/>
+                                            <label class="payment_details_label" for="cardExp">MM/YY</label>
+                                            <sub class="card_exp_warning warning-sub d-none">Enter a Valid date</sub>
+                                        </div>
+
+                                        <div class="payment-details-input-field cvv-input-container">
+                                            <input class="payment_details_input_fields card-cvv" type="text"
+                                                id="cardCvv" placeholder=" " required maxlength="3"/>
+                                            <label class="payment_details_label" for="cardCvv">CVV</label>
+                                            <sub class="card_cvv_warning warning-sub d-none">Enter a Valid CVV</sub>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <div class="card-section-breakdown">
+                                    <span>You are donating ₹9999 with ₹1600 tip</span>
                                 </div>
+                                <div class="contribute-btn-payment-modal">Contribute</div>
                             </div>
 
                             <!-- net banking payment -->
@@ -1168,12 +1195,15 @@
                             <!-- UPI payment -->
                             <div class="tab-pane fade p-4 upiTab" id="upi" role="tabpanel">
                                 <div class="warning-spans">
-                                    <span class="upi-spans">QR not available. Please complete transaction via mobile device.</span><br>
+                                    <span class="upi-spans">QR not available. Please complete transaction via mobile
+                                        device.</span><br>
                                     <span class="upi-spans upi-breakdown"></span><br>
                                 </div>
                                 <div class="note-subs">
-                                    <sub><i class="fa-solid fa-shield-halved"></i> 100% Safe & Secure Payment Methods</sub><br>
-                                    <sub>Note: After clicking on the “Contribute” button you might be taken to your bank’s website for 3D secure authentication using a pop - up window.</sub>
+                                    <sub><i class="fa-solid fa-shield-halved"></i> 100% Safe & Secure Payment
+                                        Methods</sub><br>
+                                    <sub>Note: After clicking on the “Contribute” button you might be taken to your
+                                        bank’s website for 3D secure authentication using a pop - up window.</sub>
                                 </div>
                             </div>
                         </div>
