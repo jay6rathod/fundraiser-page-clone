@@ -2153,6 +2153,32 @@ mark {
   padding-right: 30px;
 }
 
+.card-section-breakdown{
+  margin-top: 20px;
+  text-align: center;
+  font-size: .9rem;
+  color: #282828;
+}
+
+.contribute-btn-payment-modal{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.contribute-btn{
+  width: 90%;
+  background-color: #ff8502ea;
+  font-weight: 700;
+  color: white;
+}
+
+.contribute-btn:hover{
+  background-color: #FF8502;
+  font-weight: 700;
+  color: white;
+}
 
 /* Popup message styling */
 /* .welcome-card {
