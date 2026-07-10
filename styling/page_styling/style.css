@@ -2180,6 +2180,20 @@ mark {
   color: white;
 }
 
+
+.card-img-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 10px;
+}
+
+.card-imgs{
+  height: 30px;
+  width: auto;
+}
+
+
 /* Popup message styling */
 /* .welcome-card {
   display: flex;
