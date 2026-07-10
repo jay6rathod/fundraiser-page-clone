@@ -169,6 +169,7 @@ function calculateTip(amount) {
 
 let tipPercent = 21;
 let fixedTip = 0;
+let total;
 
 function updateTotal() {
 
@@ -177,7 +178,7 @@ function updateTotal() {
 
     const tipAmount = calculateTip(amount);
 
-    const total = amount + tipAmount;
+    total = amount + tipAmount;
 
     $(".donate-modal-btn").text(`Donate Now (${symbol}${total})`);
     $(".oai_icon").text(`${symbol}`);
@@ -190,7 +191,6 @@ function updateTotal() {
 
     $(".contribute-btn").text(`Contribute (${symbol}${total})`)
     $(".pm-section-breakdown").text(`You are donating ${symbol}${amount} with ${symbol}${tipAmount} tip`)
-
 }
 
 $(document).ready(function () {
@@ -916,3 +916,39 @@ $(document).ready(function() {
         })
     })
 })
+
+
+// Razorpay Validation
+const donateBtn = document.getElementById("donate-btn");
+
+donateBtn.addEventListener("click", function () {
+
+    const options = {
+        key: "rzp_test_T53I1W3nMKK3Rq",
+        amount: total * 100, 
+        currency: currentCurrency,
+        name: $(".name_field").val(),
+        description: "Donation to Garvika",
+
+        handler: function (response) {
+            alert("Payment Successful");
+
+            console.log(response.razorpay_payment_id);
+        },
+
+        modal: {
+            ondismiss: function () {
+                console.log("Razorpay popup closed");
+            }
+        }
+    };
+
+    const rzp = new Razorpay(options);
+
+    rzp.on("payment.failed", function (response) {
+        console.log(response.error);
+        alert("Payment Failed");
+    });
+
+    rzp.open();
+});

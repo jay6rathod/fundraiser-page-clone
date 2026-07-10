@@ -1185,7 +1185,7 @@
                                     <span>You are donating ₹9999 with ₹1600 tip</span>
                                 </div>
                                 <div class="contribute-btn-payment-modal">
-                                    <button class="contribute-btn btn rounded-pill">Contribute</button>
+                                    <button class="contribute-btn btn rounded-pill" id="donate-btn">Contribute</button>
                                 </div>
 
                                 <div class="note-subs">
@@ -1268,6 +1268,10 @@
                                 <div class="warning-spans">
                                     <!-- <span class="upi-spans">QR not available. Please complete transaction via mobile
                                         device.</span><br> -->
+
+                                        <div class="qr-img-wrapper">
+                                            <img src="https://www.impactguru.com/fundraiser/getUPIQR/c2c76765-4441-4ce8-b2bb-19e5f98ba520/120" alt="QR code of ImpactGuru for UPI payment">
+                                        </div>
                                     <div class="pm-section-breakdown">
                                         <span>You are donating ₹9999 with ₹1600 tip</span>
                                     </div>
@@ -1286,6 +1290,11 @@
             </div>
         </div>
     </div>
+
+
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
