@@ -2153,7 +2153,7 @@ mark {
   padding-right: 30px;
 }
 
-.card-section-breakdown{
+.pm-section-breakdown{
   margin-top: 20px;
   text-align: center;
   font-size: .9rem;
@@ -2182,9 +2182,17 @@ mark {
 
 
 .card-img-wrapper{
+  margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: left;
+  gap: 10px;
+}
+
+.bank_btn_wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 10px;
 }
 
@@ -2193,6 +2201,58 @@ mark {
   width: auto;
 }
 
+.card-btn{
+  height: 70px;
+  width: 70px;
+  border-radius: 10px;
+  border: none;
+  color: #198754;
+  font-size: .8rem;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.card-btn:hover{
+  background-color: #828587;
+  color: white;
+}
+
+.card-btn:active{
+  background-color: #828587;
+  color: white;
+}
+
+.bank-btn-img{
+  height: 20px;
+  width: auto;
+}
+
+.bank-opt-dropdown{
+  margin-top: 40px;
+}
+
+.select-bank{
+  border: none;
+  border-bottom: 2px solid #5A6268;
+  border-radius: 0;
+}
+
+.select-bank:focus{
+  border: none;
+  border-bottom: 2px solid #218861;
+  outline: none;
+  box-shadow: none;
+}
+
+.active-bank-btn{
+  background-color: #5A6268;
+  color: white;
+}
+
+.nb-imgs{
+  height: 20px;
+  width: auto;
+}
 
 /* Popup message styling */
 /* .welcome-card {

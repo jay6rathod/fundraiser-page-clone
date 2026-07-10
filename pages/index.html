@@ -1167,21 +1167,21 @@
                                     <div class="more_card_details_wrapper">
                                         <div class="payment-details-input-field">
                                             <input class="payment_details_input_fields card-exp" type="text"
-                                                id="cardExp" placeholder="" required maxlength="4"/>
+                                                id="cardExp" placeholder="" required maxlength="4" />
                                             <label class="payment_details_label" for="cardExp">MM/YY</label>
                                             <sub class="card_exp_warning warning-sub d-none">Enter a Valid date</sub>
                                         </div>
 
                                         <div class="payment-details-input-field cvv-input-container">
                                             <input class="payment_details_input_fields card-cvv" type="text"
-                                                id="cardCvv" placeholder=" " required maxlength="3"/>
+                                                id="cardCvv" placeholder=" " required maxlength="3" />
                                             <label class="payment_details_label" for="cardCvv">CVV</label>
                                             <sub class="card_cvv_warning warning-sub d-none">Enter a Valid CVV</sub>
                                         </div>
                                     </div>
                                 </form>
 
-                                <div class="card-section-breakdown">
+                                <div class="pm-section-breakdown">
                                     <span>You are donating ₹9999 with ₹1600 tip</span>
                                 </div>
                                 <div class="contribute-btn-payment-modal">
@@ -1189,8 +1189,10 @@
                                 </div>
 
                                 <div class="note-subs">
-                                    <sub><i class="fa-solid fa-shield-halved"></i> 100% Safe & Secure Payment Methods</sub><br>
-                                    <sub>Note: After clicking on the “Contribute” button you might be taken to your bank’s website for 3D secure authentication using a pop - up window.</sub>
+                                    <sub><i class="fa-solid fa-shield-halved"></i> 100% Safe & Secure Payment
+                                        Methods</sub><br>
+                                    <sub>Note: After clicking on the “Contribute” button you might be taken to your
+                                        bank’s website for 3D secure authentication using a pop - up window.</sub>
                                 </div>
 
                                 <div class="card-img-wrapper">
@@ -1202,15 +1204,73 @@
 
                             <!-- net banking payment -->
                             <div class="tab-pane fade p-4" id="net-banking" role="tabpanel">
-                                <h1>Net Banking payment</h1>
+                                <div class="bank_btn_wrapper">
+                                    <button class="hdfc-btn card-btn active-bank-btn" data-bank="hdfc">
+                                        <img src="../assets/HDFC.png" class="bank-btn-img" alt="HDFC logo"><br>
+                                        HDFC
+                                    </button>
+                                    <button class="icici-btn card-btn" data-bank="icici">
+                                        <img src="../assets/icici.png" class="bank-btn-img" alt="ICICI logo"><br>
+                                        ICICI
+                                    </button>
+                                    <button class="axis-btn card-btn" data-bank="axis">
+                                        <img src="../assets/axis.png" class="bank-btn-img" alt="Axis logo"><br>
+                                        AXIS
+                                    </button>
+                                    <button class="sbi-btn card-btn" data-bank="sbi">
+                                        <img src="../assets/SBI.png" class="bank-btn-img" alt="SBI logo"><br>
+                                        SBI
+                                    </button>
+                                    <button class="ubi-btn card-btn" data-bank="ubi">
+                                        <img src="../assets/UBI.png" class="bank-btn-img" alt="UBI logo"><br>
+                                        UBI
+                                    </button>
+                                </div>
+
+                                <div class="bank-opt-dropdown">
+                                    <select class="form-select select-bank" aria-label="Default select example">
+                                        <option value="andhra">Andhra Bank</option>
+                                        <option value="axis">Axis Bank</option>
+                                        <option value="boi">Bank of India</option>
+                                        <option value="canara">Canara Bank</option>
+                                        <option value="cbi">Central Bank of India</option>
+                                        <option value="dena">Dena Bank</option>
+                                        <option value="hdfc" selected>HDFC Bank Ltd</option>
+                                        <option value="icici">ICICI Bank Ltd</option>
+                                        <option value="sbi">State Bank of India</option>
+                                        <option value="ubi">Union Bank of India</option>
+                                    </select>
+                                </div>
+
+                                <div class="pm-section-breakdown">
+                                    <span>You are donating ₹9999 with ₹1600 tip</span>
+                                </div>
+
+                                <div class="contribute-btn-payment-modal">
+                                    <button class="contribute-btn btn rounded-pill">Contribute</button>
+                                </div>
+
+                                <div class="note-subs">
+                                    <sub><i class="fa-solid fa-shield-halved"></i> 100% Safe & Secure Payment
+                                        Methods</sub><br>
+                                    <sub>Note: After clicking on the “Contribute” button you might be taken to your
+                                        bank’s website for 3D secure authentication using a pop - up window.</sub>
+                                </div>
+
+                                <div class="card-img-wrapper">
+                                    <img class="nb-imgs" src="../assets/billdesk.png" alt="billdesk logo">
+                                    <img class="nb-imgs" src="../assets/razorpay.png" alt="razorpay logo">
+                                </div>
                             </div>
 
                             <!-- UPI payment -->
                             <div class="tab-pane fade p-4 upiTab" id="upi" role="tabpanel">
                                 <div class="warning-spans">
-                                    <span class="upi-spans">QR not available. Please complete transaction via mobile
-                                        device.</span><br>
-                                    <span class="upi-spans upi-breakdown"></span><br>
+                                    <!-- <span class="upi-spans">QR not available. Please complete transaction via mobile
+                                        device.</span><br> -->
+                                    <div class="pm-section-breakdown">
+                                        <span>You are donating ₹9999 with ₹1600 tip</span>
+                                    </div>
                                 </div>
                                 <div class="note-subs">
                                     <sub><i class="fa-solid fa-shield-halved"></i> 100% Safe & Secure Payment

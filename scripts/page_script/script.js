@@ -188,7 +188,8 @@ function updateTotal() {
         `(${symbol}${amount} donation amount + ${symbol}${tipAmount} Tip Amount)`
     );
 
-    $(".upi-breakdown").text(`You are donating ${symbol}${amount} with ${symbol}${tipAmount} tip`)
+    $(".contribute-btn").text(`Contribute (${symbol}${total})`)
+    $(".pm-section-breakdown").text(`You are donating ${symbol}${amount} with ${symbol}${tipAmount} tip`)
 
 }
 
@@ -904,3 +905,14 @@ $(document).ready(function () {
     })
 })
 
+// For the bank selection in net banking section
+$(document).ready(function() {
+    $(".card-btn").each(function() {
+        $(this).click(function() {
+            const bank = $(this).data("bank");
+            $(".select-bank").val(bank);
+            $(".card-btn").removeClass("active-bank-btn")
+            $(this).addClass("active-bank-btn")
+        })
+    })
+})
