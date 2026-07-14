@@ -794,7 +794,7 @@ $(document).ready(function () {
         } else {
             console.log("Give Monthly is active");
             $(".support_name_field").on("input", function () {
-                if ($(this).val().trim() === "") {
+                if ($(this).val().trim() === "" && $(this).val()) {
                     $(".support_name_warning").removeClass("d-none");
                 }
                 else {

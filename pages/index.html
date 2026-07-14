@@ -597,7 +597,7 @@
                                             <hr class="space-line border">
                                             <form action="" class="donation_details_form">
                                                 <div class="donation-details-input-field">
-                                                    <input class="donation_details_input_fields name_field" type="text"
+                                                    <input class="donation_details_input_fields name_field" oninput="this.value = this.value.replace(/\d/g, '')" type="text"
                                                         id="name" required />
                                                     <label class="donation_details_label" for="name">Full Name*</label>
                                                     <sub class="full_name_warning_sub warning-sub d-none">Please enter
@@ -640,7 +640,7 @@
                                                 </div>
                                                 <div class="state_input_container">
                                                     <label for="state" class="state_label">Billing State</label>
-                                                    <input type="text" value="Maharashtra" class="state_input">
+                                                    <input type="text" value="Maharashtra" oninput="this.value = this.value.replace(/\d/g, '')" class="state_input">
                                                 </div>
                                                 <div class="citizen_input_container">
                                                     <label for="citizen" class="citizen_label title_label">Are you an
@@ -756,7 +756,7 @@
                                                 <form action="" class="support_details_form">
                                                     <div class="support-input-field">
                                                         <input class="support_input_fields support_name_field"
-                                                            type="text" id="support_name" required />
+                                                            type="text" id="support_name" oninput="this.value = this.value.replace(/\d/g, '')" required />
                                                         <label class="support_label" for="support_name">Full
                                                             Name*</label>
                                                         <sub class="support_name_warning warning-sub d-none">Please
@@ -809,7 +809,7 @@
                                                     <div class="support-state-container">
                                                         <label for="state" class="support-state-label">Billing
                                                             State</label>
-                                                        <input type="text" value="Maharashtra"
+                                                        <input type="text" value="Maharashtra" oninput="this.value = this.value.replace(/\d/g, '')"
                                                             class="support-state-input">
                                                     </div>
                                                     <div class="support-citizen-container">
