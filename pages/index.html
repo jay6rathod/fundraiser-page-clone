@@ -14,7 +14,10 @@
 </head>
 
 <body>
-    <nav id="nav"></nav>
+    <div class="nav-wrapper">
+        <nav id="nav"></nav>
+    </div>
+
     <nav class="mini_nav navbar-expand-xxl" id="miniNav">
         <div class="container">
             <div class="section_buttons">
@@ -62,19 +65,41 @@
     </div> -->
 
 
-
-    <div class="hero container text-center">
-        <h2>Garvika Fights SMA. Save her life!</h2>
-        <div class="badge">
-            <div class="icon-wrapper">
-                <i class="fa-solid fa-briefcase-medical"></i>
+    <div class="header-wrap-one">
+        <div class="header-wrap-two">
+            <h2>Garvika Fights SMA. Save her life!</h2>
+            <div class="badge-wrapper">
+                <div class="badge">
+                    <div class="icon-wrapper">
+                        <i class="fa-solid fa-briefcase-medical"></i>
+                    </div>
+                    <span class="label">MEDICAL</span>
+                </div>
             </div>
-            <span class="label">MEDICAL</span>
         </div>
+    </div>
+    <div class="hero container text-center">
 
-
+        <div class="header-content-wrapper">
+            <h2 class="heading-title">Garvika Fights SMA. Save her life!</h2>
+            <div class="real-badge-wrapper">
+                <div class="badge real-badge">
+                    <div class="icon-wrapper">
+                        <i class="fa-solid fa-briefcase-medical"></i>
+                    </div>
+                    <span class="label">MEDICAL</span>
+                </div>
+            </div>
+        </div>
         <div class="container division">
 
+            <!-- <div class="left">
+                <h1>This is the left side</h1>
+            </div>
+
+            <div class="right">
+                <h1>This is the right side</h1>
+            </div> -->
             <!-- left -->
             <div class="left">
                 <div id="carousel-content"></div>
@@ -597,7 +622,8 @@
                                             <hr class="space-line border">
                                             <form action="" class="donation_details_form">
                                                 <div class="donation-details-input-field">
-                                                    <input class="donation_details_input_fields name_field" oninput="this.value = this.value.replace(/\d/g, '')" type="text"
+                                                    <input class="donation_details_input_fields name_field"
+                                                        oninput="this.value = this.value.replace(/\d/g, '')" type="text"
                                                         id="name" required />
                                                     <label class="donation_details_label" for="name">Full Name*</label>
                                                     <sub class="full_name_warning_sub warning-sub d-none">Please enter
@@ -640,7 +666,9 @@
                                                 </div>
                                                 <div class="state_input_container">
                                                     <label for="state" class="state_label">Billing State</label>
-                                                    <input type="text" value="Maharashtra" oninput="this.value = this.value.replace(/\d/g, '')" class="state_input">
+                                                    <input type="text" value="Maharashtra"
+                                                        oninput="this.value = this.value.replace(/\d/g, '')"
+                                                        class="state_input">
                                                 </div>
                                                 <div class="citizen_input_container">
                                                     <label for="citizen" class="citizen_label title_label">Are you an
@@ -756,7 +784,9 @@
                                                 <form action="" class="support_details_form">
                                                     <div class="support-input-field">
                                                         <input class="support_input_fields support_name_field"
-                                                            type="text" id="support_name" oninput="this.value = this.value.replace(/\d/g, '')" required />
+                                                            type="text" id="support_name"
+                                                            oninput="this.value = this.value.replace(/\d/g, '')"
+                                                            required />
                                                         <label class="support_label" for="support_name">Full
                                                             Name*</label>
                                                         <sub class="support_name_warning warning-sub d-none">Please
@@ -809,7 +839,8 @@
                                                     <div class="support-state-container">
                                                         <label for="state" class="support-state-label">Billing
                                                             State</label>
-                                                        <input type="text" value="Maharashtra" oninput="this.value = this.value.replace(/\d/g, '')"
+                                                        <input type="text" value="Maharashtra"
+                                                            oninput="this.value = this.value.replace(/\d/g, '')"
                                                             class="support-state-input">
                                                     </div>
                                                     <div class="support-citizen-container">
@@ -983,90 +1014,92 @@
             </div>
         </div>
     </div>
-    <div class="footer container-fluid text-center">
-        <div class="parallax">
-            <button class="para-btn">START A FREE FUNDRAISER</button>
-        </div>
-        <div class="actual-foot">
-            <div class="footer-head">
-                <h1>Join The Impact Community!</h1>
-                <div class="footer-header-input">
-                    <input class="email-footer-input" type="email" placeholder="Enter your e-mail id">
-                    <button type="button" class="subscribe-btn-footer ">SUBSCRIBE NOW</button>
-                </div>
+    <div class="footing-wrapper">
+        <div class="footer container-fluid text-center">
+            <div class="parallax">
+                <button class="para-btn">START A FREE FUNDRAISER</button>
             </div>
-            <hr>
-            <div class="footer-main">
-                <div class="footer-container">
-                    <div class="footer-col">
-                        <h3>Contact Us</h3>
-                        <div class="contact-text">General Enquiry</div>
-                        <div class="contact-text">Email : info@impactguru.com</div>
-                        <div class="contact-text">Phone : 18008912903</div>
-                        <span class="sub-text">(Toll-free number for Indian residents)</span>
-                        <div class="contact-text">Click below to Raise a Concern</div>
-                        <a href="#" class="btn raise-foot-btn">Raise A Concern</a>
+            <div class="actual-foot">
+                <div class="footer-head">
+                    <h1>Join The Impact Community!</h1>
+                    <div class="footer-header-input">
+                        <input class="email-footer-input" type="email" placeholder="Enter your e-mail id">
+                        <button type="button" class="subscribe-btn-footer ">SUBSCRIBE NOW</button>
+                    </div>
+                </div>
+                <hr>
+                <div class="footer-main">
+                    <div class="footer-container">
+                        <div class="footer-col">
+                            <h3>Contact Us</h3>
+                            <div class="contact-text">General Enquiry</div>
+                            <div class="contact-text">Email : info@impactguru.com</div>
+                            <div class="contact-text">Phone : 18008912903</div>
+                            <span class="sub-text">(Toll-free number for Indian residents)</span>
+                            <div class="contact-text">Click below to Raise a Concern</div>
+                            <a href="#" class="btn raise-foot-btn">Raise A Concern</a>
 
-                        <h3>Follow Us On</h3>
-                        <div class="social-icons">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
-                            <a href="#"><i class="fab fa-whatsapp"></i></a>
-                            <a href="#"><i class="fas fa-blog"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <h3>Follow Us On</h3>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                                <a href="#"><i class="fas fa-blog"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="footer-col">
-                        <h3>About Us</h3>
-                        <ul>
-                            <li><a href="#" class="footer-anchor">About Us</a></li>
-                            <li><a href="#" class="footer-anchor">Careers</a></li>
-                            <li><a href="#" class="footer-anchor">Blog</a></li>
-                            <li>
-                                <a href="#" class="footer-anchor">Resources</a>
-                                <ul class="nested-list">
-                                    <li><a href="#" class="footer-anchor">English</a></li>
-                                    <li><a href="#" class="footer-anchor">Hindi</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#" class="footer-anchor">Press & Awards</a></li>
-                            <li><a href="#" class="footer-anchor">Contact Us</a></li>
-                            <li><a href="#" class="footer-anchor">Referrals</a></li>
-                            <li><a href="#" class="footer-anchor">Bug Bounty</a></li>
-                        </ul>
-                    </div>
+                        <div class="footer-col">
+                            <h3>About Us</h3>
+                            <ul>
+                                <li><a href="#" class="footer-anchor">About Us</a></li>
+                                <li><a href="#" class="footer-anchor">Careers</a></li>
+                                <li><a href="#" class="footer-anchor">Blog</a></li>
+                                <li>
+                                    <a href="#" class="footer-anchor">Resources</a>
+                                    <ul class="nested-list">
+                                        <li><a href="#" class="footer-anchor">English</a></li>
+                                        <li><a href="#" class="footer-anchor">Hindi</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" class="footer-anchor">Press & Awards</a></li>
+                                <li><a href="#" class="footer-anchor">Contact Us</a></li>
+                                <li><a href="#" class="footer-anchor">Referrals</a></li>
+                                <li><a href="#" class="footer-anchor">Bug Bounty</a></li>
+                            </ul>
+                        </div>
 
-                    <div class="footer-col">
-                        <h3>Learn</h3>
-                        <ul>
-                            <li><a href="#" class="footer-anchor">What is Crowdfunding?</a></li>
-                            <li><a href="#" class="footer-anchor">Fundraising Ideas</a></li>
-                            <li><a href="#" class="footer-anchor">Fundraising Tips</a></li>
-                            <li><a href="#" class="footer-anchor">Frequently Asked Questions</a></li>
-                            <li><a href="#" class="footer-anchor">Pricing & Fees</a></li>
-                            <li><a href="#" class="footer-anchor">Trust & Safety</a></li>
-                            <li><a href="#" class="footer-anchor">Find Hospital List</a></li>
-                            <li><a href="#" class="footer-anchor">Disease Cost Calculator</a></li>
-                            <li><a href="#" class="footer-anchor">Patient Care Guides</a></li>
-                            <li><a href="#" class="footer-anchor">Health Insurance Plans</a></li>
-                            <li><a href="#" class="footer-anchor">Health Insurance Compare</a></li>
-                        </ul>
-                    </div>
+                        <div class="footer-col">
+                            <h3>Learn</h3>
+                            <ul>
+                                <li><a href="#" class="footer-anchor">What is Crowdfunding?</a></li>
+                                <li><a href="#" class="footer-anchor">Fundraising Ideas</a></li>
+                                <li><a href="#" class="footer-anchor">Fundraising Tips</a></li>
+                                <li><a href="#" class="footer-anchor">Frequently Asked Questions</a></li>
+                                <li><a href="#" class="footer-anchor">Pricing & Fees</a></li>
+                                <li><a href="#" class="footer-anchor">Trust & Safety</a></li>
+                                <li><a href="#" class="footer-anchor">Find Hospital List</a></li>
+                                <li><a href="#" class="footer-anchor">Disease Cost Calculator</a></li>
+                                <li><a href="#" class="footer-anchor">Patient Care Guides</a></li>
+                                <li><a href="#" class="footer-anchor">Health Insurance Plans</a></li>
+                                <li><a href="#" class="footer-anchor">Health Insurance Compare</a></li>
+                            </ul>
+                        </div>
 
-                    <div class="footer-col">
-                        <h3>Top Categories</h3>
-                        <ul>
-                            <li><a href="#" class="footer-anchor">Medical Crowdfunding</a></li>
-                            <li><a href="#" class="footer-anchor">Transplant Crowdfunding</a></li>
-                            <li><a href="#" class="footer-anchor">Cancer Crowdfunding</a></li>
-                            <li><a href="#" class="footer-anchor">Child Health Crowdfunding</a></li>
-                            <li><a href="#" class="footer-anchor">NGO Crowdfunding</a></li>
-                            <li><a href="#" class="footer-anchor">Education Crowdfunding</a></li>
-                            <li><a href="#" class="footer-anchor">Emergency Crowdfunding</a></li>
-                        </ul>
+                        <div class="footer-col">
+                            <h3>Top Categories</h3>
+                            <ul>
+                                <li><a href="#" class="footer-anchor">Medical Crowdfunding</a></li>
+                                <li><a href="#" class="footer-anchor">Transplant Crowdfunding</a></li>
+                                <li><a href="#" class="footer-anchor">Cancer Crowdfunding</a></li>
+                                <li><a href="#" class="footer-anchor">Child Health Crowdfunding</a></li>
+                                <li><a href="#" class="footer-anchor">NGO Crowdfunding</a></li>
+                                <li><a href="#" class="footer-anchor">Education Crowdfunding</a></li>
+                                <li><a href="#" class="footer-anchor">Emergency Crowdfunding</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1269,9 +1302,10 @@
                                     <!-- <span class="upi-spans">QR not available. Please complete transaction via mobile
                                         device.</span><br> -->
 
-                                        <div class="qr-img-wrapper">
-                                            <img src="https://www.impactguru.com/fundraiser/getUPIQR/c2c76765-4441-4ce8-b2bb-19e5f98ba520/120" alt="QR code of ImpactGuru for UPI payment">
-                                        </div>
+                                    <div class="qr-img-wrapper">
+                                        <img src="https://www.impactguru.com/fundraiser/getUPIQR/c2c76765-4441-4ce8-b2bb-19e5f98ba520/120"
+                                            alt="QR code of ImpactGuru for UPI payment">
+                                    </div>
                                     <div class="pm-section-breakdown">
                                         <span>You are donating ₹9999 with ₹1600 tip</span>
                                     </div>

@@ -4,6 +4,10 @@
     margin-top: 50px;
 }
 
+.carousel-wrapper{
+    width: 100%;
+}
+
 .carousel-indicators [data-bs-target] {
     background-color: black;
 }
