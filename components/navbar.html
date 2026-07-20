@@ -12,44 +12,87 @@
 </head>
 
 <body>
-    <nav class="navbar-nav navi" id="nav">
+    <nav class="navbar navbar-expand-xxl navi" id="nav">
         <div class="container d-flex justify-content-between align-items-center">
+        
+        <a class="navbar-brand" href="#" onclick="location.reload()"><img class="igt-logo"
+                src="https://cdn.impactguru.com/themes/front/page/images/icons/impactguru.png" alt=""></a>
 
-            <ul class="navi-list navbar-nav flex-row align-items-center gap-3">
-                <li><a href="#" onclick="location.reload()"><img
-                            src="https://cdn.impactguru.com/themes/front/page/images/icons/impactguru.png" alt=""></a>
+        <div class="nav-space d-flex">
+            <ul class="droppers">
+                <li type="none" class="child-droppers dropdown">
+                    <button class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="fa-solid fa-indian-rupee-sign"></i> INR
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-indian-rupee-sign"></i> INR</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-dollar-sign"></i> USD</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-sterling-sign"></i> GBP</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-euro-sign"></i> Euro</a></li>
+                    </ul>
                 </li>
-                <li>
+            </ul>
+
+            <button class="navbar-toggler hambar" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navi-list navbar-nav mr-auto">
+                <li class="search-section-ham d-flex">
                     <form class="d-flex" role="search">
                         <div class="search-wrapper">
-                            <button class="search-icon icon icon-btn"><i class=" fa-solid fa-magnifying-glass"></i></button>
-                            <input class="form-control me-2 search-bar" type="search" placeholder="Search"
-                                aria-label="Search" />
+                            <button class="search-icon icon icon-btn"><i
+                                    class=" fa-solid fa-magnifying-glass"></i></button>
+                            <input class="form-control form-control-sm me-2 search-bar" type="search"
+                                placeholder="Search" aria-label="Search" />
                         </div>
                     </form>
+
+                    <div class="nav-item dropdown child-droppers">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-user"></i>
+                        </a>
+                        <ul class="dropdown-menu position-absolute">
+                            <li><a class="dropdown-item" href="#"><i
+                                        class="fa-solid fa-arrow-right-to-bracket"></i>Login</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user-plus"></i> Sign up</a></li>
+                        </ul>
+                    </div>
                 </li>
                 <li><a href="">Start a free fundraiser</a></li>
                 <li><a href="">How it Works</a></li>
                 <li><a href="">Browse Fundraiser</a></li>
                 <li><button class="glowBtn">Help Praveena</button></li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown dropper-small">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         <i class="fa-solid fa-user"></i>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-right-to-bracket"></i>Login</a></li>
+                        <li><a class="dropdown-item" href="#"><i
+                                    class="fa-solid fa-arrow-right-to-bracket"></i>Login</a>
+                        </li>
                         <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user-plus"></i> Sign up</a></li>
                     </ul>
                 </li>
 
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown dropper-small">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         <i class="fa-solid fa-indian-rupee-sign"></i> INR
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-indian-rupee-sign"></i> INR</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-indian-rupee-sign"></i> INR</a>
+                        </li>
                         <li><a class="dropdown-item" href="#"><i class="fa-solid fa-dollar-sign"></i> USD</a></li>
                         <li><a class="dropdown-item" href="#"><i class="fa-solid fa-sterling-sign"></i> GBP</a></li>
                         <li><a class="dropdown-item" href="#"><i class="fa-solid fa-euro-sign"></i> Euro</a></li>
@@ -57,11 +100,14 @@
                 </li>
             </ul>
         </div>
+        </div>
     </nav>
     <hr>
 
     <script src="../scripts/component_script/navbar.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>
