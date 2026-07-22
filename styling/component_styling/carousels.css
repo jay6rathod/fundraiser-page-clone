@@ -1,10 +1,10 @@
-.image-content{
+.image-content {
     width: 800px;
     height: auto;
     margin-top: 50px;
 }
 
-.carousel-wrapper{
+.carousel-wrapper {
     width: 100%;
 }
 
@@ -12,48 +12,48 @@
     background-color: black;
 }
 
-.control-btn span{
+.control-btn span {
     color: black;
 }
 
 .carousel-item img {
-    box-shadow: -1px 4px 16px -4px rgba(0,0,0,0.8);
+    box-shadow: -1px 4px 16px -4px rgba(0, 0, 0, 0.8);
     margin: 10px;
     border-radius: 10px;
-    width: 672px;
-    height: 450px;
+    width: 600;
+    height: auto;
 }
 
 
 .gallery-content {
     display: flex;
-    justify-content: space-between; 
-    align-items: flex-end;          
+    justify-content: space-between;
+    align-items: flex-end;
     width: 100%;
-    padding: 15px 0;                
-    background-color: transparent;  
+    padding: 15px 0;
+    background-color: transparent;
 }
 
 
 .gallery-main-left {
     display: flex;
-    flex-direction: column;         
-    gap: 12px;                      
+    flex-direction: column;
+    gap: 12px;
 }
 
 
 .gallery-heading {
     font-size: 16px;
     font-weight: 700;
-    color: #555e6b;                 
-    text-transform: uppercase;      
+    color: #555e6b;
+    text-transform: uppercase;
     margin-right: 50px;
 }
 
 .prev-img {
     display: flex;
     flex-direction: row;
-    gap: 15px;                      
+    gap: 15px;
     align-items: center;
     margin-left: 75px;
 }
@@ -71,26 +71,26 @@
 
 .img-btn.active {
     /* outline: 2px solid #2B946B;      */
-    border: 2px solid #2B946B;     
+    border: 2px solid #2B946B;
     /* outline-offset: -2px; */
 }
 
 .img-indicators {
     width: auto;
-    height: 50px;                   
+    height: 50px;
     border-radius: 8px;
 }
 
 .prev-img-side-content {
     display: flex;
-    align-items: center;            
-    gap: 5px;               
+    align-items: center;
+    gap: 5px;
     margin-right: 80px;
 }
 
 
 .promise-badge {
-    height: 80px;                   
+    height: 80px;
     width: auto;
     cursor: pointer;
 }
@@ -101,4 +101,29 @@
     font-weight: 400;
     margin: 0;
     white-space: nowrap;
+}
+
+
+@media (max-width: 1000px) {
+    .carousel-img {
+        width: 300px;
+        height: auto;
+    }
+
+    .carousel-item{
+        width: 350px;
+        height: auto;
+    }
+
+    .carousel-inner{
+        margin-right: 20px;
+    }
+
+    .gallery-content{
+        display: none;
+    }
+
+    .carousel-control-next{
+        margin-right: 20px;
+    }
 }

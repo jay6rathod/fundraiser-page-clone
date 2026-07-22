@@ -1,0 +1,251 @@
+/* Glowing Button css */
+.glowBtn {
+    background: hsla(44, 100%, 71%, 1);
+    background: linear-gradient(90deg, hsla(44, 100%, 71%, 1) 0%, hsla(15, 97%, 74%, 1) 100%);
+    color: black;
+    border: none;
+    font-weight: 500;
+    border-radius: 20px;
+    padding: 10px;
+    animation: constant-glow 1s infinite ease-in-out;
+    transition: 0.3s ease;
+}
+
+
+.glowBtn:hover {
+    color: white;
+}
+
+@keyframes constant-glow {
+    0% {
+        box-shadow: 0 0 5px hsla(44, 100%, 71%, 1),
+            0 0 10px hsla(15, 97%, 74%, 1);
+    }
+
+    50% {
+        box-shadow: 0 0 20px hsla(44, 100%, 71%, 1),
+            0 0 30px hsla(15, 97%, 74%, 1);
+    }
+
+    100% {
+        box-shadow: 0 0 5px hsla(44, 100%, 71%, 1),
+            0 0 10px hsla(15, 97%, 74%, 1);
+    }
+}
+
+
+
+/* Navbar positioning */
+.navi {
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px 10px;
+    width: 100%;
+}
+
+.navi-list {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    /* margin-left: 50px; */
+    gap: 1rem;
+}
+
+/* searchbar styling */
+
+.search-wrapper {
+    position: relative;
+    /* width: 260px; */
+}
+
+.search-bar {
+    border-radius: 30px;
+}
+
+.search-bar:focus {
+    outline: none;
+    box-shadow: none;
+    border: 2px solid #24936B;
+}
+
+.search-icon {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    /* top: 10%; */
+    transform: translateY(-50%);
+    /* z-index: 1; */
+}
+
+
+.search-icon:active {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+.search-icon:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+.droppers {
+    display: none;
+}
+
+.search-section-ham {
+    gap: 30px;
+}
+
+.clear-icon {
+    display: none;
+}
+
+.icon-hide {
+    display: none;
+}
+
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: #24936B;
+}
+
+.icon-btn {
+    border: none;
+    background-color: transparent;
+    /* margin-top: 5px;
+    margin-right: 10px; */
+    margin: 0;
+}
+
+.hambar {
+    outline: none;
+    border: none;
+    box-shadow: none;
+    transition: 0.2s all ease-in-out;
+}
+
+.hambar:focus-within {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+
+
+.child-droppers{
+    display: none;
+}
+
+@media (max-width: 1400px) {
+    .navi-list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .search-wrapper {
+        width: 100%;
+        max-width: 500px;
+        top: 10px;
+    }
+
+    .droppers {
+        display: flex;
+        align-items: center;
+        align-self: flex-end;
+        gap: 10px;
+    }
+
+    .child-droppers {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    .dropper-small {
+        display: none;
+    }
+}
+
+@media (max-width: 992px){
+    .igt-logo{
+        width: 130px;
+        height: auto;
+    }
+
+    .search-wrapper{
+        max-width: 100%;
+    }
+
+    .search-section-ham{
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px){
+    .navi{
+        padding: 15px 10px;
+    }
+
+    .igt-logo{
+        width: 120px;
+    }
+
+    .search-wrapper{
+        width: 100%;
+    }
+
+    .child-droppers{
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .child-droppers a{
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .igt-logo {
+        width: 100px;
+    }
+
+    .child-droppers a {
+        font-size: .8rem;
+    }
+
+    .search-section-ham{
+        gap: 10px;
+    }
+
+    .droppers{
+        gap: 5px;
+    }
+}
+@media (max-width: 375px) {
+
+    .navi {
+        width: 100%;
+    }
+
+    .igt-logo {
+        width: 90px;
+    }
+
+    .child-droppers {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .child-droppers a {
+        font-size: 0.75rem;
+    }
+}

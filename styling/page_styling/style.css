@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
   background-color: #FAFBFB;
   width: 100%;
@@ -2429,11 +2434,19 @@ body.noscroll {
 
 @media (max-width: 1400px) {
   .nav-wrapper {
+<<<<<<< HEAD
     width: 200%;
   }
 
   .footing-wrapper {
     width: 200%;
+=======
+    width: 100%;
+  }
+
+  .footing-wrapper {
+    width: 100%;
+>>>>>>> f1c1e4b (Fixed: some positional issues are fixed)
   }
 
   .header-content-wrapper {
@@ -2460,8 +2473,6 @@ body.noscroll {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 50%;
-    margin-right: 50%;
   }
 
   .header-wrap-one {
@@ -2469,8 +2480,7 @@ body.noscroll {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 50%;
-    margin-right: 50%;
+
   }
 
   .badge-wrapper {
@@ -2479,7 +2489,13 @@ body.noscroll {
     justify-content: center;
   }
 
+<<<<<<< HEAD
   
+=======
+  .disappear{
+    display: none;
+  }
+>>>>>>> f1c1e4b (Fixed: some positional issues are fixed)
 
 }
 
@@ -2495,7 +2511,11 @@ body.noscroll {
     display: flex;
     justify-content: center;
     align-items: center;
+<<<<<<< HEAD
     margin-left: 20px;
+=======
+    /* margin-left: 20px; */
+>>>>>>> f1c1e4b (Fixed: some positional issues are fixed)
   }
 
   .mob-cardi{
@@ -2506,7 +2526,11 @@ body.noscroll {
 
   .mob-pay-card{
     display: block;
+<<<<<<< HEAD
     width: 600px;
+=======
+    width: 350px;
+>>>>>>> f1c1e4b (Fixed: some positional issues are fixed)
     height: auto;
     padding: 20px;
     margin: 20px;
@@ -2517,8 +2541,13 @@ body.noscroll {
   }
 
   .upi-pay-btn{
+<<<<<<< HEAD
     padding-left: 150px;
     padding-right: 150px;
+=======
+    padding-left: 20%;
+    padding-right: 20%;
+>>>>>>> f1c1e4b (Fixed: some positional issues are fixed)
     padding-top: 0;
     padding-bottom: 0;
   }
@@ -2650,6 +2679,197 @@ body.noscroll {
   .mob-s2s-btn-wrap{
     padding: 20px;
   }
+<<<<<<< HEAD
+=======
+
+  .share_linger_btn_container{
+    display: none;
+  }
+
+  .cardi{
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .side-by-side-cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    /* background-color: red; */
+  }
+
+  .mob-update-wrapper{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-right: 20px;
+  }
+
+  .update-card{
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .share_buttons{
+    display: none;
+  }
+
+  .story_card{
+    width: 100%;
+    max-width: 350px;  
+  }
+
+  .story_section{
+    width: 350px;
+  }
+
+  .story_section_wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+  }
+
+  .declaration{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .declaration_content{
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .mob-docs-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+  }
+
+  .docs_card{
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .mob-imgs-prev{
+    width: 200px;
+    height: 100%;
+  }
+
+  .mob-img-btns{
+    width: 50px;
+    height: 50px;
+  }
+
+  .mob-updates-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+  }
+
+  .update-content-card{
+    width: 350px;
+    height: 100%;
+  }
+
+  .mob-comments-wrapper{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-right: 20px;
+  }
+
+  .comments-card{
+    width: 350px;
+    height: 100%;
+    display: flex;
+    flex-direction:column;
+  }
+
+  .comment-input-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .footer-header-input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .top_influencers{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+
+  .top_card{
+    width: 350px;
+    height: 100%;
+  }
+  .dialog_btn{
+    width: 200px;
+    height: auto;
+  }
+
+  .all_donations{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+  }
+
+  .all_donations_card{
+    width: 350px;
+    height: auto;
+  }
+
+  .donators p{
+    font-size: 1.1rem;
+  }
+  
+  .fundraise_for_cause{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+  }
+
+  .fundraise_cause_card{
+    width: 350px;
+    height: auto;
+  }
+
+  .side_btn{
+    font-size: .9rem;
+  }
+
+  .mob-payment-header h1{
+    font-size: 1.2rem;
+  }
+
+  .only-show-mob{
+    display: flex;
+    align-items: self-start;
+    justify-content: left;
+    margin-right: 20px;
+  }
+
+  .mob-collap{
+    width: 300px;
+    height: auto;
+  }
+
+>>>>>>> f1c1e4b (Fixed: some positional issues are fixed)
 }
 
 
@@ -2679,6 +2899,87 @@ body.noscroll {
   /* .right{
     width: 100%;
   } */
+<<<<<<< HEAD
+
+  .foot-const {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .foot-const-wrapper {
+    text-align: center;
+  }
+
+  .hider {
+    display: none;
+  }
+
+  .all-mob-collapser {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .only-show-mob {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mob-collapser {
+    background: transparent;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(32rem, 4vw, 64rem);
+    width: 700px;
+  }
+
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+
+  .mob-collapser-heading {
+    font-size: .9rem;
+    text-wrap-mode: nowrap;
+  }
+
+  .mob-collapser-card {
+    background-color: black;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .mob-collapser {
+    box-shadow: none;
+    outline: none;
+    border: none;
+  }
+
+  .mob-collapser:focus-within {
+    box-shadow: none;
+    outline: none;
+    border: none;
+  }
+
+  .footer-anchor {
+    color: white;
+    list-style-type: none;
+=======
 
   .foot-const {
     display: flex;
@@ -2759,4 +3060,17 @@ body.noscroll {
     color: white;
     list-style-type: none;
   }
+}
+
+@media (max-width: 1000px) {
+  .header-heading{
+    font-size: 1.2rem;
+  }
+
+  .label {
+    font-size: .7rem;
+>>>>>>> f1c1e4b (Fixed: some positional issues are fixed)
+  }
+
+
 }
