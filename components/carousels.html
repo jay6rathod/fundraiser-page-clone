@@ -8,17 +8,13 @@
   <title>Document</title>
 </head>
 
+<!--  data-bs-ride="carousel" -->
+
 <body>
   <div class="carousel-wrapper">
-    <div class="carousel slide carousel-xxl" id="fund-image-slider" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#fund-image-slider" data-bs-slide-to="0" class="active slider-btn"
-          aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#fund-image-slider" class="slider-btn" data-bs-slide-to="1"
-          aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#fund-image-slider" class="slider-btn" data-bs-slide-to="2"
-          aria-label="Slide 3"></button>
-      </div>
+
+
+    <div id="fund-image-slider" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="https://cdn.impactguru.com/assets/uploads/campaigns_gallery/help-garvika-goyal177850393919303.jpg"
@@ -33,54 +29,53 @@
             alt="Garvika Goyal" class="carousel-img">
         </div>
       </div>
-
-      <button class="carousel-control-prev prev-button control-btn " type="button" data-bs-target="#fund-image-slider"
-        data-bs-slide="prev">
-        <span><i class="fa-solid fa-chevron-left"></i></span>
-        <!-- <span class="visually-hidden">Previous</span> -->
-      </button>
-
-      <button class="carousel-control-next next-button control-btn " type="button" data-bs-target="#fund-image-slider"
-        data-bs-slide="next">
-        <span><i class="fa-solid fa-chevron-right"></i></span>
-        <!-- <span class="visually-hidden">Next</span> -->
-      </button>
-    </div>
-    <div class="gallery-content">
-
-      <div class="gallery-main-left">
-        <h5 class="gallery-heading">GALLERY (3)</h5>
-
-        <div class="prev-img">
-          <button type="button" data-bs-target="#fund-image-slider" data-bs-slide-to="0"
-            class="img-btn active slider-btn" aria-current="true" aria-label="Slide 1">
-            <img class="img-indicators"
-              src="https://cdn.impactguru.com/assets/uploads/campaigns_gallery/help-garvika-goyal177850393919303.jpg"
-              alt="">
-          </button>
-          <button type="button" data-bs-target="#fund-image-slider" class="img-btn slider-btn" data-bs-slide-to="1"
-            aria-label="Slide 2">
-            <img class="img-indicators"
-              src="https://cdn.impactguru.com/assets/uploads/campaigns_gallery/help-garvika-goyal177364256937353.webp"
-              alt="">
-          </button>
-          <button type="button" data-bs-target="#fund-image-slider" class="img-btn slider-btn" data-bs-slide-to="2"
-            aria-label="Slide 3">
-            <img class="img-indicators"
-              src="https://cdn.impactguru.com/assets/uploads/campaigns_gallery/help-garvika-goyal177364257595451.jpeg"
-              alt="">
-          </button>
-        </div>
+      <div class="image-toggler-wrapper">
+        <button class="carousel-control-prev prev-button control-btn" type="button" data-bs-target="#fund-image-slider"
+          data-bs-slide="prev">
+          <span class="previous-btn"><i class="fa-solid fa-chevron-left"></i></span>
+        </button>
+        <button class="carousel-control-next next-button control-btn" type="button" data-bs-target="#fund-image-slider"
+          data-bs-slide="next">
+          <span class="next-btn"><i class="fa-solid fa-chevron-right"></i></span>
+        </button>
       </div>
-
-      <div class="prev-img-side-content">
-
-        <img src="/assets/donor-safety-promise.png" data-bs-toggle="tooltip" data-bs-placement="bottom"
-          data-bs-title="Tooltip on bottom" alt="donor-safety-promise-img" class="promise-badge">
-        <h4 class="shares-count">414 Shares</h4>
-      </div>
-
     </div>
+  </div>
+  <div class="gallery-content">
+
+    <div class="gallery-main-left">
+      <h5 class="gallery-heading">GALLERY (3)</h5>
+
+      <div class="prev-img">
+        <button type="button" data-bs-target="#fund-image-slider" data-bs-slide-to="0" class="img-btn active slider-btn"
+          aria-current="true" aria-label="Slide 1">
+          <img class="img-indicators"
+            src="https://cdn.impactguru.com/assets/uploads/campaigns_gallery/help-garvika-goyal177850393919303.jpg"
+            alt="">
+        </button>
+        <button type="button" data-bs-target="#fund-image-slider" class="img-btn slider-btn" data-bs-slide-to="1"
+          aria-label="Slide 2">
+          <img class="img-indicators"
+            src="https://cdn.impactguru.com/assets/uploads/campaigns_gallery/help-garvika-goyal177364256937353.webp"
+            alt="">
+        </button>
+        <button type="button" data-bs-target="#fund-image-slider" class="img-btn slider-btn" data-bs-slide-to="2"
+          aria-label="Slide 3">
+          <img class="img-indicators"
+            src="https://cdn.impactguru.com/assets/uploads/campaigns_gallery/help-garvika-goyal177364257595451.jpeg"
+            alt="">
+        </button>
+      </div>
+    </div>
+
+    <div class="prev-img-side-content">
+
+      <img src="/assets/donor-safety-promise.png" data-bs-toggle="tooltip" data-bs-placement="bottom"
+        data-bs-title="Tooltip on bottom" alt="donor-safety-promise-img" class="promise-badge">
+      <h4 class="shares-count">414 Shares</h4>
+    </div>
+
+  </div>
   </div>
 
 

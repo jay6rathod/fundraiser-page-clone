@@ -146,6 +146,11 @@ a:hover {
 }
 
 @media (max-width: 1400px) {
+    .navi{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     .navi-list {
         flex-direction: column;
         align-items: flex-start;
@@ -177,7 +182,7 @@ a:hover {
 
 @media (max-width: 992px){
     .igt-logo{
-        width: 130px;
+        width: 190px;
         height: auto;
     }
 
@@ -196,7 +201,7 @@ a:hover {
     }
 
     .igt-logo{
-        width: 120px;
+        width: 150px;
     }
 
     .search-wrapper{
@@ -215,7 +220,7 @@ a:hover {
 
 @media (max-width: 480px) {
     .igt-logo {
-        width: 100px;
+        width: 130px;
     }
 
     .child-droppers a {

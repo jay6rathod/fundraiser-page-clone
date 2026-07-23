@@ -1,11 +1,6 @@
-.image-content {
-    width: 800px;
-    height: auto;
-    margin-top: 50px;
-}
-
 .carousel-wrapper {
     width: 100%;
+    /* outline: 2px solid red; */
 }
 
 .carousel-indicators [data-bs-target] {
@@ -16,31 +11,41 @@
     color: black;
 }
 
-.carousel-item img {
-    box-shadow: -1px 4px 16px -4px rgba(0, 0, 0, 0.8);
-    margin: 10px;
-    border-radius: 10px;
-    width: 600;
-    height: auto;
+.carousel-control-prev {
+    justify-content: flex-start;
+    left: 30px;
 }
 
+.carousel-control-next {
+    justify-content: flex-end;
+    right: 30px;
+}
+
+.carousel-img {
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    border-radius: 10px;
+}
 
 .gallery-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-end;
     width: 100%;
     padding: 15px 0;
     background-color: transparent;
+    flex-wrap: wrap;
+    gap: 16px;
 }
-
 
 .gallery-main-left {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
-
 
 .gallery-heading {
     font-size: 16px;
@@ -56,6 +61,7 @@
     gap: 15px;
     align-items: center;
     margin-left: 75px;
+    flex-wrap: wrap;
 }
 
 .img-btn {
@@ -70,9 +76,7 @@
 }
 
 .img-btn.active {
-    /* outline: 2px solid #2B946B;      */
     border: 2px solid #2B946B;
-    /* outline-offset: -2px; */
 }
 
 .img-indicators {
@@ -88,7 +92,6 @@
     margin-right: 80px;
 }
 
-
 .promise-badge {
     height: 80px;
     width: auto;
@@ -103,27 +106,133 @@
     white-space: nowrap;
 }
 
+.prev-button {
+    margin-right: 100px;
+}
+
+.image-toggler-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
 
 @media (max-width: 1000px) {
+
+
+    .carousel-img {
+        width: 350px;
+    }
+
+    .carousel-inner {
+        width: 100%;
+    }
+
+    .carousel-control-next {
+        margin-right: 20px;
+    }
+
+    .prev-img,
+    .prev-img-side-content {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .gallery-heading {
+        margin-right: 0;
+    }
+
+}
+
+#fund-image-slider {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.carousel {
+    overflow: hidden;
+}
+
+@media (max-width: 480px) {
     .carousel-img {
         width: 300px;
+    }
+
+    .img-indicators {
+        height: 36px;
+    }
+
+    .promise-badge {
+        height: 56px;
+    }
+
+    .shares-count {
+        font-size: 15px;
+    }
+
+    .gallery-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .prev-img {
+        justify-content: center;
+    }
+
+    #fund-image-slider {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 321px) {
+    .carousel-img {
+        width: 280px;
+    }
+
+    #fund-image-slider {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 426px) {
+    .carousel-img {
+        width: 380px;
+    }
+
+    #fund-image-slider {
+        width: 100%;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+
+    .img-indicators{
+        width: 100px;
         height: auto;
     }
+}
 
-    .carousel-item{
-        width: 350px;
+
+
+@media (min-width: 500px) and (max-width: 770px) {
+    .carousel-img {
+        width: 650px;
+    }
+
+    #fund-image-slider {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .img-indicators{
+        width: 100px;
         height: auto;
-    }
-
-    .carousel-inner{
-        margin-right: 20px;
-    }
-
-    .gallery-content{
-        display: none;
-    }
-
-    .carousel-control-next{
-        margin-right: 20px;
     }
 }
